@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.io.File;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.example.demo.entity.DiaryBoard;
-import com.example.demo.entity.GenBoard;
 import com.example.demo.service.DiaryBoardService;
 import com.example.demo.service.JSONUtil;
 
@@ -29,15 +29,41 @@ public class DiaryBoardController {
 	@Autowired private DiaryBoardService diaryBoardService;
 	@Value("${spring.servlet.multipart.location}") private String uploadDir;
 	
+//==page기능 추가해서 list 새로 불러오기 작업 2/10====
 	@GetMapping("/list")
-	public String list(Model model) {
-		List<DiaryBoard> list = diaryBoardService.getDiaryBoardList();
+	public String list(HttpServletRequest req, Model model) {
+		String page_ = req.getParameter("p");
+		String field = req.getParameter("f");
+		String query = req.getParameter("q");
+		
+		int page = (page_ == null || page_.equals("")) ? 1 : Integer.parseInt(page_);
+		field = (field == null || field.equals("")) ? "title" : field;
+		query = (query == null || query.equals("")) ? "" : query;
+		List<DiaryBoard> list = diaryBoardService.getDiaryBoardList(page, field, query);
+		
+		HttpSession session = req.getSession();
+		session.setAttribute("currentDiaryBoardPage", page);
+		model.addAttribute("field", field);
+		model.addAttribute("query", query);
+		
+		int totalDiaryBoardNo = diaryBoardService.getDiaryBoardCount("did", "");
+		int totalPages = (int) Math.ceil(totalDiaryBoardNo / 10.);
+		
+		int startPage = (int)(Math.ceil((page-0.5)/10) - 1) * 10 + 1;
+		int endPage = Math.min(totalPages, startPage + 9);
+		List<String> pageList = new ArrayList<>();
+		for (int i = startPage; i <= endPage; i++) 
+			pageList.add(String.valueOf(i));
+		model.addAttribute("pageList", pageList);
+		model.addAttribute("startPage", startPage);
+		model.addAttribute("endPage", endPage);
+		model.addAttribute("totalPages", totalPages);
+		
+		String today = LocalDate.now().toString(); 
+		model.addAttribute("today", today);
 		model.addAttribute("diaryBoardList", list);
-//		String today = LocalDate.now().toString(); 
-//		model.addAttribute("today", today);
 		return "diaryBoard/list";
 	}
-	
 	
 //==2/2 dir: DiaryBoard -> diaryBoard로 수정//  
 //==아래부턴 2/3a에 작업부분===//
@@ -128,7 +154,7 @@ public class DiaryBoardController {
 		String content = (String) req.getParameter("content");
 		
 		HttpSession session = req.getSession();
-		List<String> additionalFileList = (List<String>) session.getAttribute("fileList"); //<-----확인하기
+		List<String> additionalFileList = (List<String>) session.getAttribute("fileList"); 
 		String[] delFileList = req.getParameterValues("delFile");
 		if (delFileList != null) {
 			for (String delName: delFileList) {

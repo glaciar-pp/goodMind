@@ -10,5 +10,7 @@ import com.example.demo.entity.Map;
 public interface MapService {
 
 	List<Map> getMapList();
+
+	List<Map> getSearchList(String searchWord);
 	
 }

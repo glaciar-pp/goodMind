@@ -14,8 +14,10 @@ public class DiaryBoardServiceImpl implements DiaryBoardService {
 	@Autowired private DiaryBoardDao diaryBoardDao;
 	
 	@Override
-	public List<DiaryBoard> getDiaryBoardList() {
-		List<DiaryBoard> list = diaryBoardDao.getDiaryBoardList();
+	public List<DiaryBoard> getDiaryBoardList(int page, String field, String query) {
+		int offset = (page - 1) * 10;
+		query = "%"+query+"%";
+		List<DiaryBoard> list = diaryBoardDao.getDiaryBoardList(offset, field, query);
 		return list;
 	}
 
@@ -33,18 +35,18 @@ public class DiaryBoardServiceImpl implements DiaryBoardService {
 //===2/3a add method (class에서 add됨)
 	@Override
 	public void updateDiaryBoard(DiaryBoard diaryBoard) {  //-2/3a-1  젤끝에 d-> diaryBoard 로 수정
-		diaryBoardDao.updateDiaryBoard(diaryBoard); //- //<-2/3a-1  젤끝에 d-> diaryBoard 로 수정
+		diaryBoardDao.updateDiaryBoard(diaryBoard);  //<-2/3a-1  젤끝에 d-> diaryBoard 로 수정
 	}
 
 	@Override
 	public void deleteDiaryBoard(int did) {
 		diaryBoardDao.deleteDiaryBoard(did);
 	}
-
-//	@Override
-//	public int getDiaryBoardCount(String field, String query) {
-//		query = "%"+query+"%";
-//		int count = diaryBoardDao.getDiaryBoardCount(field, query)
-//		return 0;
-//	}
+//===2/10 추가 
+	@Override
+	public int getDiaryBoardCount(String field, String query) {
+		query = "%"+query+"%";
+		int count = diaryBoardDao.getDiaryBoardCount(field, query);
+		return count;
+	}
 }

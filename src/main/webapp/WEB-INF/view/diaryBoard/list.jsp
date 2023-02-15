@@ -14,7 +14,7 @@
     		const field = document.getElementById("field").value;
     		const query = document.getElementById("query").value;
     		console.log("search()", field, query);
-    		location.href = "/goodM/diaryBoard/list?p=${currentInfoBoardPage}&f=" + field + "&q=" + query;
+    		location.href = "/goodM/diaryBoard/list?p=${currentDiaryBoardPage}&f=" + field + "&q=" + query;
     	}
     </script>
 </head>
@@ -73,25 +73,25 @@
                     </tr>
                 </c:forEach>    
                 </table>
-<!--                 <ul class="pagination justify-content-center mt-4"> -->
-<%--                 <c:if test="${currentiaryBoardPage gt 10}"> --%>
-<%--                     <li class="page-item"><a class="page-link" href="/goodM/diaryBoard/list?p=${startPage - 1}&f=${field}&q=${query}">&laquo;</a></li> --%>
-<%--                 </c:if> --%>
-<%--                 <c:if test="${currentiaryBoardPage le 10}"> --%>
-<!--                     <li class="page-item"><a class="page-link" href="#">&laquo;</a></li> -->
-<%--                 </c:if> --%>
-<%--                 <c:forEach var="page" items="${pageList}" varStatus="loop">     --%>
-<%--                     <li class="page-item ${(currentdiaryBoardPage eq page) ? 'active' : ''}"> --%>
-<%--                     	<a class="page-link" href="/goodM/DiaryBoard/list?p=${page}&f=${field}&q=${query}">${page}</a> --%>
-<!--                     </li> -->
-<%--                 </c:forEach>   --%>
-<%--                 <c:if test="${totalPages gt endPage}">                     --%>
-<%--                     <li class="page-item"><a class="page-link" href="/goodM/diaryBoard/list?p=${endPage + 1}&f=${field}&q=${query}">&raquo;</a></li> --%>
-<%--                 </c:if> --%>
-<%--                 <c:if test="${totalPages le endPage}">                     --%>
-<!--                     <li class="page-item"><a class="page-link" href="#">&raquo;</a></li> -->
-<%--                 </c:if> --%>
-<!--                 </ul> -->
+                <ul class="pagination justify-content-center mt-4">
+                <c:if test="${currentDiaryBoardPage gt 10}">
+                    <li class="page-item"><a class="page-link" href="/goodM/diaryBoard/list?p=${startPage - 1}&f=${field}&q=${query}">&laquo;</a></li>
+                </c:if>
+                <c:if test="${currentDiaryBoardPage le 10}">
+                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                </c:if>
+                <c:forEach var="page" items="${pageList}" varStatus="loop">    
+                    <li class="page-item ${(currentDiaryBoardPage eq page) ? 'active' : ''}">
+                    	<a class="page-link" href="/goodM/diaryBoard/list?p=${page}&f=${field}&q=${query}">${page}</a>
+                    </li>
+                </c:forEach>  
+                <c:if test="${totalPages gt endPage}">                    
+                    <li class="page-item"><a class="page-link" href="/goodM/diaryBoard/list?p=${endPage + 1}&f=${field}&q=${query}">&raquo;</a></li>
+                </c:if>
+                <c:if test="${totalPages le endPage}">                    
+                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                </c:if>
+                </ul>
             </div>
             <!-- =================== main =================== -->
             

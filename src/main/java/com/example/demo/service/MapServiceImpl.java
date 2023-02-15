@@ -19,5 +19,11 @@ public class MapServiceImpl implements MapService {
 		List<Map> list = mapDao.getMapList();
 		return list;
 	}
+
+	@Override
+	public List<Map> getSearchList(String searchWord) {
+		List<Map> list = mapDao.getSearchList(searchWord);
+		return list;
+	}
 	
 }
