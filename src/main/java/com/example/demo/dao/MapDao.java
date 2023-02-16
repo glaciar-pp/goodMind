@@ -13,6 +13,6 @@ public interface MapDao {
 	@Select("select * from map")
 	public List<Map> getMapList();
 
-	@Select("SELECT * FROM map WHERE addr like CONCAT('%', #{searchWord} ,'%');")
+	@Select("SELECT * FROM map WHERE addr like CONCAT('%', #{searchWord} ,'%') ORDER BY addr desc;")
 	public List<Map> getSearchList(String searchWord);
 }

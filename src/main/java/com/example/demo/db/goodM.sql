@@ -1,8 +1,8 @@
 SET SESSION FOREIGN_KEY_CHECKS=0;
 
 /* Drop Tables */
-
-DROP TABLE IF EXISTS diaBoard;
+DROP TABLE IF EXISTS diary;
+DROP TABLE IF EXISTS diaryBoard;
 DROP TABLE IF EXISTS likeList;
 DROP TABLE IF EXISTS reply;
 DROP TABLE IF EXISTS genBoard;
@@ -12,19 +12,29 @@ DROP TABLE IF EXISTS testResult;
 DROP TABLE IF EXISTS users;
 
 
-
-
 /* Create Tables */
+CREATE TABLE diary 
+(
+	  uid VARCHAR(20) NOT NULL,
+	  dayStr CHAR(8) NOT NULL,
+	  anniversary VARCHAR(20),
+	  title VARCHAR(80),
+	  content VARCHAR(800),
+	  sentiment VARCHAR(20),
+	  isHoliday INT DEFAULT 0,
+	  PRIMARY KEY(uid, dayStr)
+	);
 
-CREATE TABLE diaBoard
+CREATE TABLE diaryBoard
 (
 	did int NOT NULL AUTO_INCREMENT,
 	uid varchar(20) NOT NULL,
 	title varchar(128) NOT NULL,
-	content varchar(128),
+	content varchar(800), /* 800으로 변경 */
 	modTime datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	isDeleted int DEFAULT 0 NOT NULL,
 	files varchar(100),
+	score int NOT NULL,  /* 2/14추가함 */
 	PRIMARY KEY (did)
 );
 

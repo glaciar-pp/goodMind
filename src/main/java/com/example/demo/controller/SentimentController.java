@@ -28,4 +28,5 @@ public class SentimentController {
 		model.addAttribute("result", result);
 		return "sentiment/sentimentResult";
 	}
+// 이 파일은 마지막에 서비스가 안정적으로 돌아가는지 테스트 완료후에 삭제해도 됩니다. 
 }

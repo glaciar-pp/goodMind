@@ -62,5 +62,5 @@ public class SentimentUtil {
 		
 		return sentiment;
 	}
-
+// 이파일은 삭제하면 안됩니다. 
 }

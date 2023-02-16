@@ -11,27 +11,30 @@ public class DiaryBoard {
 	private int isDeleted;
 	private String files;
 	private String uname;
+	private int score; // score 2/14추가
 	
-	public DiaryBoard() {}  //게시글 생성시 필요한 생성자 
-	public DiaryBoard(String uid, String title, String content, String files) {
+	public DiaryBoard() {}  // 게시글 생성시 필요한 생성자 
+	public DiaryBoard(String uid, String title, String content, String files, int score) {
 		super();
 		this.uid = uid;
 		this.title = title;
 		this.content = content;
 		this.files = files;
+		this.score = score; // score 2/14추가
 	}
-	//==2/3a== 추가함
-	public DiaryBoard(int did, String title, String content, String files) {
+	//===2/3a 추가
+	public DiaryBoard(int did, String title, String content, String files, int score) {
 		super();
 		this.did = did;
 		this.title = title;
 		this.content = content;
 		this.files = files;
+		this.score = score; // score 2/14추가
 	}
 	
-		// constructor -> toString -> getters&setters 순서로  ===2/1=====
+	//===2/1 constructor -> toString -> getters&setters 순서로  
 	public DiaryBoard(int did, String uid, String title, String content, LocalDateTime modTime, int isDeleted,
-			String files, String uname) {
+			String files, int score, String uname) {
 		super();
 		this.did = did;
 		this.uid = uid;
@@ -40,13 +43,14 @@ public class DiaryBoard {
 		this.modTime = modTime;
 		this.isDeleted = isDeleted;
 		this.files = files;
+		this.score = score; // score 2/14추가
 		this.uname = uname;
 	}
 	
-	@Override 
-	public String toString() {
+	@Override
+	public String toString() { // score 2/14추가
 		return "DiaryBoard [did=" + did + ", uid=" + uid + ", title=" + title + ", content=" + content + ", modTime="
-				+ modTime + ", isDeleted=" + isDeleted + ", files=" + files + ", uname=" + uname + "]";
+				+ modTime + ", isDeleted=" + isDeleted + ", files=" + files + ", score=" + score + ", uname=" + uname + "]";
 	}
 	public int getDid() {
 		return did;
@@ -102,9 +106,19 @@ public class DiaryBoard {
 	public void setFiles(String files) {
 		this.files = files;
 	}
+	
+	public int getScore() { // score 2/14추가
+		return score;
+	}
+	
+	public void setScore(int score) { // score 2/14추가
+		this.score = score;
+	}
+	
 	public String getUname() {
 		return uname;
 	}
+	
 	public void setUname(String uname) {
 		this.uname = uname;
 	}

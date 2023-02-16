@@ -24,6 +24,11 @@
 	                    <a class="dropdown-item" href="/goodM/genBoard/list?p=1&f=&q="> 자유게시판</a>
 	                </li>
                 </ul>
+                
+                <li class="nav-item ms-3">
+                    <a class="nav-link ${menu eq 'schedule' ? "active" : ''}" href="/goodM/schedule/calendar"><i class="fa-solid fa-calendar-days"></i> 스케쥴</a>
+                </li>
+                
 				<li class="nav-item ms-3">
 					<a class="nav-link ${menu eq 'diaryBoard' ? "active" : ''}" href="/goodM/diaryBoard/list?p=1&f=&q="><i class="fa-solid fa-book"></i> 기분일기</a>
 				</li>

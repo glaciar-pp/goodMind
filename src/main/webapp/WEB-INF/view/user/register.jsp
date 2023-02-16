@@ -10,11 +10,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color:#CCCCFF">
         <div class="container-fluid">
         <!-- 로고 지정 필요 -->
             <img src="/goodM/img/logo.png" alt="Logo" style="height:60px;" class="rounded-3 mx-2">
-            <div class="p-2 bg-dark justify-content-center rounded">
+            <div class="p-2 justify-content-center rounded">
                 <img src="https://picsum.photos/1500/200" width="100%">
             </div>
         </div>
