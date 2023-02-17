@@ -1,6 +1,6 @@
 package com.example.demo.filter;
 
-/*import java.io.IOException;
+import java.io.IOException;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 /**
  * Servlet Filter implementation class MenuFilter
  */
-/*@Component
+@Component
 public class goodMFilter extends HttpFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -32,13 +32,13 @@ public class goodMFilter extends HttpFilter implements Filter {
 		else if (uri.contains("genBoard"))
 			session.setAttribute("menu", "genBoard");
 		else if (uri.contains("diaBoard"))
-			session.setAttribute("menu", "diaBoard");	
+			session.setAttribute("menu", "diaryBoard");	
 		else if (uri.contains("user"))
 			session.setAttribute("menu", "user");
 		else
 			session.setAttribute("menu", "");
 		
-		String[] urlPatterns = {"/infoBoard", "/genBoard", "/diaBoard" "/user/list", "/user/update", "/user/delete"};
+		String[] urlPatterns = {"/infoBoard", "/genBoard", "/diaryBoard", "/user/update", "/user/delete"};
 		for (String routing: urlPatterns) {
 			if (uri.contains(routing)) {
 				String uid = (String) session.getAttribute("uid");
@@ -54,4 +54,3 @@ public class goodMFilter extends HttpFilter implements Filter {
 	}
 
 }
-*/

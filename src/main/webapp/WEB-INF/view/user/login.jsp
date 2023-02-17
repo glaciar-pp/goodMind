@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color:#CCCCFF">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
         <div class="container-fluid">
             <img src="/img/logo.png" alt="Logo" style="height:80px;" class="rounded-3 mx-2">
             <div class="p-2 justify-content-center rounded">

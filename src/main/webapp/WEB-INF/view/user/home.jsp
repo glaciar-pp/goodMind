@@ -11,13 +11,16 @@
 
 <body style="height: 2000px">
     <%@ include file="../common/top.jsp" %>
-
-    <div class="container" style="margin-top: 80px;">
-        <div class="row">           
+    <div class="container-fluid" style="margin-top: 80px;">
+		<div class="row">
+			<div class="col-3" id="TCsoft">
+				<img alt="기분어때 로고" src="/img/logo.png" style="height:80px; margin: 30px">
+			</div>
+			<div class="col-8">           
             <!-- =================== main =================== -->
             <form action="/goodM/home" method="post">
 			<h1>만나서 반가워요!</h1>
-			<br><br><br><br>
+			<br><br>
 			<p>
 				발전해가는 사회 속 우리는 꾸준히 성장해가고 있습니다.
 				건강에 대한 관심도 높아지고 있지만, 상대적으로 마음의 건강에 대해서는 아직 부족한 실정입니다.
@@ -39,11 +42,12 @@
 			</p>
 			
 			<h1>오늘, 기분 어때?</h1>
+			<img class="float-end" src="/img/home_bg.svg">
             <!-- =================== main =================== -->
             </form>
         </div>
     </div>
-
+    	</div>
     <%@ include file="../common/bottom.jsp" %>
 </body>
 </html>

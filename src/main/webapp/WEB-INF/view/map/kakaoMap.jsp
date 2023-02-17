@@ -50,10 +50,13 @@
 		#pagination .on {font-weight: bold; cursor: default;color:black;}
 		#menuToggle {position: absolute; top: 10px; right: 35%; z-index: 1;}
 	</style>
-    
+    <%@ include file="../common/heading.jsp" %>
 </head>
 <body style="margin:40px;">
-<h3><strong>주변 병원/기관 찾기</strong></h3>
+    <%@ include file="../common/top.jsp" %>
+            
+            <!-- =================== main =================== -->
+<h3 style="margin-top:80px;"><strong>주변 병원/기관 찾기</strong></h3>
     <div class="map_wrap">
         <div id="map" style="width:65%;height:100%;position:relative;overflow:hidden;"></div>
     	
@@ -284,5 +287,6 @@ function pagination() {
 
 
 </script>
+<%@ include file="../common/bottom.jsp" %>
 </body>
 </html>

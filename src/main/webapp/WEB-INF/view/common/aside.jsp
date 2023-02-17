@@ -49,6 +49,5 @@
 	                </div>
                    	<a href="#" id="weather"><span class="badge bg-secondary">날씨</span></a><br>
                     <div id="weatherInfo"></div>
-                </div>
-                <button class="btn btn-sm btn-outline-primary mt-3" onclick = "location.href = '/goodM/user/update/{user.uid}'">Edit Profile</button>
-            </div>
+				</div>
+			</div>

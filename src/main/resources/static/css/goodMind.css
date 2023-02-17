@@ -1,0 +1,23 @@
+/* theme color : #ccccff -> #a0a0ff */
+@font-face {
+    font-family: 'KOTRAHOPE';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+.navbar{
+background-color:#a0a0ff
+    }
+
+/* 1. 테마 배경색 강하게 */
+#TChard {
+    background-color:#a0a0ff;
+}
+/* 2. 테마 배경색 연하게 */
+#TCsoft {
+    background-color:#ccccff;
+}
+
+h1{
+    font-family: 'KOTRAHOPE';
+}

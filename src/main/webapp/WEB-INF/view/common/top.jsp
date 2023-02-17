@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color:#CCCCFF">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
         <div class="container-fluid">
             <ul class="navbar-nav">
                 <a class="navbar-brand ms-5 me-5" href="#">
@@ -11,6 +11,9 @@
                 </li>
                 <li class="nav-item ms-3">
 					<a class="nav-link ${menu eq 'map' ? "active" : ''}" href="/goodM/map/kakaoMap"><i class="fa-solid fa-map-location-dot"></i> 도움찾기</a>
+				</li>
+				<li class="nav-item ms-3">
+					<a class="nav-link ${menu eq 'chat' ? "active" : ''}" href="/goodM/chat/gibuni"><i class="fa-solid fa-robot"></i></i> 챗봇 기부니</a>
 				</li>
 				<li class="nav-item dropdown ms-3">
 					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
@@ -26,7 +29,7 @@
                 </ul>
                 
                 <li class="nav-item ms-3">
-                    <a class="nav-link ${menu eq 'calendar' ? "active" : ''}" href="/goodM/calendar/calendar"><i class="fa-solid fa-calendar-days"></i> 나의 한달</a>
+                    <a class="nav-link ${menu eq 'calendar' ? "active" : ''}" href="/goodM/calendar/calendar"><i class="fa-solid fa-calendar-days"></i> 기분일기</a>
                 </li>
                 
 				<li class="nav-item ms-3">
