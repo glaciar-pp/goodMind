@@ -42,6 +42,7 @@ public class DiaryBoardController {
 		int page = (page_ == null || page_.equals("")) ? 1 : Integer.parseInt(page_);
 		field = (field == null || field.equals("")) ? "title" : field;
 		query = (query == null || query.equals("")) ? "" : query;
+		System.out.println(page+","+field+","+query+","+uid);
 		List<DiaryBoard> list = diaryBoardService.getDiaryBoardList(page, field, query, uid); // uid 추가 2/16b
 		
 		session.setAttribute("currentDiaryBoardPage", page); //httpSession 지우고 36에서 선언 2/16a
@@ -80,7 +81,8 @@ public class DiaryBoardController {
 		String title = (String) req.getParameter("title");
 		String content = (String) req.getParameter("content");
 		List<MultipartFile> fileList = req.getFiles("files");
-//		int score = Integer.parseInt(req.getParameter("score")); // score 2/15a에 추가했다가 삭제 (write에는 xx)
+		LocalDate today = LocalDate.now();
+		String dDate = today.toString().replace("-",""); 
 		List<String> list = new ArrayList<>();
 		// File upload
 		for (MultipartFile file: fileList) {
@@ -122,7 +124,7 @@ public class DiaryBoardController {
 		case "neutral":
 			score = 2;
 		}
-		DiaryBoard diaryBoard = new DiaryBoard(uid, title, content, files, score); //score값이 들어가도록 sql, entity, service(impl), dao, db_table 대수술 2/14
+		DiaryBoard diaryBoard = new DiaryBoard(uid, title, content, files, score, dDate); //score값이 들어가도록 sql, entity, service(impl), dao, db_table 대수술 2/14
 		diaryBoardService.insertDiaryBoard(diaryBoard);
 		return "redirect:/goodM/diaryBoard/list?p=1&f=&q=";
 	}
@@ -184,6 +186,7 @@ public class DiaryBoardController {
 		String title = (String) req.getParameter("title");
 		String content = (String) req.getParameter("content");
 		int score = Integer.parseInt(req.getParameter("score")); // score 추가 2/15a
+		String dDate = (String) req.getParameter("dDate");
 		HttpSession session = req.getSession();
 		List<String> additionalFileList = (List<String>) session.getAttribute("fileList"); 
 		String[] delFileList = req.getParameterValues("delFile");
@@ -220,7 +223,7 @@ public class DiaryBoardController {
 		}
 		JSONUtil json = new JSONUtil();
 		String files = json.stringify(newAdditionalFileList);
-		DiaryBoard diaryBoard = new DiaryBoard(did, title, content, files, score); // score 추가 2/14
+		DiaryBoard diaryBoard = new DiaryBoard(did, title, content, files, score, dDate); // score 추가 2/14
 		diaryBoardService.updateDiaryBoard(diaryBoard);
 		return "redirect:/goodM/diaryBoard/detail?did=" + did + "&uid=" + uid + "&option=DNI";
 	}

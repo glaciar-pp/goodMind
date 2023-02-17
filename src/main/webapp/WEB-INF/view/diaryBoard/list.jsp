@@ -58,8 +58,8 @@
                         <th class="col-1">번호</th>
                         <th class="col-6">제목</th>
                         <th class="col-2">글쓴이</th>
-                        <th class="col-3">날짜/시간</th>
-                      
+                        <th class="col-2">날짜</th>
+                        <th class="col-1">기분</th>
                     </tr>
                 <c:forEach var="db" items="${diaryBoardList}">
                     <tr>
@@ -69,7 +69,8 @@
                             </a>
                         </td>
                         <td>${db.uname}</td>
-                        <td>${fn:replace(db.modTime, 'T', '&nbsp;&nbsp;')}</td>
+                        <td>${fn:substring(db.modTime, 0,10)}</td>
+                        <td><img src="/img/sentiImage${db.score}.png" height="24px"></td>
                     </tr>
                 </c:forEach>    
                 </table>

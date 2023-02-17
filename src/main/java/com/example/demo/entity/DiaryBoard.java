@@ -12,29 +12,33 @@ public class DiaryBoard {
 	private String files;
 	private String uname;
 	private int score; // score 2/14추가
+	private String dDate;
 	
 	public DiaryBoard() {}  // 게시글 생성시 필요한 생성자 
-	public DiaryBoard(String uid, String title, String content, String files, int score) {
+	public DiaryBoard(String uid, String title, String content, String files, int score, String dDate) {
 		super();
 		this.uid = uid;
 		this.title = title;
 		this.content = content;
 		this.files = files;
 		this.score = score; // score 2/14추가
+		this.dDate = dDate; // 2/17추가
 	}
 	//===2/3a 추가
-	public DiaryBoard(int did, String title, String content, String files, int score) {
+	public DiaryBoard(int did, String title, String content, String files, int score, String dDate) {
 		super();
 		this.did = did;
 		this.title = title;
 		this.content = content;
 		this.files = files;
 		this.score = score; // score 2/14추가
+		this.dDate = dDate; // 2/17추가
+
 	}
 	
 	//===2/1 constructor -> toString -> getters&setters 순서로  
 	public DiaryBoard(int did, String uid, String title, String content, LocalDateTime modTime, int isDeleted,
-			String files, int score, String uname) {
+			String files, int score, String uname, String dDate) {
 		super();
 		this.did = did;
 		this.uid = uid;
@@ -45,6 +49,8 @@ public class DiaryBoard {
 		this.files = files;
 		this.score = score; // score 2/14추가
 		this.uname = uname;
+		this.dDate = dDate; // 2/17추가
+
 	}
 	
 	@Override
@@ -121,6 +127,12 @@ public class DiaryBoard {
 	
 	public void setUname(String uname) {
 		this.uname = uname;
+	}
+	public String getdDate() {
+		return dDate;
+	}
+	public void setdDate(String dDate) {
+		this.dDate = dDate;
 	}
 	
 }

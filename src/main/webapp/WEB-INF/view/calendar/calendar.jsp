@@ -8,7 +8,7 @@
 <head>
     <%@ include file="../common/heading.jsp" %>
     <style>
-  -      th { text-align: center; width: 14.28%;}
+        th { text-align: center; width: 14.28%;}
     </style>
     <script>
     	var schedClicked = false;
@@ -80,11 +80,11 @@
                 <div class="d-flex justify-content-between">
                     <div>${today}</div>
                     <div>
-                        <a href="/goodM/schedule/calendar/left2"><i class="fa-solid fa-angles-left"></i></a>
-                        <a href="/goodM/schedule/calendar/left"><i class="fa-solid fa-angle-left ms-2"></i></a>
+                        <a href="/goodM/calendar/calendar/left2"><i class="fa-solid fa-angles-left"></i></a>
+                        <a href="/goodM/calendar/calendar/left"><i class="fa-solid fa-angle-left ms-2"></i></a>
                         <span class="badge bg-primary mx-2">${year}.${month}</span>
-                        <a href="/goodM/schedule/calendar/right"><i class="fa-solid fa-angle-right me-2"></i></a>
-                        <a href="/goodM/schedule/calendar/right2"><i class="fa-solid fa-angles-right"></i></a>
+                        <a href="/goodM/calendar/calendar/right"><i class="fa-solid fa-angle-right me-2"></i></a>
+                        <a href="/goodM/calendar/calendar/right2"><i class="fa-solid fa-angles-right"></i></a>
                     </div>
                     <div><i class="fa-solid fa-pen me-3"></i><i class="fa-solid fa-table-list"></i></div>
                 </div>
@@ -118,15 +118,10 @@
 	                        	</div>
                            	</c:if>
                             </div>
-                        <c:forEach var="sched" items="${day.schedList}" varStatus="loop">
+                        <c:forEach var="diaryBoard" items="${day.diaryBoardList}" varStatus="loop">
                         	<div class="${loop.first ? 'mt-1' : ''}" style="font-size: 12px;" onclick="schedClick(${sched.sid})">
-	                        	${fn:substring(sched.startTime, 11, 16)}
-	                        <c:if test="${sched.isImportant eq 1}">
-	                        	<strong>${sched.title}</strong>
-	                        </c:if>
-	                        <c:if test="${sched.isImportant ne 1}">
-	                        	${sched.title}
-	                        </c:if>
+	                        	${diaryBoard.title}
+	                        	<img src="/img/sentiImage${diaryBoard.score}.png" height="16px">                        	
                         	</div>
                         </c:forEach>
                         </td>

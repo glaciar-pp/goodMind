@@ -26,7 +26,7 @@
                 </ul>
                 
                 <li class="nav-item ms-3">
-                    <a class="nav-link ${menu eq 'schedule' ? "active" : ''}" href="/goodM/schedule/calendar"><i class="fa-solid fa-calendar-days"></i> 스케쥴</a>
+                    <a class="nav-link ${menu eq 'calendar' ? "active" : ''}" href="/goodM/calendar/calendar"><i class="fa-solid fa-calendar-days"></i> 나의 한달</a>
                 </li>
                 
 				<li class="nav-item ms-3">

@@ -15,7 +15,7 @@ public class DiaryBoardServiceImpl implements DiaryBoardService {
 	
 	@Override
 	public List<DiaryBoard> getDiaryBoardList(int page, String field, String query) {
-		List<DiaryBoard> list = getDiaryBoardList(page, field, query, "");
+		List<DiaryBoard> list = getDiaryBoardList(page, field, query, "%");
 		return list;
 	}
 
