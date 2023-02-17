@@ -48,7 +48,7 @@
 		#pagination {margin:10px auto;text-align: center;}
 		#pagination a {display:inline-block;margin-right:10px;}
 		#pagination .on {font-weight: bold; cursor: default;color:black;}
-		#menuToggle {position: absolute; top: 10px; right: 65%;}
+		#menuToggle {position: absolute; top: 10px; right: 35%; z-index: 1;}
 	</style>
     
 </head>
