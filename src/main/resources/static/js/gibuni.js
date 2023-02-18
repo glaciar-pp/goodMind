@@ -41,8 +41,8 @@ $(function(){
                             console.log(ct_data)
                             for(var ct_d in ct_data){
                                 $("#chatBox").append
-                                ("<a href='"+ct_data[ct_d].data.data.action.data.url+"' target='_blank'>" +
-                                ct_data[ct_d].data.data.action.data.url+ "</a><br>");
+                                ("<a href='"+ct_data[ct_d].data.title.data.action.data.url+"' target='_blank'>" +
+                                ct_data[ct_d].data.title.data.action.data.url+ "</a><br>");
                             }
                         }
                     }else if (bubbles[b].type == 'carousel') {

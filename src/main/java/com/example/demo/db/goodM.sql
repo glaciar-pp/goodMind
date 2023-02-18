@@ -1,6 +1,7 @@
 SET SESSION FOREIGN_KEY_CHECKS=0;
 
 /* Drop Tables */
+
 DROP TABLE IF EXISTS diary;
 DROP TABLE IF EXISTS diaryBoard;
 DROP TABLE IF EXISTS likeList;
@@ -12,29 +13,34 @@ DROP TABLE IF EXISTS testResult;
 DROP TABLE IF EXISTS users;
 
 
+
+
 /* Create Tables */
-CREATE TABLE diary 
+
+CREATE TABLE diary
 (
-	  uid VARCHAR(20) NOT NULL,
-	  dayStr CHAR(8) NOT NULL,
-	  anniversary VARCHAR(20),
-	  title VARCHAR(80),
-	  content VARCHAR(800),
-	  sentiment VARCHAR(20),
-	  isHoliday INT DEFAULT 0,
-	  PRIMARY KEY(uid, dayStr)
-	);
+	uid varchar(20) NOT NULL,
+	dayStr char(8) NOT NULL,
+	anniversary varchar(20),
+	title varchar(80),
+	content varchar(800),
+	sentiment varchar(20),
+	isHoliday int DEFAULT 0,
+	score int
+);
+
 
 CREATE TABLE diaryBoard
 (
 	did int NOT NULL AUTO_INCREMENT,
 	uid varchar(20) NOT NULL,
-	title varchar(128) NOT NULL,
-	content varchar(800), /* 800으로 변경 */
+	title varchar(80) NOT NULL,
+	content varchar(800),
 	modTime datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	isDeleted int DEFAULT 0 NOT NULL,
 	files varchar(100),
-	score int NOT NULL,  /* 2/14추가함 */
+	score int NOT NULL,
+	dDate char(8),
 	PRIMARY KEY (did)
 );
 
@@ -43,8 +49,8 @@ CREATE TABLE genBoard
 (
 	genBid int NOT NULL AUTO_INCREMENT,
 	uid varchar(20) NOT NULL,
-	title varchar(128) NOT NULL,
-	content varchar(128),
+	title varchar(80) NOT NULL,
+	content varchar(2000),
 	modTime datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	viewCount int DEFAULT 0 NOT NULL,
 	replyCount int DEFAULT 0 NOT NULL,
@@ -58,8 +64,8 @@ CREATE TABLE infoBoard
 (
 	infoBid int NOT NULL AUTO_INCREMENT,
 	uid varchar(20) NOT NULL,
-	title varchar(128) NOT NULL,
-	content varchar(128),
+	title varchar(80) NOT NULL,
+	content varchar(5000),
 	modTime datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	viewCount int DEFAULT 0 NOT NULL,
 	isDeleted int DEFAULT 0 NOT NULL,
@@ -80,12 +86,10 @@ CREATE TABLE likeList
 
 CREATE TABLE map
 (
-	hid int NOT NULL,
 	orgName varchar(50) NOT NULL,
-	orgType varchar(40) NOT NULL,
-	addr varchar(100) NOT NULL,
-	homepage varchar(200),
-	PRIMARY KEY (hid)
+	orgType varchar(50) NOT NULL,
+	addr varchar(200) NOT NULL,
+	homepage varchar(200)
 );
 
 
@@ -147,7 +151,15 @@ ALTER TABLE likeList
 ;
 
 
-ALTER TABLE diaBoard
+ALTER TABLE diary
+	ADD FOREIGN KEY (uid)
+	REFERENCES users (uid)
+	ON UPDATE RESTRICT
+	ON DELETE RESTRICT
+;
+
+
+ALTER TABLE diaryBoard
 	ADD FOREIGN KEY (uid)
 	REFERENCES users (uid)
 	ON UPDATE RESTRICT

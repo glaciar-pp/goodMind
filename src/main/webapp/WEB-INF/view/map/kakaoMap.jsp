@@ -56,7 +56,7 @@
     <%@ include file="../common/top.jsp" %>
             
             <!-- =================== main =================== -->
-<h3 style="margin-top:80px;"><strong>주변 병원/기관 찾기</strong></h3>
+<h3 style="margin-top:80px;">주변 병원/기관 찾기</h3>
     <div class="map_wrap">
         <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
     	

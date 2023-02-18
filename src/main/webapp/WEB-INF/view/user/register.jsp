@@ -24,7 +24,7 @@
         <div class="row">
         	<div class="col-4"></div>
             <div class="col-4">
-            	<h3><strong>회원 가입</strong></h3>
+            	<h3>회원 가입</h3>
             	<hr>
 	            <form action="/goodM/user/register" method="post">
 	                <table class="table table-borderless">

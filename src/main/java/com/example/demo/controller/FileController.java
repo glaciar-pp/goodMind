@@ -49,7 +49,7 @@ package com.example.demo.controller;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				url = "/bbs/file/download?file=" + fname;
+				url = "/goodM/file/download?file=" + fname;
 	        }
 			String data = "<script> "
 	                + "     window.parent.CKEDITOR.tools.callFunction(" 

@@ -21,7 +21,7 @@
                         
             <!-- =================== main =================== -->
             <div class="col-sm-9">
-                <h3><strong>게시글 상세 조회</strong>
+                <h3>게시글 상세 조회
                 	<span style="font-size: 0.6em;">
                         <a href="/goodM/genBoard/list?p=${currentGenBoardPage}&f=&q=" class="ms-5"><i class="fas fa-list-ul"></i> 목록</a>
                     

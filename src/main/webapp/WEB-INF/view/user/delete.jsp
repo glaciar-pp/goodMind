@@ -18,7 +18,7 @@
             
             <!-- =================== main =================== -->
             <div class="col-sm-9">
-            	<h3><strong>회원 탈퇴</strong></h3>
+            	<h3>회원 탈퇴</h3>
             	<hr>
                 <div class="row">
 			        <div class="col-3"></div>

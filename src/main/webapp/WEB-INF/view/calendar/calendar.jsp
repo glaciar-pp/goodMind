@@ -75,7 +75,7 @@
             
             <!-- =================== main =================== -->
             <div class="col-sm-9">
-            	<h3><strong>기분일기 달력</strong></h3>
+            	<h3>기분일기 달력</h3>
             	<hr>
                 <div class="d-flex justify-content-between">
                     <div>${today}</div>

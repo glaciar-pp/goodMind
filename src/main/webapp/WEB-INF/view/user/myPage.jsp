@@ -18,8 +18,8 @@
 		<div class="row">
 			<div class="col-1"></div>			
 			<!-- =================== main =================== -->
-				<div class="col-10" style="padding: 30px">						
-                <h3><strong>회원 정보 조회</strong></h3>
+				<div class="col-10" style="margin-top:80px; padding: 30px">						
+                <h3>회원 정보 조회</h3>
                 <hr>
                 <!-- 프로필 이미지 -->
                 <img src="/img/profile.png" alt="profile" style="height:250px;" class="mx-auto d-block">

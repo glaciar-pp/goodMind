@@ -1,10 +1,22 @@
 /* theme color : #ccccff -> #a0a0ff */
 @font-face {
-    font-family: 'KOTRAHOPE';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+    font-family: 'ONE-Mobile-POP';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: 'IBMPlexSansKR-Regular';
+    font-size: 18px;
+}
+
 .navbar{
 background-color:#a0a0ff
     }
@@ -19,5 +31,12 @@ background-color:#a0a0ff
 }
 
 h1{
-    font-family: 'KOTRAHOPE';
+    font-family: 'ONE-Mobile-POP';
+    font-size: 50px;
+  }
+
+  /* 제목 중, 글쓰기 버튼 등과 비율 맞춤이 필요한 제목 */
+h3{
+    font-family: 'ONE-Mobile-POP';
+    font-size: 35px;
 }

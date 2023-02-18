@@ -18,7 +18,7 @@
 	<%@ include file="../common/top.jsp" %>
     <div id="wrap" style="margin-top: 80px;">
       <!-- Header -->
-    <h3>챗봇 서비스</h3>
+    <h1>챗봇 서비스</h1>
 
     <!-- 응답 메시지 출력  -->
     <div id="chatBox">
@@ -27,7 +27,7 @@
     <!-- 질문 메시지 입력 폼 -->
     <form id="chatForm">
       <input type="text" id="message" name="message" size="30" placeholder="질문을 입력하세요">
-      <input type="submit" value="전송">
+      <input id="btnSubmit" type="submit" value="전송">
     </form>
     <br><br>
     </div>

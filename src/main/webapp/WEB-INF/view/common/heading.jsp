@@ -5,14 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/goodMind.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/jquery-3.6.3.min.js"></script>
     <script src="https://kit.fontawesome.com/77ad8525ff.js" crossorigin="anonymous"></script>
-    <style>
-        * { font-family: 'Noto Sans KR', sans-serif; }
-        a { text-decoration: none; }
-    </style>
     <script>
     	$(document).ready(function() {
     		$('#profileBtn').click(function(e) {

@@ -20,7 +20,7 @@
             
             <!-- =================== main =================== -->
             <div class="col-sm-9">
-            	<h3><strong>게시글 수정</strong></h3>
+            	<h3>게시글 수정</h3>
             	<hr>
                 <div class="row">
 		            <form action="/goodM/infoBoard/update" method="post" enctype="multipart/form-data">

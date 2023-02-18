@@ -31,7 +31,7 @@
                 <table class="table table-sm table-borderless">
                     <tr class="d-flex">
                         <td class="col-6" style="text-align: left;">
-                            <h3><strong>자유게시판 목록</strong>
+                            <h3>자유게시판 목록
                                 <span style="font-size: 0.6em;">
                                     <a href="/goodM/genBoard/write" class="ms-5"><i class="far fa-file-alt"></i> 글쓰기</a>
                                 </span>

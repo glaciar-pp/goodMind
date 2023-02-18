@@ -27,13 +27,19 @@
 	                    <a class="dropdown-item" href="/goodM/genBoard/list?p=1&f=&q="> 자유게시판</a>
 	                </li>
                 </ul>
-                
-                <li class="nav-item ms-3">
-                    <a class="nav-link ${menu eq 'calendar' ? "active" : ''}" href="/goodM/calendar/calendar"><i class="fa-solid fa-calendar-days"></i> 기분일기</a>
                 </li>
-                
-				<li class="nav-item ms-3">
-					<a class="nav-link ${menu eq 'diaryBoard' ? "active" : ''}" href="/goodM/diaryBoard/list?p=1&f=&q="><i class="fa-solid fa-book"></i> 기분일기</a>
+				<li class="nav-item dropdown ms-3">
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+						<i class="fa-solid fa-file-circle-exclamation"></i> 기분일기(작성중)
+					</a>
+					<ul class="dropdown-menu">
+						<li class="nav-item ms-3">
+							<a class="nav-link ${menu eq 'calendar' ? "active" : ''}" style="color: #979797" href="/goodM/calendar/calendar"><i class="fa-solid fa-calendar-days"></i> 기분일기</a>
+						</li>
+						<li class="nav-item ms-3">
+							<a class="nav-link ${menu eq 'diaryBoard' ? "active" : ''}" style="color: #979797" href="/goodM/diaryBoard/list?p=1&f=&q="><i class="fa-solid fa-book"></i> 기분일기</a>
+						</li>
+					</ul>
 				</li>
                 <li class="nav-item ms-3"><!-- 마이페이지용 -->
                     <a class="nav-link ${menu eq 'user' ? "active" : ''}" href="/goodM/user/myPage"><i class="fa-solid fa-user"></i> My page</a>

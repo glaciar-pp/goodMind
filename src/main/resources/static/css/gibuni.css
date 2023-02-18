@@ -1,19 +1,36 @@
+
 @charset "UTF-8";
+/* 컨테이너 역할*/
+#wrap { margin:0 auto; width: 600px;     height: 900px; }
 
-#wrap { margin:0 auto; width: 500px;     height: 800px; }
+/* 채팅창 */
+#chatBox {height: 700px; width: 600px; overflow-y:scroll; padding:10px 15px; background:#f0f0ff;}
 
-#chatHeader {padding: 10px 15px; border-bottom: 1px solid #7575ff;}
+/* 입력창 */
+#message {width:500px;}
 
-#chatBox {height: 600px; width: 500px; overflow-y:scroll; padding:10px 15px; background:#f0f0ff;}
+/* 입력버튼 */
+#btnSubmit {
+    cursor: pointer;
+    width: 50px;
+    border-radius: 15px;
+    background-color:#a0a0ff; 
+    height: 40px; 
+    text-decoration: none;
+    font-family: 'ONE-Mobile-POP';
+    font-size: 20px;
 
-#message {width: 440px;}
+}
 
-#btnSubmit {float: right; background:#eeeeee; height: 28px; padding-right:0;}
-
+/* 메세지 출력 양식 */
 .msgBox  span {padding:3px 5px; word-break:break-all; display:block;
     max-width:300px; margin-bottom: 10px; border-radius: 10px;}
 
+/* 사용자 입력 */
 .msgBox.send  span {background:#ffffff; float:right; }
 
-.msgBox #in {width:480px; background:#f0f0ff;}
+/* 메세지 박스 영역 */
+.msgBox #in {width:500px; background:#f0f0ff;}
+
+/* 챗봇 답장 */
 .msgBox.receive  span {background:#ccccff; float:left; }

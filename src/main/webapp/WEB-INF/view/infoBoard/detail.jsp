@@ -12,7 +12,7 @@
     </style>
 </head>
 
-<body style="height: 2000px">
+<body>
     <%@ include file="../common/top.jsp" %>
 
     <div class="container" style="margin-top: 80px;">
@@ -21,7 +21,7 @@
                         
             <!-- =================== main =================== -->
             <div class="col-sm-9">
-                <h3><strong>게시글 상세 조회</strong>
+                <h3>게시글 상세 조회
                 	<span style="font-size: 0.6em;">
                         <a href="/goodM/infoBoard/list?p=${currentInfoBoardPage}&f=&q=" class="ms-5"><i class="fas fa-list-ul"></i> 목록</a>
                     
@@ -59,10 +59,10 @@
                     </div>
 
                     <div class="col-12"><hr></div>
-                    <div class="col-12" style="height: 500px">
+                    <div class="col-12">
                         ${fn:replace(infoBoard.content, newline, '<br>')}
                     </div>
-                    <hr>
+                    <hr style="margin-bottom:300px">
                 </div>
 
             </div>

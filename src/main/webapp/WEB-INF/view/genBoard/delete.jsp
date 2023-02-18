@@ -18,7 +18,7 @@
             
             <!-- =================== main =================== -->
             <div class="col-sm-9">
-            	<h3><strong>게시글 삭제</strong></h3>
+            	<h3>게시글 삭제</h3>
             	<hr>
                 <div class="row">
 			        <div class="col-3"></div>

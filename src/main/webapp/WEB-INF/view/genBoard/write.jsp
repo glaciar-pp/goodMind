@@ -19,7 +19,7 @@
             
             <!-- =================== main =================== -->
             <div class="col-sm-9">
-            	<h3><strong>게시글 쓰기</strong></h3>
+            	<h3>게시글 쓰기</h3>
             	<hr>
                 <div class="row">
 		            <form action="/goodM/genBoard/write" method="post" enctype="multipart/form-data">
