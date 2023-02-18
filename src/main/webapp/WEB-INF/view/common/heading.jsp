@@ -6,11 +6,11 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/goodMind.css" rel="stylesheet">
     <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/jquery-3.6.3.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/77ad8525ff.js" crossorigin="anonymous"></script>
     <script>
     	$(document).ready(function() {
-    		$('#profileBtn').click(function(e) {
+    		$("#profileBtn').click(function(e) {
     			$('#profileInputDisp').attr({'class': 'mt-2'});
     		});
     		$('#profileSubmit').click(function(e) {
@@ -68,11 +68,11 @@
     	});
     	function getWeatherInfo() {
     		$.ajax({
-    			type: "GET",
-                url: "/aside/weather",
+    			type: 'GET',
+                url: '/aside/weather',
                 data: {'addr': $('#addr').text()},
                 success: function(result) {
-                    console.log("success");
+                    console.log('success');
                     $('#weatherInfo').html(result);
                 },
     		});

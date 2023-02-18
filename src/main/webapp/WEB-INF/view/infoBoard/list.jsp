@@ -6,9 +6,6 @@
 <html lang="ko">
 <head>
     <%@ include file="../common/heading.jsp" %>
-    <style>
-        th, td { text-align: center; }
-    </style>
     <script>
     	function search() {
     		const field = document.getElementById("field").value;
@@ -31,7 +28,7 @@
                 <table class="table table-sm table-borderless">
                     <tr class="d-flex">
                         <td class="col-6" style="text-align: left;">
-                            <h3>마음에 Good! 목록
+                            <h3>심리건강정보
                                 <span style="font-size: 0.6em;">
                                     <a href="/goodM/infoBoard/write" class="ms-5"><i class="far fa-file-alt"></i> 글쓰기</a>
                                 </span>

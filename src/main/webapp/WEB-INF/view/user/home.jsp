@@ -14,20 +14,7 @@
 			<div class="sidenav">
 				<img alt="기분어때 로고" src="/img/logo.png" style="height:80px; margin: 30px">
 				<br>
-				<a href="/goodM/user/home"><i class="fa-solid fa-house"></i> Home</a>
-				<a class="nav-link ${menu eq 'map' ? "active" : ''}" href="/goodM/map/kakaoMap"><i class="fa-solid fa-map-location-dot"></i> 도움찾기</a>
-				<a class="nav-link ${menu eq 'chat' ? "active" : ''}" href="/goodM/chat/gibuni"><i class="fa-solid fa-robot"></i></i> 챗봇 기부니</a>
-				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-					<i class="far fa-list-alt"></i>게시판
-				</a>
-					<ul class="dropdown-menu">
-						<li>
-							<a class="dropdown-item" style="color: #979797" href="/goodM/infoBoard/list?p=1&f=&q="> 마음에 Good!</a>
-						</li>
-						<li>
-							<a class="dropdown-item" style="color: #979797" href="/goodM/genBoard/list?p=1&f=&q="> 자유게시판</a>
-						</li>
-					</ul>
+				<a href="/goodM/user/home"><i class="fa-solid fa-house"></i> </a>
 				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
 					<i class="fa-solid fa-file-circle-exclamation"></i> 기분일기(작성중)
 				</a>
@@ -37,6 +24,19 @@
 						</li>
 						<li class="nav-item ms-3">
 							<a class="nav-link ${menu eq 'diaryBoard' ? "active" : ''}" style="color: #979797" href="/goodM/diaryBoard/list?p=1&f=&q="><i class="fa-solid fa-book"></i> 기분일기</a>
+						</li>
+					</ul>
+				<a class="nav-link ${menu eq 'chat' ? "active" : ''}" href="/goodM/chat/gibuni"><i class="fa-solid fa-robot"></i></i> 챗봇 기부니</a>
+				<a class="nav-link ${menu eq 'map' ? "active" : ''}" href="/goodM/map/kakaoMap"><i class="fa-solid fa-map-location-dot"></i> 병원찾기</a>
+				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+					<i class="far fa-list-alt"></i>게시판
+				</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="dropdown-item" style="color: #979797" href="/goodM/infoBoard/list?p=1&f=&q="> 심리건강정보 게시판</a>
+						</li>
+						<li>
+							<a class="dropdown-item" style="color: #979797" href="/goodM/genBoard/list?p=1&f=&q="> 자유게시판</a>
 						</li>
 					</ul>
 				<a class="nav-link ${menu eq 'user' ? "active" : ''}" href="/goodM/user/myPage"><i class="fa-solid fa-user"></i> My page</a>

@@ -3,16 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-
-	<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-	<script src="/js/gibuni.js"></script>
 	<link rel="stylesheet" type="text/css" href="/css/gibuni.css">
 	<%@ include file="../common/heading.jsp" %>
-	<style>
-		th, td { text-align: center; }
-	</style>
+	<script src="/js/gibuni.js"></script>
 </head>
 <body>
 	<%@ include file="../common/top.jsp" %>
