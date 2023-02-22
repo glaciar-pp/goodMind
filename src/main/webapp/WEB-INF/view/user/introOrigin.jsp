@@ -18,7 +18,7 @@
 			</div>
 			<div class="col-8">           
             <!-- =================== main =================== -->
-            <form action="/goodM/home" method="post">
+            <form action="/goodM/intro" method="post">
 			<h1>만나서 반가워요!</h1>
 			<br><br>
 			<p>

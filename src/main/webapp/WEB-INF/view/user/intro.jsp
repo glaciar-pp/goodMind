@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <%@ include file="../common/heading.jsp" %>
-	<link rel="stylesheet" href="/css/home.css">
+	<link rel="stylesheet" href="/css/intro.css">
 </head>
 <body>
 	<div class="container-xl" style="margin-top: 100px;">
@@ -14,7 +14,7 @@
 			<div class="sidenav">
 				<img alt="기분어때 로고" src="/img/logo.png" style="height:80px; margin: 30px">
 				<br>
-				<a href="/goodM/user/home"><i class="fa-solid fa-house"></i> </a>
+				<a href="/goodM/user/intro"><i class="fa-solid fa-house"></i> </a>
 				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
 					<i class="fa-solid fa-file-circle-exclamation"></i> 기분일기(작성중)
 				</a>

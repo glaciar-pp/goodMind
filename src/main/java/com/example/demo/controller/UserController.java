@@ -58,9 +58,9 @@ public class UserController {
 		return "redirect:/goodM/user/login";
 	}
 	
-	@GetMapping("/home")
+	@GetMapping("/intro")
 	public String main() {
-		return "user/home";
+		return "user/intro";
 	}
 	
 	@GetMapping("/register")

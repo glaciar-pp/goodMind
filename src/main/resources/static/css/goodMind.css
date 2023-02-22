@@ -35,8 +35,20 @@ h1{
     font-size: 50px;
   }
 
-  /* 제목 중, 글쓰기 버튼 등과 비율 맞춤이 필요한 제목 */
+/* 제목 중, 글쓰기 버튼 등과 비율 맞춤이 필요한 제목 */
 h3{
     font-family: 'ONE-Mobile-POP';
     font-size: 35px;
 }
+
+/* 정보게시판, ul 태그 기호 삭제, 들여쓰기 삭제 */
+ul{
+   list-style:none;
+   padding-left:0px;
+   }
+
+/* a 클래스 밑줄 제거, 검은 글씨로 변경 */
+ a {
+  color: black;
+  text-decoration: none;
+  }
