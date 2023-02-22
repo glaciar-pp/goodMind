@@ -18,8 +18,26 @@ body{
 }
 
 .navbar{
-background-color:#a0a0ff
-    }
+    background-color:#a0a0ff;
+}
+
+.navbar a {
+    color:#ffffff;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+.navbar a:hover {
+    background-color: #a0a0ff;
+    color: black;
+  }
+
+
+
+/* .navbar-brand{
+    color:#ffffff;
+} */
 
 /* 1. 테마 배경색 강하게 */
 #TChard {
