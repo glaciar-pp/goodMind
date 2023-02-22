@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.entity.DiaryBoard;
 import com.example.demo.entity.DiaryDay;
 import com.example.demo.entity.Schedule;
 import com.example.demo.service.AnniversaryService;
@@ -147,9 +148,14 @@ public class CalendarController {
 //		String memo = req.getParameter("memo");
 //		String sdate = startDate.replace("-", "");
 //		String uid = (String) session.getAttribute("uid");
-//		Schedule schedule = new Schedule(uid, sdate, title, place, startDateTime, endDateTime, isImportant, memo);
+//		String dDate = today.toString().replace("-",""); 
+//		Schedule schedule = new Schedule(uid, title, place, startDateTime, endDateTime, isImportant, memo);
 //		schedService.insert(schedule);
-//		return "redirect:/goodM/schedule/calendar";
+//		DiaryBoard diaryBoard = new DiaryBoard(uid, title, memo, score, dDate); //score값이 들어가도록 sql, entity, service(impl), dao, db_table 대수술 2/14
+//		diaryBoardService.insertDiaryBoard(diaryBoard);
+//		return "redirect:/goodM/diaryBoard/list?p=1&f=&q=";
+//	}
+//		return "redirect:/goodM/diaryBoard/write";
 //	}
 	
 	// Ajax로 detail data 받음

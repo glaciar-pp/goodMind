@@ -1,8 +1,8 @@
 package com.example.demo.entity;
 
-import java.util.List;
+import java.util.List; //이 파일 지우기 
 
-public class SchDay {
+public class SchDay { 
 	private int day;
 	private int date;	// 요일 (0-일요일, ..., 6-토요일)
 	private int isHoliday;

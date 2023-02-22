@@ -21,7 +21,7 @@
                         
             <!-- =================== main =================== -->
             <div class="col-sm-9">
-                <h3>게시글 상세 조회
+                <h3>기분일기 보기
                 	<span style="font-size: 0.6em;">
                         <a href="/goodM/diaryBoard/list?p=${currentDiaryBoardPage}&f=&q=" class="ms-5"><i class="fas fa-list-ul"></i> 목록</a>
                     
@@ -46,7 +46,8 @@
                 <div class="row">
                     <div class="col-12">
                         <h5>${diaryBoard.title}</h5>
-                        <h6>글 번호: ${diaryBoard.did} | ${fn:replace(diaryBoard.modTime, 'T', ' ')}</h6>
+                        <h6>글 번호: ${diaryBoard.did} | ${fn:replace(diaryBoard.modTime, 'T', ' ')}</h6> 
+                        <h6>기분: <img src="/img/sentiImage${diaryBoard.score}.png" height="30px"></h6>
                         <h6>첨부 파일: 
                         <c:forEach var="file" items="${fileList}">
                         	<a href="/goodM/file/download?file=${file}" class="me-2" download>${file}</a>

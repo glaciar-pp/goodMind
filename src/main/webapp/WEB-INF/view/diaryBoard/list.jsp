@@ -32,16 +32,15 @@
                     <tr class="d-flex">
                         <td class="col-6" style="text-align: left;">
                             <h3>기분일기
-                                <span style="font-size: 0.6em;">
-                                    <a href="/goodM/diaryBoard/write" class="ms-5"><i class="far fa-file-alt"></i> 글쓰기</a>
-                                </span>
+<!--                                 <span style="font-size: 0.6em;"> -->
+<!--                                     <a href="/goodM/diaryBoard/write" class="ms-5"><i class="far fa-file-alt"></i> 글쓰기</a> -->
+<!--                                 </span> -->
                             </h3>
                         </td>
                         <td class="col-2">
                             <select class="form-select me-2" name="f" id="field">
                                 <option value="title" selected>제목</option>
                                 <option value="content">본문</option>
-                                <option value="uname">글쓴이</option>
                             </select>
                         </td>
                         <td class="col-3">
@@ -54,13 +53,19 @@
                 </table>
                 <hr>
                 <table class="table mt-2">
-                    <tr class="table-secondary">
-                        <th class="col-1">번호</th>
-                        <th class="col-6">제목</th>
-                        <th class="col-2">글쓴이</th>
-                        <th class="col-2">날짜</th>
-                        <th class="col-1">기분</th>
-                    </tr>
+                	<div align="right">
+                    	<a href="/goodM/diaryBoard/write"><i class="fa-solid fa-pen me-3"></i></a>
+                    	<a href="/goodM/calendar/calendar"><i class="fa-solid fa-calendar-days"></i></a>
+                	</div>
+                	<div>
+                    	<tr class="table-secondary">
+	                        <th class="col-1">번호</th>
+	                        <th class="col-6">제목</th>
+	                        <th class="col-2">글쓴이</th>
+	                        <th class="col-2">날짜</th>
+	                        <th class="col-1">기분</th>
+                    	</tr>
+					</div>
                 <c:forEach var="db" items="${diaryBoardList}">
                     <tr>
                         <td>${db.did}</td>

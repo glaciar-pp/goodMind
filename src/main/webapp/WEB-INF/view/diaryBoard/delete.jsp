@@ -18,14 +18,14 @@
             
             <!-- =================== main =================== -->
             <div class="col-sm-9">
-            	<h3>게시글 삭제</h3>
+            	<h3>기분일기 삭제</h3>
             	<hr>
                 <div class="row">
 			        <div class="col-3"></div>
 			        <div class="col-6">
 						<div class="card border-warning mt-3">
 			                <div class="card-body">
-			                    <strong class="card-title">정말로 삭제하시겠습니까?</strong>
+			                    <strong class="card-title">일기를 삭제하시겠습니까?</strong>
 			                    <p class="card-text text-center">
 			                        <br>
 			                        <button class="btn btn-primary" onclick="location.href='/goodM/diaryBoard/deleteConfirm?did=${did}'">삭제</button>

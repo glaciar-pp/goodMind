@@ -22,14 +22,17 @@ public interface DiaryBoardService {
 	public int getDiaryBoardCount(String field, String query, String uid); // 괄호안 uid추가 2/16b 
 
 	//===2/14 score 추가
-	public int getDiaryBoardScore(int score);
+	public int getDiaryBoardScore(int did);
 
-	public void updateDiaryBoardScore(DiaryBoard diaryBoard);
+//	public void updateDiaryBoardScore(DiaryBoard diaryBoard);
 
 	//===2/14 update score 추가
-	public int updateDiaryBoardScore(int score);
+//	public int updateDiaryBoardScore(int did, int score);
 	
 	//===2/15 uid session 추가
 	public List<DiaryBoard> getDiaryBoardList(int page, String field, String query, String uid); // 괄호안 uid추가 2/16b 
+
+	//===2/21 dDate 추가
+//	public void updateDiaryBoardDDate(DiaryBoard diaryBoard);
 
 }

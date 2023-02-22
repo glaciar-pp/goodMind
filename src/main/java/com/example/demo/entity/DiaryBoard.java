@@ -12,9 +12,17 @@ public class DiaryBoard {
 	private String files;
 	private String uname;
 	private int score; // score 2/14추가
-	private String dDate;
+	private String dDate; // dDate 2/17추가
 	
 	public DiaryBoard() {}  // 게시글 생성시 필요한 생성자 
+	public DiaryBoard(int did, String title, String content, String files, String dDate) {
+		super();
+		this.did = did;
+		this.title = title;
+		this.content = content;
+		this.files = files;
+		this.dDate = dDate; // 2/17추가
+	}
 	public DiaryBoard(String uid, String title, String content, String files, int score, String dDate) {
 		super();
 		this.uid = uid;
@@ -128,10 +136,10 @@ public class DiaryBoard {
 	public void setUname(String uname) {
 		this.uname = uname;
 	}
-	public String getdDate() {
+	public String getdDate() { // dDate 2/17추가
 		return dDate;
 	}
-	public void setdDate(String dDate) {
+	public void setdDate(String dDate) { // dDate 2/17추가
 		this.dDate = dDate;
 	}
 	

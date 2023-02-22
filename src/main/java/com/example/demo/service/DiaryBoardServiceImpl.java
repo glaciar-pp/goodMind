@@ -51,24 +51,24 @@ public class DiaryBoardServiceImpl implements DiaryBoardService {
 	
 	//===2/14 score추가
 	@Override
-	public int getDiaryBoardScore(int score) {
-		score = diaryBoardDao.getDiaryBoardScore(score);
+	public int getDiaryBoardScore(int did) {
+		int score = diaryBoardDao.getDiaryBoardScore(did);
 		return score;
 	}
 	
-	//===2/15a update score 추가
-	@Override   
-	public void updateDiaryBoardScore(DiaryBoard diaryBoard) { 
-		diaryBoardDao.updateDiaryBoard(diaryBoard);
-	}
-
-	//===2/15a update score 추가
-	@Override
-	public int updateDiaryBoardScore(int score) {
-		score = diaryBoardDao.updateDiaryBoardScore(score);
-		return score;
-		}
-	
+//	//===2/15a update score 추가
+//	@Override   
+//	public void updateDiaryBoardScore(DiaryBoard diaryBoard) { 
+//		diaryBoardDao.updateDiaryBoard(diaryBoard);
+//	}
+//
+//	//===2/15a update score 추가
+//	@Override
+//	public int updateDiaryBoardScore(int score) {
+//		score = diaryBoardDao.updateDiaryBoardScore(score);
+//		return score;
+//		}
+//	
 	//===2/16b uid session 추가
 	@Override 
 	public List<DiaryBoard> getDiaryBoardList(int page, String field, String query, String uid) {
@@ -77,4 +77,9 @@ public class DiaryBoardServiceImpl implements DiaryBoardService {
 		List<DiaryBoard> list = diaryBoardDao.getDiaryBoardList(offset, field, query, uid);
 		return list;
 	}
+	//===2/21 dDate 추가
+//	@Override
+//	public void updateDiaryBoardDDate(DiaryBoard diaryBoard) {
+//		diaryBoardDao.updateDiaryBoard(diaryBoard);
+//	}
 }

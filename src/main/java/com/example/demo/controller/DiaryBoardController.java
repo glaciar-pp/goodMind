@@ -71,18 +71,21 @@ public class DiaryBoardController {
 	
 //=== 2/3a write이하 작업
 	@GetMapping("/write")
-	public String write() {
+	public String write(HttpServletRequest req, Model model)  {
+		String date = req.getParameter("date");
+		if (date==null || date.equals(""))
+			date = LocalDate.now().toString().replace("-", "");
+		model.addAttribute("date", date);
 		return "diaryBoard/write";
 	}
 	
 	@PostMapping("/write")
 	public String write(MultipartHttpServletRequest req) throws Exception {
-		String uid = (String) req.getParameter("uid");
-		String title = (String) req.getParameter("title");
-		String content = (String) req.getParameter("content");
+		String uid = req.getParameter("uid");
+		String title = req.getParameter("title");
+		String content = req.getParameter("content");
 		List<MultipartFile> fileList = req.getFiles("files");
-		LocalDate today = LocalDate.now();
-		String dDate = today.toString().replace("-",""); 
+		String dDate = req.getParameter("date");
 		List<String> list = new ArrayList<>();
 		// File upload
 		for (MultipartFile file: fileList) {
@@ -165,7 +168,6 @@ public class DiaryBoardController {
 	@GetMapping("/update")  //getmapping부분 2/3b에 추가 
 	public String updateForm(HttpServletRequest req, Model model) {
 		int did = Integer.parseInt(req.getParameter("did"));
-		int score = Integer.parseInt(req.getParameter("score")); // score 추가 2/15a
 		DiaryBoard diaryBoard = diaryBoardService.getDiaryBoard(did);
 		HttpSession session = req.getSession();
 		
@@ -180,13 +182,41 @@ public class DiaryBoardController {
 	}
 	
 	@PostMapping("/update")
-	public String update(MultipartHttpServletRequest req) {
+	public String update(MultipartHttpServletRequest req) throws Exception { 
 		int did = Integer.parseInt(req.getParameter("did"));
 		String uid = req.getParameter("uid");
 		String title = (String) req.getParameter("title");
 		String content = (String) req.getParameter("content");
-		int score = Integer.parseInt(req.getParameter("score")); // score 추가 2/15a
-		String dDate = (String) req.getParameter("dDate");
+		
+//		int score = Integer.parseInt(req.getParameter("score")); // score 추가 2/15a
+		String dDate = (String) req.getParameter("dDate"); // dDate 추가 2/17 
+		String result = sentimentUtil.getSentimentResult(content.replace("\n", " ").replace("\r", "")); 
+		// positive (99.98%) -> result를  split으로 잘라서 
+		//=== 2/14 반복문 작업 
+		String[] tmp = result.split(" ");		
+		int score = 0;  
+		switch(tmp[0]) {
+		case "positive":
+			Double val = Double.parseDouble(tmp[1].replaceAll("[()%]", "")); //괄호와%를 없애는
+			System.out.println(val); 
+			if (val > 90.) 
+				score = 4;
+			else
+				score = 3;
+			break;
+
+		case "negative":
+			val = Double.parseDouble(tmp[1].replaceAll("[()%]", ""));
+			System.out.println(val);
+			if (val > 90.) 
+				score = 1;
+			else
+				score = 0;
+			break;
+			
+		case "neutral":
+			score = 2;
+		}
 		HttpSession session = req.getSession();
 		List<String> additionalFileList = (List<String>) session.getAttribute("fileList"); 
 		String[] delFileList = req.getParameterValues("delFile");
@@ -223,7 +253,7 @@ public class DiaryBoardController {
 		}
 		JSONUtil json = new JSONUtil();
 		String files = json.stringify(newAdditionalFileList);
-		DiaryBoard diaryBoard = new DiaryBoard(did, title, content, files, score, dDate); // score 추가 2/14
+		DiaryBoard diaryBoard = new DiaryBoard(did, title, content, files, score, dDate); //  dDate추가 2/17
 		diaryBoardService.updateDiaryBoard(diaryBoard);
 		return "redirect:/goodM/diaryBoard/detail?did=" + did + "&uid=" + uid + "&option=DNI";
 	}

@@ -19,11 +19,12 @@
             
             <!-- =================== main =================== -->
             <div class="col-sm-9">
-            	<h3>게시글 쓰기</h3>
+            	<h3>기분일기 쓰기</h3>
             	<hr>
                 <div class="row">
 		            <form action="/goodM/diaryBoard/write" method="post" enctype="multipart/form-data">
 		            	<input type="hidden" name="uid" value="${uid}">
+		            	<input type="hidden" name="date" value="${date}">
 		                <table class="table table-borderless">
 		                    <tr class="d-flex">
 		                        <td class="col-1"><label for="title">제목</label></td>

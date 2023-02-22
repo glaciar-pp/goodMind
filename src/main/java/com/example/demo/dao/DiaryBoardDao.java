@@ -38,7 +38,7 @@ public interface DiaryBoardDao {
 	void increaseCount(int did, String field);
 	
 	@Update("UPDATE diaryBoard SET title=#{title}, content=#{content}, "
-			+ " modTime=NOW(), files=#{files}, score=#{score}, WHERE did=#{did}") // score 추가 2/14
+			+ " modTime=NOW(), files=#{files}, score=#{score} WHERE did=#{did}") // score 추가 2/14
 	void updateDiaryBoard(DiaryBoard diaryBoard);
 	
 	@Update("UPDATE diaryBoard SET isDeleted=1 WHERE did=#{did}")
