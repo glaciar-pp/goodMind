@@ -1,25 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 			<div class="col-sm-3">
 				<div class="d-flex flex-row">
 					<div>
+						<!-- 프로필 이미지 -->
 		                <img id="profileImg" class="rounded-circle" width="100%"
-		                	 src="/goodM/file/download?file=${empty sessionProfile ? 'avatar_man.png' : sessionProfile}">
+		                	 src="/goodM/file/download?file=${empty sessionProfile ? 'profile.png' : sessionProfile}">
 	                </div>
 	                <div class="align-self-end me-4">
 	                	<a href="#" id="profileBtn" >
 	                		<span class="badge bg-light text-secondary">이미지 변경</span>
                 		</a>
 	                </div>
-                </div>
-                <div id="profileInputDisp" class="mt-2 d-none">
+					<div id="profileInputDisp" class="mt-2 d-none">
                 	<form id="profileForm" enctype="multipart/form-data">
                 		<input class="form-control form-control-sm" type="file" id="profileInput">
                 	</form>
                 	<a href="#" id="profileSubmit"><span class="badge bg-primary">확인</span></a>
                 </div>
-                
-                <span class="mt-3" id="stateMsg">
+                </div>
+                <!-- 프로필 상태메세지 -->
+				<span class="mt-3" id="stateMsg">
                 	${empty sessionStateMsg ? '상태메세지를 입력해주세요.' : sessionStateMsg}
                 </span>
                	<a href="#" id="stateMsgBtn"><span class="badge bg-secondary">수정</span></a>
@@ -27,9 +29,13 @@
                 	<input class="form-control form-control-sm" type="text" id="stateInput">
                 	<a href="#" id="stateMsgSubmit"><span class="badge bg-primary">확인</span></a>
                 </div>
-                
-                <div class="mt-5">
-                    <i class="fa fa-envelope me-2"></i><a href="#">email-id@goodM.com</a><br>
+                <hr>
+                <!-- 유저 환영 메세지 -->
+				<span><strong>${uname}님 환영합니다.</strong></span>
+
+                <div class="mt-3">
+					<i class="fa fa-envelope me-2"></i>대표 이메일: ${user.email} <br>
+
                     <%--
                     <img src="/img/github.png" height="16" class="me-2"><a href="#">github-id</a><br>
                     <img src="/img/insta.png" height="16" class="me-2"><a href="#">instagram-id</a><br>
@@ -50,4 +56,5 @@
                    	<a href="#" id="weather"><span class="badge bg-secondary">날씨</span></a><br>
                     <div id="weatherInfo"></div>
 				</div>
+				<a class="nav-link ${menu eq 'user' ? "active" : ''}" href="/goodM/user/myPage"><strong><i class="fa-solid fa-square-caret-right"></i> My page </strong></a>
 			</div>

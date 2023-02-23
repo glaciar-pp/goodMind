@@ -19,11 +19,11 @@ body{
 
 .navbar{
     background-color:#a0a0ff;
+    text-align: center;
 }
 
 .navbar a {
     color:#ffffff;
-    padding: 16px;
     text-decoration: none;
     display: block;
   }

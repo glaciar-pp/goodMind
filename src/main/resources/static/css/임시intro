@@ -11,13 +11,13 @@ body {
 /* Style the side navigation */
 .sidenav {
   height: 100%;
-  width: 250px;
+  width: 20%;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   background-color: #a0a0ff;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 
