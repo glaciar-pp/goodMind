@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <c:set var="height" value="${600 / numberOfWeeks}"></c:set>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -26,26 +25,20 @@
     		console.log(did);
     		location.href = "/goodM/diaryBoard/detail?did=" + did + "&uid=" + uid;
     	}
+    	
     </script>
 </head>
+<body>
+	<%@ include file="../common/top.jsp" %>
 
-<body class="is-preload" style="margin-bottom:100px">
-	<%@ include file="../common/aside.jsp" %>
-	<!-- Wrapper -->
-	<div id="wrapper">
-		<!-- Main -->
-		<div id="main">
-			<div class="inner">
-			<!-- 상단 로고 및 진한 선 -->
-			<header id="header">
-				<a href="/goodM/user/main" class="logo"><strong><img src="/img/logo.png" alt="" width="30px" height="30px"></strong> by 멀캠가네 둘째 조</a>
-			</header>
-			<!-- Content -->
-			<section>
-				<header class="main">
-					<h1>기분일기</h1><!-- 제목 -->
-				</header>
-				
+    <div class="container" style="margin-top: 80px;">
+        <div class="row">
+            <%@ include file="../common/aside.jsp" %>
+            
+            <!-- =================== main =================== -->
+            <div class="col-sm-9">
+            	<h3>기분일기 달력</h3>
+            	<hr>
                 <div class="d-flex justify-content-between">
                     <div>${today}</div>
                     <div>
@@ -101,10 +94,14 @@
                     </tr>
                 </c:forEach>
                 </table>
-			</section>
-			</div>
-		</div>
+            </div>
+            <!-- =================== main =================== -->
+            
+        </div>
+    </div>
+
+    <%@ include file="../common/bottom.jsp" %>
+    
 	</div>
-<%@ include file="../common/bottom.jsp" %>
 </body>
 </html>

@@ -1,60 +1,83 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-			<div class="col-sm-3">
-				<div class="d-flex flex-row">
-					<div>
-						<!-- 프로필 이미지 -->
-		                <img id="profileImg" class="rounded-circle" width="100%"
-		                	 src="/goodM/file/download?file=${empty sessionProfile ? 'profile.png' : sessionProfile}">
-	                </div>
-	                <div class="align-self-end me-4">
-	                	<a href="#" id="profileBtn" >
-	                		<span class="badge bg-light text-secondary">이미지 변경</span>
-                		</a>
-	                </div>
-					<div id="profileInputDisp" class="mt-2 d-none">
-                	<form id="profileForm" enctype="multipart/form-data">
-                		<input class="form-control form-control-sm" type="file" id="profileInput">
-                	</form>
-                	<a href="#" id="profileSubmit"><span class="badge bg-primary">확인</span></a>
-                </div>
-                </div>
-                <!-- 프로필 상태메세지 -->
-				<span class="mt-3" id="stateMsg">
-                	${empty sessionStateMsg ? '상태메세지를 입력해주세요.' : sessionStateMsg}
-                </span>
-               	<a href="#" id="stateMsgBtn"><span class="badge bg-secondary">수정</span></a>
-                <div id="stateMsgInput" class="mt-2 d-none">
-                	<input class="form-control form-control-sm" type="text" id="stateInput">
-                	<a href="#" id="stateMsgSubmit"><span class="badge bg-primary">확인</span></a>
-                </div>
-                <hr>
-                <!-- 유저 환영 메세지 -->
-				<span><strong>${uname}님 환영합니다.</strong></span>
-
-                <div class="mt-3">
-					<i class="fa fa-envelope me-2"></i>대표 이메일: ${user.email} <br>
-
-                    <%--
-                    <img src="/img/github.png" height="16" class="me-2"><a href="#">github-id</a><br>
-                    <img src="/img/insta.png" height="16" class="me-2"><a href="#">instagram-id</a><br>
-                    <img src="/img/facebook.png" height="16" class="me-2"><a href="#">facebook-id</a><br>
-                    <img src="/img/twitter.png" height="16" class="me-2"><a href="#">twitter-id</a><br>
-                    <img src="/img/homepage.png" height="16" class="me-2"><a href="#">www.homepage.co.kr</a><br>
-                    <img src="/img/blog.png" height="16" class="me-2"><a href="#">blog.naver.com/blog-id</a><br>
-                     --%>
-                     
-                    <a href="#" id="addrChange"><img src="/img/addr.png" height="16" class="me-1"></a>
-                   	<span id="addr">
-                   		${empty sessionAddress ? '서울시 광진구' : sessionAddress}
-                   	</span>
-                   	<div id="addrInputDisp" class="mt-2 d-none">
-	                	<input class="form-control form-control-sm" type="text" id="addrInput">
-	                	<a href="#" id="addrSubmit"><span class="badge bg-primary">확인</span></a>
-	                </div>
-                   	<a href="#" id="weather"><span class="badge bg-secondary">날씨</span></a><br>
-                    <div id="weatherInfo"></div>
-				</div>
-				<a class="nav-link ${menu eq 'user' ? "active" : ''}" href="/goodM/user/myPage"><strong><i class="fa-solid fa-square-caret-right"></i> My page </strong></a>
+		<div id="sidebar">
+			<div class="inner">
+		
+				<!-- Search -->
+					<section id="search" class="alt">
+						<form method="post" action="#">
+							<input type="text" name="query" id="query" placeholder="Search" />
+						</form>
+					</section>
+		
+				<!-- Menu -->
+					<nav id="menu">
+						<header class="major">
+							<h2>Menu</h2>
+						</header>
+						<ul>
+							<li><a href="/goodM/user/main">메인</a></li>
+							<li><a href="/goodM/calendar/calendar"><i class="fa-solid fa-calendar-days"></i> 기분일기</a></li>
+							<li><a href="/goodM/chat/gibuni"><i class="fa-solid fa-robot"></i> 기부니(형태 미정)</a></li>
+		                                   <li><a href="/goodM/map/kakaoMap"><i class="fa-solid fa-map-location-dot"></i> 병원/기관 찾기</a></li>
+							<li>
+								<span class="opener">게시판</span>
+								<ul>
+									<li><a href="/goodM/infoBoard/list?p=1&f=&q=">심리건강정보 게시판</a></li>
+									<li><a href="/goodM/genBoard/list?p=1&f=&q=">자유게시판</a></li>
+								</ul>
+							</li>
+							
+							<li><a href="#">자가진단 테스트(기입 예정)</a></li>
+							<li><a href="/goodM/user/myPage">마이페이지</a></li>
+		                                   <br>
+		                                   <li><a href="/goodM/user/logout"><i class="fas fa-sign-out-alt"></i> 로그아웃</a></li>
+						</ul>
+					</nav>
+		
+				<!-- Section -->
+					<section>
+						<header class="major">
+							<h2>미니 포스트</h2>
+						</header>
+						<div class="mini-posts">
+							<article>
+								<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+							</article>
+							<article>
+								<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+							</article>
+							<article>
+								<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+							</article>
+						</div>
+						<ul class="actions">
+							<li><a href="#" class="button">More</a></li>
+						</ul>
+					</section>
+		
+				<!-- Section -->
+					<section>
+						<header class="major">
+							<h2>Get in touch</h2>
+						</header>
+						<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+						<ul class="contact">
+							<li class="icon solid fa-envelope"><a href="#">admin@goodM.com</a></li>
+							<li class="icon solid fa-phone">(000) 000-0000</li>
+							<li class="icon solid fa-home">주소</li>
+						</ul>
+					</section>
 			</div>
+		</div>
+	<!-- 양식 JS -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<!-- 양식 CSS -->
+	<link rel="stylesheet" href="/assets/css/main.css" />

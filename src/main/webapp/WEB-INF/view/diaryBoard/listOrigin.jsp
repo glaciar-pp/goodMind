@@ -6,6 +6,9 @@
 <html lang="ko">
 <head>
     <%@ include file="../common/heading.jsp" %>
+    <style>
+        th, td { text-align: center; }
+    </style>
     <script>
     	function search() {
     		const field = document.getElementById("field").value;
@@ -16,24 +19,24 @@
     </script>
 </head>
 
-<body class="is-preload" style="margin-bottom:100px">
-	<%@ include file="../common/aside.jsp" %>
-	<!-- Wrapper -->
-	<div id="wrapper">
-		<!-- Main -->
-		<div id="main">
-			<div class="inner">
-			<!-- 상단 로고 및 진한 선 -->
-			<header id="header">
-				<a href="/goodM/user/main" class="logo"><strong><img src="/img/logo.png" alt="" width="30px" height="30px"></strong> by 멀캠가네 둘째 조</a>
-			</header>
-			<!-- Content -->
-			<section>
-				<header class="main">
-					<h1>기분일기</h1>
-				</header>
+<body style="height: 2000px">
+    <%@ include file="../common/top.jsp" %>
+
+    <div class="container" style="margin-top: 80px;">
+        <div class="row">
+            <%@ include file="../common/aside.jsp" %>
+            
+            <!-- =================== main =================== -->
+            <div class="col-sm-9">
                 <table class="table table-sm table-borderless">
                     <tr class="d-flex">
+                        <td class="col-6" style="text-align: left;">
+                            <h3>기분일기
+<!--                                 <span style="font-size: 0.6em;"> -->
+<!--                                     <a href="/goodM/diaryBoard/write" class="ms-5"><i class="far fa-file-alt"></i> 글쓰기</a> -->
+<!--                                 </span> -->
+                            </h3>
+                        </td>
                         <td class="col-2">
                             <select class="form-select me-2" name="f" id="field">
                                 <option value="title" selected>제목</option>
@@ -95,11 +98,12 @@
                     <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
                 </c:if>
                 </ul>
-            <!-- =================== main =================== -->         
-			</section>
-			</div>
-		</div>
-	</div>
-<%@ include file="../common/bottom.jsp" %>
+            </div>
+            <!-- =================== main =================== -->
+            
+        </div>
+    </div>
+
+    <%@ include file="../common/bottom.jsp" %>
 </body>
 </html>

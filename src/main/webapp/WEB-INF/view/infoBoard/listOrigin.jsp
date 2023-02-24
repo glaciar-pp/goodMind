@@ -15,29 +15,23 @@
     	}
     </script>
 </head>
+<body style="height: 2000px">
+	<%@ include file="../common/top.jsp" %>
 
-<body class="is-preload" style="margin-bottom:100px">
-	<%@ include file="../common/aside.jsp" %>
-	<!-- Wrapper -->
-	<div id="wrapper">
-		<!-- Main -->
-		<div id="main">
-			<div class="inner">
-			<!-- 상단 로고 및 진한 선 -->
-			<header id="header">
-				<a href="/goodM/user/main" class="logo"><strong><img src="/img/logo.png" alt="" width="30px" height="30px"></strong> by 멀캠가네 둘째 조</a>
-			</header>
-			<!-- Content -->
-			<section>
-				<header class="main">
-					<h1>심리건강정보
-						<span style="font-size: 0.6em;">
-							<a href="/goodM/infoBoard/write" class="ms-5"><i class="far fa-file-alt"></i> 글쓰기</a>
-						</span>
-					</h1><!-- 제목 -->
-				</header>
+	<div class="container" style="margin-top: 80px;">
+		<div class="row">
+			<%@ include file="../common/aside.jsp" %>
+			<!-- =================== main =================== -->
+			<div class="col-sm-9">
 				<table class="table table-sm table-borderless">
 					<tr class="d-flex">
+						<td class="col-6" style="text-align: left;">
+							<h3>심리건강정보
+								<span style="font-size: 0.6em;">
+									<a href="/goodM/infoBoard/write" class="ms-5"><i class="far fa-file-alt"></i> 글쓰기</a>
+								</span>
+							</h3>
+						</td>
 						<!-- 검색 기능 -->
 						<td class="col-2">
 							<select class="form-select me-2" name="f" id="field">
@@ -56,29 +50,29 @@
 				</table>
 				<hr>
 				<div class="gallery-list">
-					<ul>
+				<ul>
 					<c:forEach var="info_board" items="${infoBoardList}">
 						<li style="display: inline-block; margin: 30px; width: 40%; height:25%">
 							<a href="/goodM/infoBoard/detail?infoBid=${info_board.infoBid}&uid=${info_board.uid}">
           				<img src="/img/기본 썸네일.png" style="height: 200px;">
        				
-								<div style="text-align: left; margin-top: 20px; margin-bottom: 20px;">
-									<hr>
-									<span><strong>${info_board.title}</strong></span><br>
-									<p style="color: grey">조회수: ${info_board.viewCount}</p>
-									<c:if test="${today eq fn:substring(info_board.modTime, 0, 10)}">
-										${fn:substring(info_board.modTime, 11, 19)}
-									</c:if>
-									<c:if test="${not (today eq fn:substring(info_board.modTime, 0, 10))}">
-										${fn:substring(info_board.modTime, 0, 10)}
-									</c:if>
-								</div>
-							</a>
-						</li>
-					</c:forEach>
-					</ul>
-				</div>
-			<!--페이지네이션-->
+						<div style="text-align: left; margin-top: 20px; margin-bottom: 20px;">
+							<hr>
+							<span><strong>${info_board.title}</strong></span><br>
+							<p style="color: grey">조회수: ${info_board.viewCount}</p>
+							<c:if test="${today eq fn:substring(info_board.modTime, 0, 10)}">
+								${fn:substring(info_board.modTime, 11, 19)}
+							</c:if>
+							<c:if test="${not (today eq fn:substring(info_board.modTime, 0, 10))}">
+								${fn:substring(info_board.modTime, 0, 10)}
+							</c:if>
+						</div>
+						</a>
+					</li>
+				</c:forEach>
+			</ul>
+		</div>
+	<!--페이지네이션-->
 			<ul class="pagination justify-content-center mt-4">
                 <c:if test="${currentInfoBoardPage gt 10}">
                     <li class="page-item"><a class="page-link" href="/goodM/infoBoard/list?p=${startPage - 1}&f=${field}&q=${query}">&laquo;</a></li>
@@ -98,10 +92,8 @@
                     <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
                 </c:if>
                 </ul>
-			</section>
 			</div>
 		</div>
 	</div>
-<%@ include file="../common/bottom.jsp" %>
 </body>
 </html>

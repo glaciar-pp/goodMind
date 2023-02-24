@@ -4,24 +4,28 @@
 <html lang="ko">
 <head>
     <%@ include file="../common/heading.jsp" %>
+    <style>
+        th, td { text-align: center; }
+    </style>
 </head>
 
-<body class="is-preload" style="margin-bottom:100px">
-	<%@ include file="../common/aside.jsp" %>
-	<!-- Wrapper -->
-	<div id="wrapper">
-		<!-- Main -->
-		<div id="main">
-			<div class="inner">
-			<!-- 상단 로고 및 진한 선 -->
-			<header id="header">
-				<a href="/goodM/user/main" class="logo"><strong><img src="/img/logo.png" alt="" width="30px" height="30px"></strong> by 멀캠가네 둘째 조</a>
-			</header>
-			<!-- Content -->
-			<section>
-				<header class="main">
-					<h1>회원가입</h1><!-- 제목 -->
-				</header>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color:#CCCCFF">
+        <div class="container-fluid">
+        <!-- 로고 지정 필요 -->
+            <img src="/goodM/img/logo.png" alt="Logo" style="height:60px;" class="rounded-3 mx-2">
+            <div class="p-2 justify-content-center rounded">
+                <img src="https://picsum.photos/1500/200" width="100%">
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 300px;">
+        <div class="row">
+        	<div class="col-4"></div>
+            <div class="col-4">
+            	<h3>회원 가입</h3>
+            	<hr>
 	            <form action="/goodM/user/register" method="post">
 	                <table class="table table-borderless">
 	                    <tr>
@@ -52,10 +56,11 @@
 	                    </tr>
 	                </table>
 	            </form>
-			</section>
-			</div>
-		</div>
-	</div>
-<%@ include file="../common/bottom.jsp" %>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+    <%@ include file="../common/bottom.jsp" %>
 </body>
 </html>

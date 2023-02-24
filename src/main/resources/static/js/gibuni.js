@@ -37,6 +37,7 @@ $(function(){
                                 console.log(bubbles[b].data.cover.type)
                             $("#chatBox").append("<div class='msgBox receive'><span id='in'><span>챗봇2, 멀티</span><br><span>" + bubbles[b].data.cover.data.description+ "</p>");
     }                       for(var ct in bubbles[b].data.contentTable){
+                            console.log(bubbles[b].contentTable)
                             var ct_data = bubbles[b].data.contentTable[ct];
                             console.log(ct_data)
                             for(var ct_d in ct_data){

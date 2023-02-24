@@ -7,23 +7,16 @@
     <%@ include file="../common/heading.jsp" %>
 </head>
 
-<body class="is-preload" style="margin-bottom:100px">
-	<%@ include file="../common/aside.jsp" %>
-	<!-- Wrapper -->
-	<div id="wrapper">
-		<!-- Main -->
-		<div id="main">
-			<div class="inner">
-			<!-- 상단 로고 및 진한 선 -->
-			<header id="header">
-				<a href="/goodM/user/main" class="logo"><strong><img src="/img/logo.png" alt="" width="30px" height="30px"></strong> by 멀캠가네 둘째 조</a>
-			</header>
-			<!-- Content -->
-			<section>
-				<header class="main">
-					<h1>My page</h1><!-- 제목 -->
-				</header>
-				<!-- 프로필 이미지 -->
+<body style="height: 2000px">
+	
+	<div class="container-fluid">
+	<div class="row">
+		<div class="col-1"></div>			
+		<!-- =================== main =================== -->
+			<div class="col-10" style="margin-top:80px; padding: 30px">						
+               <h3>회원 정보 조회</h3>
+               <hr>
+               <!-- 프로필 이미지 -->
                <img src="/img/profile.png" alt="profile" style="height:250px;" class="mx-auto d-block">
                <br>
                <c:forEach var="user" items="${userPage}" varStatus="loop">
@@ -66,11 +59,10 @@
                        	<a href="/goodM/user/delete?uid=${user.uid}" class="ms-3"><i class="fas fa-trash-alt"></i>계정 탈퇴</a>
                         </c:if>
                    </span>
-			</c:forEach>
-			</section>
+			</c:forEach>					          
 			</div>
+			<div class="col-1"></div>
 		</div>
 	</div>
-<%@ include file="../common/bottom.jsp" %>
 </body>
 </html>

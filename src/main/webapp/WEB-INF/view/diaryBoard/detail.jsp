@@ -7,42 +7,43 @@
 <html lang="ko">
 <head>
     <%@ include file="../common/heading.jsp" %>
-    <style>
-        .disabled-link { pointer-events: none; }
-    </style>
 </head>
 
-<body style="height: 2000px">
-    <%@ include file="../common/top.jsp" %>
-
-    <div class="container" style="margin-top: 80px;">
-        <div class="row">
-            <%@ include file="../common/aside.jsp" %>
-                        
-            <!-- =================== main =================== -->
-            <div class="col-sm-9">
-                <h3>기분일기 보기
-                	<span style="font-size: 0.6em;">
-                        <a href="/goodM/diaryBoard/list?p=${currentDiaryBoardPage}&f=&q=" class="ms-5"><i class="fas fa-list-ul"></i> 목록</a>
-                    
-                    <!-- 본인만 수정 가능 -->
-                    <c:if test="${diaryBoard.uid eq uid}">
-                        <a href="/goodM/diaryBoard/update?did=${diaryBoard.did}" class="ms-3"><i class="far fa-edit"></i> 수정</a>
-                    </c:if>
-                    <c:if test="${diaryBoard.uid ne uid}">
-                        <a href="#" class="ms-3 disabled-link"><i class="far fa-edit"></i> 수정</a>  
-                    </c:if>
-                    
-                    <!-- 본인만 삭제 가능 -->
-                    <c:if test="${diaryBoard.uid eq uid}">
-                        <a href="/goodM/diaryBoard/delete?did=${diaryBoard.did}" class="ms-3"><i class="fas fa-trash-alt"></i> 삭제</a>
-                    </c:if>
-                    <c:if test="${diaryBoard.uid ne uid}">
-                        <a href="#" class="ms-3 disabled-link"><i class="fas fa-trash-alt"></i> 삭제</a>
-                    </c:if>
-                    </span>
-                </h3>
-                <hr>
+<body class="is-preload" style="margin-bottom:100px">
+	<%@ include file="../common/aside.jsp" %>
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+			<!-- 상단 로고 및 진한 선 -->
+			<header id="header">
+				<a href="/goodM/user/main" class="logo"><strong><img src="/img/logo.png" alt="" width="30px" height="30px"></strong> by 멀캠가네 둘째 조</a>
+			</header>
+			<!-- Content -->
+			<section>
+				<header class="main">
+					<h1>기분일기 보기
+						 <span style="font-size: 0.5em;">
+	                        <a href="/goodM/diaryBoard/list?p=${currentDiaryBoardPage}&f=&q=" class="ms-5"><i class="fas fa-list-ul"></i> 목록</a>
+	                    	<!-- 본인만 수정 가능 -->
+		                    <c:if test="${diaryBoard.uid eq uid}">
+		                        <a href="/goodM/diaryBoard/update?did=${diaryBoard.did}" class="ms-3"><i class="far fa-edit"></i> 수정</a>
+		                    </c:if>
+		                    <c:if test="${diaryBoard.uid ne uid}">
+		                        <a href="#" class="ms-3 disabled-link"><i class="far fa-edit"></i> 수정</a>  
+		                    </c:if>
+		                    
+		                    <!-- 본인만 삭제 가능 -->
+		                    <c:if test="${diaryBoard.uid eq uid}">
+		                        <a href="/goodM/diaryBoard/delete?did=${diaryBoard.did}" class="ms-3"><i class="fas fa-trash-alt"></i> 삭제</a>
+		                    </c:if>
+		                    <c:if test="${diaryBoard.uid ne uid}">
+		                        <a href="#" class="ms-3 disabled-link"><i class="fas fa-trash-alt"></i> 삭제</a>
+		                    </c:if>
+	                    </span>
+					</h1>
+				</header>
                 <div class="row">
                     <div class="col-12">
                         <h5>${diaryBoard.title}</h5>
@@ -59,11 +60,10 @@
                         ${fn:replace(diaryBoard.content, newline, '<br>')}
                     </div>
                 </div>
-
-            </div>
-        </div>
-    </div>
-
-    <%@ include file="../common/bottom.jsp" %>
+			</section>
+			</div>
+		</div>
+	</div>
+<%@ include file="../common/bottom.jsp" %>
 </body>
 </html>
