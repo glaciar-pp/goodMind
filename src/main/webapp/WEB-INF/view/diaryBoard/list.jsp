@@ -16,89 +16,78 @@
     </script>
 </head>
 
-<body class="is-preload" style="margin-bottom:100px">
+<body style="margin-bottom:100px">
 	<%@ include file="../common/aside.jsp" %>
-	<!-- Wrapper -->
-	<div id="wrapper">
-		<!-- Main -->
-		<div id="main">
-			<div class="inner">
-			<!-- 상단 로고 및 진한 선 -->
-			<header id="header">
-				<a href="/goodM/user/main" class="logo"><strong><img src="/img/logo.png" alt="" width="30px" height="30px"></strong> by 멀캠가네 둘째 조</a>
-			</header>
-			<!-- Content -->
-			<section>
-				<header class="main">
-					<h1>기분일기</h1>
-				</header>
-                <table class="table table-sm table-borderless">
-                    <tr class="d-flex">
-                        <td class="col-2">
-                            <select class="form-select me-2" name="f" id="field">
-                                <option value="title" selected>제목</option>
-                                <option value="content">본문</option>
-                            </select>
-                        </td>
-                        <td class="col-3">
-                            <input class="form-control me-2" type="search" placeholder="검색 내용" name="q" id="query">
-                        </td>
-                        <td class="col-1">
-                            <button class="btn btn-outline-primary" onclick="search()">검색</button>
-                        </td>
-                    </tr>
-                </table>
-                <hr>
-                <table class="table mt-2">
-                	<div align="right">
-                    	<a href="/goodM/diaryBoard/write"><i class="fa-solid fa-pen me-3"></i></a>
-                    	<a href="/goodM/calendar/calendar"><i class="fa-solid fa-calendar-days"></i></a>
-                	</div>
-                	<div>
-                    	<tr class="table-secondary">
-	                        <th class="col-1">번호</th>
-	                        <th class="col-6">제목</th>
-	                        <th class="col-2">글쓴이</th>
-	                        <th class="col-2">날짜</th>
-	                        <th class="col-1">기분</th>
-                    	</tr>
-					</div>
-                <c:forEach var="db" items="${diaryBoardList}">
-                    <tr>
-                        <td>${db.did}</td>
-                        <td>
-                        	<a href="/goodM/diaryBoard/detail?did=${db.did}&uid=${db.uid}">${db.title}
-                            </a>
-                        </td>
-                        <td>${db.uname}</td>
-                        <td>${fn:substring(db.modTime, 0,10)}</td>
-                        <td><img src="/img/sentiImage${db.score}.png" height="24px"></td>
-                    </tr>
-                </c:forEach>    
-                </table>
-                <ul class="pagination justify-content-center mt-4">
-                <c:if test="${currentDiaryBoardPage gt 10}">
-                    <li class="page-item"><a class="page-link" href="/goodM/diaryBoard/list?p=${startPage - 1}&f=${field}&q=${query}">&laquo;</a></li>
-                </c:if>
-                <c:if test="${currentDiaryBoardPage le 10}">
-                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                </c:if>
-                <c:forEach var="page" items="${pageList}" varStatus="loop">    
-                    <li class="page-item ${(currentDiaryBoardPage eq page) ? 'active' : ''}">
-                    	<a class="page-link" href="/goodM/diaryBoard/list?p=${page}&f=${field}&q=${query}">${page}</a>
-                    </li>
-                </c:forEach>  
-                <c:if test="${totalPages gt endPage}">                    
-                    <li class="page-item"><a class="page-link" href="/goodM/diaryBoard/list?p=${endPage + 1}&f=${field}&q=${query}">&raquo;</a></li>
-                </c:if>
-                <c:if test="${totalPages le endPage}">                    
-                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                </c:if>
-                </ul>
-            <!-- =================== main =================== -->         
-			</section>
+	<div class="container-fluid">
+		<header id="header">
+			<a href="/goodM/user/main" class="logo"><strong><img src="/img/logo.png" alt="" width="30px" height="30px"></strong> by 멀캠가네 둘째 조</a>
+		</header>
+		<!-- Content -->
+		<!-- 제목 -->
+		<h2>기분일기</h2>
+		<table class="table table-sm table-borderless">
+	        <tr class="d-flex">
+	            <td class="col-2">
+	                <select class="form-select me-2" name="f" id="field">
+	                    <option value="title" selected>제목</option>
+	                    <option value="content">본문</option>
+	                </select>
+	            </td>
+	            <td class="col-3">
+	                <input class="form-control me-2" type="search" placeholder="검색 내용" name="q" id="query">
+	            </td>
+	            <td class="col-1">
+	                <button class="btn btn-outline-primary" onclick="search()">검색</button>
+	            </td>
+	        </tr>
+		</table>
+		<hr>
+		<table class="table mt-2">
+			<div align="right">
+				<a href="/goodM/diaryBoard/write"><i class="fa-solid fa-pen me-3"></i></a>
+				<a href="/goodM/calendar/calendar"><i class="fa-solid fa-calendar-days"></i></a>
 			</div>
-		</div>
+			<div>
+			<tr class="table-secondary">
+				<th class="col-1">번호</th>
+				<th class="col-6">제목</th>
+				<th class="col-2">글쓴이</th>
+				<th class="col-2">날짜</th>
+				<th class="col-1">기분</th>
+			</tr>
+			</div>
+			<c:forEach var="db" items="${diaryBoardList}">
+				<tr>
+					<td>${db.did}</td>
+					<td>
+						<a href="/goodM/diaryBoard/detail?did=${db.did}&uid=${db.uid}">${db.title}
+						</a>
+					</td>
+					<td>${db.uname}</td>
+					<td>${fn:substring(db.modTime, 0,10)}</td>
+					<td><img src="/img/sentiImage${db.score}.png" height="24px"></td>
+				</tr>
+			</c:forEach>    
+		</table>
+		<ul class="pagination justify-content-center mt-4">
+			<c:if test="${currentDiaryBoardPage gt 10}">
+				<li class="page-item"><a class="page-link" href="/goodM/diaryBoard/list?p=${startPage - 1}&f=${field}&q=${query}">&laquo;</a></li>
+			</c:if>
+			<c:if test="${currentDiaryBoardPage le 10}">
+				<li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+			</c:if>
+			<c:forEach var="page" items="${pageList}" varStatus="loop">    
+				<li class="page-item ${(currentDiaryBoardPage eq page) ? 'active' : ''}">
+					<a class="page-link" href="/goodM/diaryBoard/list?p=${page}&f=${field}&q=${query}">${page}</a>
+				</li>
+			</c:forEach>  
+			<c:if test="${totalPages gt endPage}">                    
+				<li class="page-item"><a class="page-link" href="/goodM/diaryBoard/list?p=${endPage + 1}&f=${field}&q=${query}">&raquo;</a></li>
+			</c:if>
+			<c:if test="${totalPages le endPage}">                    
+				<li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+			</c:if>
+		</ul>	
 	</div>
 <%@ include file="../common/bottom.jsp" %>
 </body>

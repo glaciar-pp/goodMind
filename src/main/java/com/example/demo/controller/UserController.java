@@ -63,6 +63,11 @@ public class UserController {
 		return "user/main";
 	}
 	
+	@GetMapping("/about")
+	public String about() {
+		return "user/about";
+	}
+	
 	@GetMapping("/register")
 	public String registerForm() {
 		return "user/register";

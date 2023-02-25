@@ -1,103 +1,111 @@
 /* theme color : #ccccff -> #a0a0ff */
 @font-face {
-    font-family: 'ONE-Mobile-POP';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'ONE-Mobile-POP';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'IBMPlexSansKR-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'IBMPlexSansKR-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
-
-body{
-    font-family: 'IBMPlexSansKR-Regular';
-    font-size: 18px;
+/* 1. 전체 공통 사항 */
+body {
+  font-family: 'IBMPlexSansKR-Regular';
+  font-size: 18px;
+  margin: 30px;
 }
-
-.navbar{
-    background-color:#a0a0ff;
-    text-align: center;
-}
-
-.navbar a {
-    color:#ffffff;
-    text-decoration: none;
-    display: block;
-  }
-
-.navbar a:hover {
-    background-color: #a0a0ff;
-    color: black;
-  }
-
-
-
-/* .navbar-brand{
-    color:#ffffff;
-} */
-
-/* 1. 테마 배경색 강하게 */
-#TChard {
-    background-color:#a0a0ff;
-}
-/* 2. 테마 배경색 연하게 */
-#TCsoft {
-    background-color:#ccccff;
-}
-
-h1{
-    font-family: 'ONE-Mobile-POP';
-    font-size: 50px;
-  }
-
-/* 제목 중, 글쓰기 버튼 등과 비율 맞춤이 필요한 제목 */
-h3{
-    font-family: 'ONE-Mobile-POP';
-    font-size: 35px;
-}
-
-/* 정보게시판, ul 태그 기호 삭제, 들여쓰기 삭제 */
-ul{
-   list-style:none;
-   padding-left:0px;
-   }
-
 /* 전체 테이블 대상 글자 가운데 정렬 */
-th, td { 
-	text-align: center; 
-	}
-
-/* 링크 이벤트 처리 */
-.disabled-link { 
-	pointer-events: none; 
-	}
-
-/* a 클래스 밑줄 제거, 검은 글씨로 변경 */
- a {
-  color: black;
-  text-decoration: none;
-  }
-  
-  .box {
-    max-width: 700px;
-    min-height: 70px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 20px;
-    background-color: #FFFFFF;
-    box-shadow: 20px 20px 20px -20px #94f6ff44;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    font-weight: 500;
-    text-align: center;
+th, td {
+  text-align: center;
 }
-  
+/* 링크 이벤트 처리 */
+.disabled-link {
+  pointer-events: none;
+}
+
+/* 2. 문자 서식 */
+/* 로고 구간 */
+header {
+  border-bottom: solid 3px #a0a0ff;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+/* 메인 제목 */
+h1 {
+  font-family: 'ONE-Mobile-POP';
+  font-size: 50px;
+  margin: 10px;
+  padding: 10px;
+}
+/* 밑줄이 있는 중간제목 */
+h2 {
+  font-family: 'ONE-Mobile-POP';
+  border-bottom: 3px dashed #ccccff;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* 소제목 */
+h3 {
+  font-family: 'ONE-Mobile-POP';
+}
+
+/* 도트형태 가로선 */
+hr {
+  border: 0px;
+  border-top: 5px dotted #cccccc;
+}
+/* 클래스 밑줄 제거, 테마색 폰트로 변경 */
+a, .btn {
+	color: #a0a0ff;
+	font-family: 'IBMPlexSansKR-Regular';
+	font-size: 18px;
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+	padding: 5px;
+	border-bottom: 1px dotted #ccccff;
+}
+
+/* 3. 아이콘, 박스, 카드 등 도형형태 서식 */
+/* 아이콘 색 */
+#mainIcon {
+	color: #a0a0ff;
+	font-size: 100px;
+	 padding-bottom: 20px;
+}
+
+/* 박스 양식 */
+.box {
+  max-width: 700px;
+  min-height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  box-shadow: 20px 20px 20px -20px #94f6ff44;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+#mainImg {
+	border-radius: 20px;
+	margin: auto;
+	width: 90%; 
+	height: 400px;"
+}
+
