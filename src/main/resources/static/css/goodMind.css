@@ -1,111 +1,274 @@
-/* theme color : #ccccff -> #a0a0ff */
-@font-face {
-  font-family: 'ONE-Mobile-POP';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'IBMPlexSansKR-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-/* 1. 전체 공통 사항 */
-body {
-  font-family: 'IBMPlexSansKR-Regular';
-  font-size: 18px;
-  margin: 30px;
-}
-/* 전체 테이블 대상 글자 가운데 정렬 */
-th, td {
-  text-align: center;
-}
-/* 링크 이벤트 처리 */
-.disabled-link {
-  pointer-events: none;
-}
-
-/* 2. 문자 서식 */
-/* 로고 구간 */
-header {
-  border-bottom: solid 3px #a0a0ff;
-  margin-bottom: 30px;
-  padding: 20px;
-}
-/* 메인 제목 */
-h1 {
-  font-family: 'ONE-Mobile-POP';
-  font-size: 50px;
-  margin: 10px;
-  padding: 10px;
-}
-/* 밑줄이 있는 중간제목 */
-h2 {
-  font-family: 'ONE-Mobile-POP';
-  border-bottom: 3px dashed #ccccff;
-  display: inline-block;
-  margin: 10px;
-  padding: 10px;
-}
-
-/* 소제목 */
-h3 {
-  font-family: 'ONE-Mobile-POP';
-}
-
-/* 도트형태 가로선 */
-hr {
-  border: 0px;
-  border-top: 5px dotted #cccccc;
-}
-/* 클래스 밑줄 제거, 테마색 폰트로 변경 */
-a, .btn {
-	color: #a0a0ff;
-	font-family: 'IBMPlexSansKR-Regular';
-	font-size: 18px;
-	text-decoration: none;
-}
-
-li{
-	list-style: none;
-	padding: 5px;
-	border-bottom: 1px dotted #ccccff;
-}
-
-/* 3. 아이콘, 박스, 카드 등 도형형태 서식 */
-/* 아이콘 색 */
-#mainIcon {
-	color: #a0a0ff;
-	font-size: 100px;
-	 padding-bottom: 20px;
-}
-
-/* 박스 양식 */
-.box {
-  max-width: 700px;
-  min-height: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 20px;
-  background-color: #FFFFFF;
-  box-shadow: 20px 20px 20px -20px #94f6ff44;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  font-weight: 500;
-  text-align: center;
-}
-
-#mainImg {
-	border-radius: 20px;
-	margin: auto;
-	width: 90%; 
-	height: 400px;"
-}
-
+:root{
+  /* Color */
+    --white-color: #fff;
+    --black-color:#140a00;
+    --lavender-dark-color:#6e72cb;
+    --lavender-color:#a0a0ff;  /* main color */
+    --lavender-light-color:#d4d1ff;
+    --grey-dark-color: #909090;
+    --grey-light-color: #e0e0e0;
+    --blue-color: #045fd4;
+    --red-color: #ff0000;
+  
+  /* Size */
+    --padding: 12px;
+  
+  /* Font Size */
+    --font-xlarge: 24px;
+    --font-large: 20px;
+    --font-mediun: 16px;
+    --font-small: 12px;
+    --font-micro: 10px;
+  }
+  * {
+    padding: o;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  /* 화면 사이즈 설정*/
+  @media screen and (min-width: 800px) {
+    .container {
+      width: 50%;  
+      margin: 0 80px 0 80px;
+    }
+  } 
+  
+  /* theme color : #ccccff -> #a0a0ff */
+  @font-face {
+    font-family: 'ONE-Mobile-POP';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  
+  /* 1. 전체 공통 사항 */
+  /* body */
+  body {
+    font-family: 'IBMPlexSansKR-Regular';
+    font-size: 18px;
+    margin: 100px;
+  }
+  /* header & logo */
+  header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--white-color);
+    color: var(--lavender-color);
+    border-bottom: solid 3px #a0a0ff;
+    margin-bottom: 50px;
+   }
+  
+  /* 1-1 정렬 */
+  /* 전체 테이블 대상 글자 왼쪽 정렬 */
+  th, td {
+    text-align: left;
+  }
+  /*search & 검색 오른쪽정렬*/
+  /* 안됨 ㅠ.ㅠ  search 검색바 col-3 주고 오른쪽 정렬 다시시도하기!!!!*/
+  
+  /* 1-2 링크 이벤트 처리 */
+  .disabled-link {
+    pointer-events: none;
+  }
+  
+  /* 2. 문자 서식 */
+  /* 2-1 main.jsp 제목 (오늘,기분어때?) */
+  h1 {
+    font-family: 'ONE-Mobile-POP';
+    font-size: 50px;
+    margin: 10px;
+    padding: 10px;
+  }
+  /* 2-2 main.jsp 밑줄이 있는 중간제목: 메인(서비스목표) & 각 페이지의 제목도 여기에서 같이 변경됨( 여백잘안맞음) */
+  h2 {
+    font-family: 'ONE-Mobile-POP';
+    border-bottom: 3px dashed var(--lavender-light-color);
+    display: inline-block;
+    padding: 10px;
+    margin: 10px 0 40px 100px;
+  }
+  
+  /* 2-3 main.jsp 소제목: 각 메뉴의이름*/
+  h3 {
+    font-family: 'ONE-Mobile-POP';
+    margin: 10px 0 10px 100px;
+  }
+  
+  /* 2-4 main.jsp 소제목의 설명글: 가독성있게 스타일 정해야함!!!!! 작업필요!!! */
+  
+  /* 2-5 도트형태 긴 가로선 */
+  hr {
+    border: 0px;
+    border-top: 5px dotted var(--grey-dark-color);
+    width: 100%;
+  }
+  
+  /* 2-6 클래스 밑줄 제거, 테마색 폰트로 변경, sideBar도 같이 변경됨: but!! 햄버거 색상 상실!! ㅜㅜ 작업필요!!!*/
+  .offcanvas-body .btn, .offcanvas-header .btn, .fa-solid fa-bars {
+    color: var(--lavender-color);
+    font-family: 'IBMPlexSansKR-Regular';
+    font-size: 18px;
+    padding: var(--padding);
+    text-decoration: none;
+  }
+  
+  /* 2-7 마우스 오버: sideBar, logo, boardTitle */
+  a {
+    color: var(--lavender-color);
+    font-family: 'IBMPlexSansKR-Regular';
+    font-size: 18px;
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--lavender-dark-color);
+    font-family: 'IBMPlexSansKR-Regular';
+    font-size: 18px;
+  }
+  
+  li{
+    list-style: none;
+    padding: 5px;
+    border-bottom: 1px dotted #ccccff;
+  }
+  
+  /* 3. 아이콘, 박스, 카드 등 도형형태 서식 */
+  /* 3-1 아이콘 색 */
+  #mainIcon {
+    color: #a0a0ff;
+    font-size: 100px;
+    margin: 10px 0 10px 100px;
+  }
+  
+  /* 3-2 카드형태 이미지 사이즈 작게 설정하기: 작업필요!!! */
+  .card h-100{
+    image-rendering: 50px;
+  }
+  
+  /* 3-3  박스 양식 */
+  .box {
+    max-width: 700px;
+    min-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 20px 20px 20px -20px #94f6ff44;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  /* 3-4 mail.jsp의 상단img*/
+  #mainImg {
+    border-radius: 20px;
+    margin: auto;
+    width: 90%; 
+    height: 400px;
+  }
+  
+  /* 4.Board 공통사항*/
+  /* 4-1 input type title, content width 변경*/
+  .d-flex .form-control {
+    width: 60%;  /*화면크기에 따라 달라지는데 이쁘지 않음ㅜㅜ 작업필요!!!*/
+  }
+  
+  /* 4-2 제출, 저장 버튼 */
+  .btn-primary {  
+    --bs-btn-bg: var(--lavender-light-color);
+    --bs-btn-border-color:var(--lavender-light-color);
+    --bs-btn-hover-color: var(--white-color);
+    --bs-btn-hover-bg: var(--lavender-dark-color);
+    --bs-btn-hover-border-color:  var(--lavender-dark-color);
+    --bs-btn-focus-shadow-rgb: inset 0 3px 5px rgba(111, 71, 205, 0.4);
+    --bs-btn-active-color: var(--white-color);
+    --bs-btn-active-bg:  var(--lavender-dark-color);
+    --bs-btn-active-border-color: var(--lavender-dark-color);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(111, 71, 205, 0.4);
+    --bs-btn-disabled-color: var(--white-color);
+    --bs-btn-disabled-bg: var(--lavender-light-color);
+    --bs-btn-disabled-border-color: var(--lavender-light-color);
+  }
+  /* 4-3 취소 버튼 */
+  .btn-secondary {  
+    --bs-btn-bg: var(--lavender-light-color);
+    --bs-btn-border-color:var(--lavender-light-color);
+    --bs-btn-hover-color: var(--white-color);
+    --bs-btn-hover-bg: var(--lavender-dark-color);
+    --bs-btn-hover-border-color:  var(--lavender-dark-color);
+    --bs-btn-focus-shadow-rgb: inset 0 3px 5px rgba(111, 71, 205, 0.4);
+    --bs-btn-active-color: var(--white-color);
+    --bs-btn-active-bg:  var(--lavender-dark-color);
+    --bs-btn-active-border-color: var(--lavender-dark-color);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(111, 71, 205, 0.4);
+    --bs-btn-disabled-color: var(--white-color);
+    --bs-btn-disabled-bg: var(--lavender-light-color);
+    --bs-btn-disabled-border-color: var(--lavender-light-color);
+  }
+  /* 4-4 searvh 검색 버튼 */
+  .btn-outline-primary { 
+    --bs-btn-bg: var(--lavender-light-color);
+    --bs-btn-border-color: var(--lavender-light-color);
+    --bs-btn-hover-color: var(--white-color);
+    --bs-btn-hover-bg: var(--lavender-dark-color);
+    --bs-btn-hover-border-color:  var(--lavender-dark-color);
+    --bs-btn-focus-shadow-rgb: inset 0 3px 5px rgba(111, 71, 205, 0.4);
+    --bs-btn-active-color: var(--white-color);
+    --bs-btn-active-bg:  var(--lavender-dark-color);
+    --bs-btn-active-border-color: var(--lavender-dark-color);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(111, 71, 205, 0.4);
+    --bs-btn-disabled-color:  var(--white-color);
+    --bs-btn-disabled-bg: var(--lavender-light-color);
+    --bs-btn-disabled-border-color: var(--lavender-light-color);
+  }
+  /* 4-5 페이지 버튼 */
+  .pagination { 
+    --bs-pagination-padding-x: 0.75rem;
+    --bs-pagination-padding-y: 0.375rem;
+    --bs-pagination-font-size: 1rem;
+    --bs-pagination-color: var(--lavender-light-color);
+    --bs-pagination-bg: var(--white-color);
+    --bs-pagination-border-width: 1px;
+    --bs-pagination-border-color: #dee2e6;
+    --bs-pagination-border-radius: 0.375rem;
+    --bs-pagination-hover-color: var(--lavender-dark-color);
+    --bs-pagination-hover-bg: #e9ecef;
+    --bs-pagination-hover-border-color: #dee2e6;
+    --bs-pagination-focus-color: var(--lavender-dark-color);
+    --bs-pagination-focus-bg: #e9ecef;
+    --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    --bs-pagination-active-color: var(--white-color);
+    --bs-pagination-active-bg: var(--lavender-color);
+    --bs-pagination-active-border-color: var(--lavender-color);
+    --bs-pagination-disabled-color: #6c757d;
+    --bs-pagination-disabled-bg: var(--white-color);
+    --bs-pagination-disabled-border-color: #dee2e6;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+  }
+  /* 4-5 버튼 속 글자색 */
+  .btn {
+    color: var(--white-color);
+    font-family: 'IBMPlexSansKR-Regular';
+    font-size: 1rem;
+    text-decoration: none;
+  } 
+  /* 캘린더 현재 년/월표시 네모박스: 바꾸고 싶은데 안바뀜ㅜ.ㅜ 작업필요!!! */
+  .badge bg-primary mx-2 {
+    color: var(--white-color);
+    background: var(--lavender-dark-color);
+  }
