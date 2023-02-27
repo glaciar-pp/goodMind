@@ -19,7 +19,7 @@
 			<table class="table table-borderless">
 				<tr>
 					<td><label for="uid">프로필 사진</label></td>
-					<td><form enctype="multipart/form-data"><input type="file" name="filename" value="${user.filename}"></form></td>
+					<td><input type="file" name="filename" value="${user.filename}"></td>
 				</tr>
 				<tr>
 			        <td><label for="uid">사용자 ID</label></td>

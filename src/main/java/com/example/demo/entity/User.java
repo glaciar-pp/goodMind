@@ -10,6 +10,7 @@ public class User {
 	private LocalDate regDate;
 	private int isDeleted;
 	private String filename;
+	private String admin;
 	
 	public User() {}
 	public User(String uid, String uname, String email, String filename) {
@@ -34,10 +35,22 @@ public class User {
 		this.isDeleted = isDeleted;
 		this.filename = filename;
 	}
+	public User(String uid, String pwd, String uname, String email, LocalDate regDate, int isDeleted, String filename,
+			String admin) {
+		super();
+		this.uid = uid;
+		this.pwd = pwd;
+		this.uname = uname;
+		this.email = email;
+		this.regDate = regDate;
+		this.isDeleted = isDeleted;
+		this.filename = filename;
+		this.admin = admin;
+	}
 	@Override
 	public String toString() {
 		return "User [uid=" + uid + ", pwd=" + pwd + ", uname=" + uname + ", email=" + email + ", regDate=" + regDate
-				+ ", isDeleted=" + isDeleted + ", filename=" + filename + "]";
+				+ ", isDeleted=" + isDeleted + ", filename=" + filename + ", admin=" + admin + "]";
 	}
 	public String getUid() {
 		return uid;
@@ -80,6 +93,12 @@ public class User {
 	}
 	public void setFilename(String filename) {
 		this.filename = filename;
+	}
+	public String getAdmin() {
+		return admin;
+	}
+	public void setAdmin(String admin) {
+		this.admin = admin;
 	}
 	
 	

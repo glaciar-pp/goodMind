@@ -61,11 +61,6 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 	
-	/*
-	 * @Override public void updateUser(User user, String newPwd) { if
-	 * (newPwd.length() > 0) { String cryptedPwd = BCrypt.hashpw(newPwd,
-	 * BCrypt.gensalt()); user.setPwd(cryptedPwd); } userDao.updateUser(user); }
-	 */
 	@Override
 	public void deleteUser(String uid) {
 		userDao.deleteUser(uid);
@@ -75,7 +70,11 @@ public class UserServiceImpl implements UserService {
 	public int login(String uid, String pwd, HttpSession session) {
 		User u = userDao.getUser(uid);
 		if (u != null && u.getUid() != null) {		// uid 가 존재
-			if (BCrypt.checkpw(pwd, u.getPwd())) {
+			if (u.getIsDeleted() == 1) {
+				session.setAttribute("uid", u.getUid());
+				session.setAttribute("uname", u.getUname());
+				return UserService.IS_DELETED_1;
+			} else if(BCrypt.checkpw(pwd, u.getPwd())) {
 				session.setAttribute("uid", u.getUid());
 				session.setAttribute("uname", u.getUname());
 				return UserService.CORRECT_LOGIN;

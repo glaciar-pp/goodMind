@@ -121,6 +121,7 @@ CREATE TABLE users
 	regDate date DEFAULT (CURRENT_DATE),
 	isDeleted int DEFAULT 0 NOT NULL,
 	filename varchar(50),
+	admin varchar(20) DEFAULT 'user',
 	PRIMARY KEY (uid)
 );
 

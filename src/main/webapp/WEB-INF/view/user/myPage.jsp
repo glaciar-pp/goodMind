@@ -15,21 +15,19 @@
 		</header>
 		<!-- Content -->
 		<!-- 제목 -->
-		<h2>My page</h2>
+		<h2>My page</h2><br>
 		<!-- 프로필 이미지 -->
-		<img src="/img/profile.png" alt="profile" style="height:250px;" class="mx-auto d-block">
-		<br>
-		
-		<c:forEach var="user" items="${userPage}" varStatus="loop">
-			<!-- 수정 및 삭제 권한 -->
-			<span style="font-size: 1.0em;">                     
-				<c:if test="${uid eq user.uid}">
-					<a href="/goodM/user/update/${user.uid}" class="ms-3"><i class="far fa-edit"></i>정보 수정</a>
-				</c:if>
-			</span>
+		<div class="d-flex justify-content-center">
+			<c:if test="${empty user.filename}">
+				<img class="rounded-circle" width="20%" src="/img/profile.png">
+			</c:if>
+			<c:if test="${not empty user.filename}">
+				<img class="rounded-circle" width="20%" src="/goodM/file/download?file=${user.filename}">
+			</c:if>
+		</div>
 			<br>
 			<!-- 마이페이지 내 정보 -->                   
-			<c:if test="${uid eq user.uid}">
+			<a href="/goodM/user/update/${user.uid}" class="ms-3"><i class="far fa-edit"></i>정보 수정</a>
 			<table  class="table table-hover" style="margin-bottom: 80px;">
 				<tr class="table-secondary">
 					<th class="col-2">항목</th>
@@ -54,13 +52,9 @@
 				</tr>
 			</table>
 			<br><br><br><br><br><br><br><br><br>
-			</c:if>
 			<span style="font-size: 1.0em;">
-				<c:if test="${uid eq user.uid}">
-					<a href="/goodM/user/delete/${user.uid}" class="ms-3"><i class="fas fa-trash-alt"></i>계정 탈퇴</a>
-				</c:if>
+				<a href="/goodM/user/delete/${user.uid}" class="ms-3"><i class="fas fa-trash-alt"></i>계정 탈퇴</a>
 			</span>
-		</c:forEach>
 	</div>
 <%@ include file="../common/bottom.jsp" %>
 </body>

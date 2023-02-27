@@ -24,7 +24,7 @@ public interface UserDao {
 	@Select("SELECT * FROM users ORDER BY regDate, uid")
 	public List<User> getUserInfo();
 	
-	@Insert("INSERT INTO users VALUES (#{uid}, #{pwd}, #{uname}, #{email}, DEFAULT, DEFAULT)")
+	@Insert("INSERT INTO users VALUES (#{uid}, #{pwd}, #{uname}, #{email}, DEFAULT, DEFAULT, #{filename}), 'user'")
 	public void insertUser(User user);
 	
 	@Update("UPDATE users SET uname=#{uname}, email=#{email} WHERE uid=#{uid}")

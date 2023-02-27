@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<div class="offcanvas offcanvas-start" id="nav">
 		<div class="offcanvas-header">
 			<h1 class="offcanvas-title">Menu</h1>
@@ -36,9 +36,18 @@
 			<li>
             <a href="#">자가진단 테스트(기입 예정)</a>
             </li>
-            <li>
-            <a href="/goodM/user/myPage">마이페이지</a>
-			</li>
+             <c:choose>
+			    <c:when test="${uid == 'admin'}">
+			      <li>
+			        <a href="/goodM/user/list/1">관리자페이지</a>
+			      </li>
+			    </c:when>
+			    <c:otherwise>
+			      <li>
+			        <a href="/goodM/user/myPage">마이페이지</a>
+			      </li>
+			    </c:otherwise>
+			 </c:choose>
             <br>
             <li>
             	<a href="/goodM/user/logout"><i class="fas fa-sign-out-alt"></i> 로그아웃</a>
