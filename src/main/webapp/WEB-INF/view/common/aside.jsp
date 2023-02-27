@@ -18,10 +18,6 @@
 				<a href="/goodM/calendar/calendar"><i class="fa-solid fa-calendar-days"></i> 기분일기</a>
 			</li>
 			<li>
-            <a href="/goodM/chat/gibuni"><i class="fa-solid fa-robot"></i> 기부니(형태 미정)</a>
-				
-			</li>
-			<li>
             	<a href="/goodM/map/kakaoMap"><i class="fa-solid fa-map-location-dot"></i> 병원/기관 찾기</a>
 			</li>
 			<div class="dropdown">

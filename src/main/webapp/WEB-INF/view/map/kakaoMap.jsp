@@ -49,18 +49,21 @@
 		#radiusSelect {position: absolute; top: 70px; right: 2%; z-index: 1;}
 	</style>
     <%@ include file="../common/heading.jsp" %>
+   	<%@ include file="../chat/gibuni.jsp" %>
 </head>
 
-<body style="margin:40px;">
-    <%@ include file="../common/top.jsp" %>
-    <div class="container" style="margin-top: 80px;">
-        <div class="row">
-            <%@ include file="../common/aside.jsp" %>       
+<body style="margin-bottom:100px">
+	<%@ include file="../common/aside.jsp" %>
+    <div class="container-fluid">
+			<header id="header">
+				<a href="/goodM/user/main" class="logo"><strong><img src="/img/logo.png" alt="" width="30px" height="30px"></strong> by 멀캠가네 둘째 조</a>
+			</header>
             
        <!-- =================== main =================== -->
-            
-			<h3 style="margin-top:80px;">주변 병원/기관 찾기</h3>
-		    <div class="map_wrap col-sm-9">
+            <!-- Content -->
+			<!-- 제목 -->
+			<h2>주변 병원/기관 찾기</h2>
+		    <div class="map_wrap">
 		        <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 		    	
 		        <button id="menuToggle">목록 숨기기</button>
@@ -84,11 +87,8 @@
 		            <ul id="placesList"></ul>
 		            <div id="pagination"></div>
 		        </div>
-		    </div>
-			<!-- =================== main =================== -->
- 
-  		</div>
-    </div>
+		<!-- =================== main =================== -->
+	</div>
 <script>
 // 목록 숨기기 토글
 $(document).ready(function() {

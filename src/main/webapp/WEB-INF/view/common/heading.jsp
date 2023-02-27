@@ -8,6 +8,7 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/77ad8525ff.js" crossorigin="anonymous"></script>
+
     <script>
     	$(document).ready(function() {
     		$('#weather').click(getWeatherInfo);

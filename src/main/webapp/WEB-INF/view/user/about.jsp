@@ -4,6 +4,7 @@
 <html lang="ko">
 <head>
     <%@ include file="../common/heading.jsp" %>
+   	<%@ include file="../chat/gibuni.jsp" %>
 </head>
 
 <body style="margin-bottom:100px">

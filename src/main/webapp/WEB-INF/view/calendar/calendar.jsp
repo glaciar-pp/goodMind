@@ -8,6 +8,7 @@
 <html lang="ko">
 <head>
     <%@ include file="../common/heading.jsp" %>
+   	<%@ include file="../chat/gibuni.jsp" %>
     <style>
         th { text-align: center; width: 14.28%;}
     </style>
