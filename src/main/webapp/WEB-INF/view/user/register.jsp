@@ -15,9 +15,13 @@
 		<!-- Content -->
 		<!-- 제목 -->
 		<h2>회원가입</h2>
-		<form action="/goodM/user/register" method="post">
+		<form action="/goodM/user/register" method="post" enctype="multipart/form-data">
 			<table class="table table-borderless">
-			    <tr>
+				<tr>
+					<td><label for="uid">프로필 사진</label></td>
+					<td><form enctype="multipart/form-data"><input type="file" name="filename" value="${user.filename}"></form></td>
+				</tr>
+				<tr>
 			        <td><label for="uid">사용자 ID</label></td>
 			        <td><input type="text" name="uid" id="uid"></td>
 			    </tr>

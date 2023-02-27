@@ -27,6 +27,15 @@ public interface UserDao {
 	@Insert("INSERT INTO users VALUES (#{uid}, #{pwd}, #{uname}, #{email}, DEFAULT, DEFAULT)")
 	public void insertUser(User user);
 	
+	@Update("UPDATE users SET uname=#{uname}, email=#{email} WHERE uid=#{uid}")
+	public void updateUserWithoutPassword(User user);
+	
+	@Update("UPDATE users SET uname=#{uname}, email=#{email}, filename=#{filename} WHERE uid=#{uid}")
+	public void updateUserWithoutPasswordWithImage(User user);
+	
+	@Update("UPDATE users SET pwd=#{pwd}, uname=#{uname}, email=#{email}, filename=#{filename} WHERE uid=#{uid}")
+	public void updateUserWithImage(User user);
+	
 	@Update("UPDATE users SET pwd=#{pwd}, uname=#{uname}, email=#{email} WHERE uid=#{uid}")
 	public void updateUser(User user);
 	

@@ -19,11 +19,12 @@
 		<!-- 프로필 이미지 -->
 		<img src="/img/profile.png" alt="profile" style="height:250px;" class="mx-auto d-block">
 		<br>
+		
 		<c:forEach var="user" items="${userPage}" varStatus="loop">
 			<!-- 수정 및 삭제 권한 -->
 			<span style="font-size: 1.0em;">                     
 				<c:if test="${uid eq user.uid}">
-					<a href="/goodM/user/update?uid=${user.uid}" class="ms-3"><i class="far fa-edit"></i>정보 수정</a>
+					<a href="/goodM/user/update/${user.uid}" class="ms-3"><i class="far fa-edit"></i>정보 수정</a>
 				</c:if>
 			</span>
 			<br>
@@ -56,7 +57,7 @@
 			</c:if>
 			<span style="font-size: 1.0em;">
 				<c:if test="${uid eq user.uid}">
-					<a href="/goodM/user/delete?uid=${user.uid}" class="ms-3"><i class="fas fa-trash-alt"></i>계정 탈퇴</a>
+					<a href="/goodM/user/delete/${user.uid}" class="ms-3"><i class="fas fa-trash-alt"></i>계정 탈퇴</a>
 				</c:if>
 			</span>
 		</c:forEach>

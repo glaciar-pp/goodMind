@@ -15,10 +15,14 @@
 		<!-- Content -->
 		<!-- 제목 -->
 		<h2>회원정보 수정</h2>
-		<form action="/goodM/user/update" method="post">
+		<form action="/goodM/user/update" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="uid" value="${user.uid}">
 			<table class="table table-borderless">
-			    <tr>
+				<tr>
+					<td><label for="filename">프로필 사진</label></td>
+					<td><input type="file" name="filename" id="filename"></td>
+				</tr>
+				<tr>
 			        <td><label for="uid">사용자 ID</label></td>
 			        <td><input type="text" name="uid" value="${user.uid}" disabled></td>
 				</tr>

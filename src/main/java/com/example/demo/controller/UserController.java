@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,12 +8,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.example.demo.entity.User;
 import com.example.demo.service.UserService;
@@ -23,6 +27,8 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Value("${spring.servlet.multipart.location}") private String uploadDir;
 	
 	@GetMapping("/login")
 	public String loginForm() {
@@ -74,12 +80,17 @@ public class UserController {
 	}
 
 	@PostMapping("/register")
-	public String register(HttpServletRequest req, Model model) {
+	public String register(MultipartHttpServletRequest req, Model model) throws Exception{
 		String uid = req.getParameter("uid").strip();
 		String pwd = req.getParameter("pwd").strip();
 		String pwd2 = req.getParameter("pwd2").strip();
 		String uname = req.getParameter("uname").strip();
 		String email = req.getParameter("email").strip();
+		MultipartFile profile = req.getFile("filename");
+		String filename = profile.getOriginalFilename();
+		String imageFile_ = uploadDir + "/" + filename;
+		File uploadFile = new File(imageFile_);
+		profile.transferTo(uploadFile);
 
 		User user = userService.getUser(uid);
 		if (user != null) {
@@ -88,7 +99,7 @@ public class UserController {
 			return "user/alertMsg";
 		}
 		if (pwd.equals(pwd2)) {
-			user = new User(uid, pwd, uname, email);
+			user = new User(uid, pwd, uname, email, filename);
 			userService.registerUser(user);
 			return "redirect:/goodM/user/login";
 		} else {
@@ -131,25 +142,35 @@ public class UserController {
 	}
 	
 	@PostMapping("/update")
-	public String update(HttpServletRequest req, Model model) {
+	public String update(MultipartHttpServletRequest  req, Model model) throws Exception{
 		String uid = req.getParameter("uid");
 		String pwd = req.getParameter("pwd").strip();
 		String pwd2 = req.getParameter("pwd2").strip();
 		String uname = req.getParameter("uname").strip();
 		String email = req.getParameter("email").strip();
+		MultipartFile profile = req.getFile("filename");
+		String filename = profile.getOriginalFilename();
+		System.out.println(profile + "===" + filename);
+		if (filename != null && !filename.equals("")) {
+		    String imageFile_ = uploadDir + "/" + filename;
+		    File uploadFile = new File(imageFile_);
+		    profile.transferTo(uploadFile);
+		} else
+			filename = null;
+		
 		HttpSession session = req.getSession();
 		User user;
 		
 		if (pwd == null || pwd.equals("")) {	// 패스워드를 입력하지 않은 경우
-			user = new User(uid, uname, email);
-			userService.updateUser(user, "");
+			user = new User(uid, uname, email, filename);
+			userService.updateUser(user, "", filename);
 			session.setAttribute("uname", uname);
-			return "redirect:/goodM/user/list/" + session.getAttribute("currentUserPage");			
+			return "redirect:/goodM/user/myPage/";		
 		} else if (pwd.equals(pwd2)) {			// 패스워드가 올바른 경우
-			user = new User(uid, uname, email);
-			userService.updateUser(user, pwd);
+			user = new User(uid, uname, email, filename);
+			userService.updateUser(user, pwd, filename);
 			session.setAttribute("uname", uname);
-			return "redirect:/goodM/user/list/" + session.getAttribute("currentUserPage");
+			return "redirect:/goodM/user/myPage/";
 		} else {								// 패스워드를 잘못 입력한 경우
 			model.addAttribute("msg", "패스워드 입력이 잘못되었습니다.");
 			model.addAttribute("url", "/goodM/user/update/" + uid);
@@ -168,7 +189,7 @@ public class UserController {
 	public String deleteConfirm(@PathVariable String uid, HttpServletRequest req) {
 		userService.deleteUser(uid);
 		HttpSession session = req.getSession();
-		return "redirect:/goodM/user/list/" + session.getAttribute("currentUserPage");
+		return "redirect:/goodM/user/logout/";
 	}
 	
 }

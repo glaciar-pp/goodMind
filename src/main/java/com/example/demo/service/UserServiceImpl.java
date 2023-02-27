@@ -45,14 +45,27 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void updateUser(User user, String newPwd) {
+	public void updateUser(User user, String newPwd, String filename) {
 		if (newPwd.length() > 0) {
 			String cryptedPwd = BCrypt.hashpw(newPwd, BCrypt.gensalt());
 			user.setPwd(cryptedPwd);
+			if (filename == null)
+				userDao.updateUser(user);	 
+			else 
+				userDao.updateUserWithImage(user);
+		} else {
+			if (filename == null)
+				userDao.updateUserWithoutPassword(user);
+			else
+				userDao.updateUserWithoutPasswordWithImage(user);
 		}
-		userDao.updateUser(user);	 
 	}
-
+	
+	/*
+	 * @Override public void updateUser(User user, String newPwd) { if
+	 * (newPwd.length() > 0) { String cryptedPwd = BCrypt.hashpw(newPwd,
+	 * BCrypt.gensalt()); user.setPwd(cryptedPwd); } userDao.updateUser(user); }
+	 */
 	@Override
 	public void deleteUser(String uid) {
 		userDao.deleteUser(uid);

@@ -120,6 +120,7 @@ CREATE TABLE users
 	email varchar(32),
 	regDate date DEFAULT (CURRENT_DATE),
 	isDeleted int DEFAULT 0 NOT NULL,
+	filename varchar(50),
 	PRIMARY KEY (uid)
 );
 

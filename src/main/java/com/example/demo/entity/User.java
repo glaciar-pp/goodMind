@@ -9,32 +9,35 @@ public class User {
 	private String email;
 	private LocalDate regDate;
 	private int isDeleted;
+	private String filename;
 	
 	public User() {}
-	public User(String uid, String uname, String email) {
+	public User(String uid, String uname, String email, String filename) {
 		this.uid = uid;
 		this.uname = uname;
 		this.email = email;
+		this.filename = filename;
 	}
-	public User(String uid, String pwd, String uname, String email) {
+	public User(String uid, String pwd, String uname, String email, String filename) {
 		this.uid = uid;
 		this.pwd = pwd;
 		this.uname = uname;
 		this.email = email;
+		this.filename = filename;
 	}
-	public User(String uid, String pwd, String uname, String email, LocalDate regDate, int isDeleted) {
+	public User(String uid, String pwd, String uname, String email, LocalDate regDate, int isDeleted, String filename) {
 		this.uid = uid;
 		this.pwd = pwd;
 		this.uname = uname;
 		this.email = email;
 		this.regDate = regDate;
 		this.isDeleted = isDeleted;
+		this.filename = filename;
 	}
-	
 	@Override
 	public String toString() {
 		return "User [uid=" + uid + ", pwd=" + pwd + ", uname=" + uname + ", email=" + email + ", regDate=" + regDate
-				+ ", isDeleted=" + isDeleted + "]";
+				+ ", isDeleted=" + isDeleted + ", filename=" + filename + "]";
 	}
 	public String getUid() {
 		return uid;
@@ -72,4 +75,12 @@ public class User {
 	public void setIsDeleted(int isDeleted) {
 		this.isDeleted = isDeleted;
 	}
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	
+	
 }

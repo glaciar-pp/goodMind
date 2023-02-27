@@ -21,7 +21,7 @@ public interface UserService {
 
 	void registerUser(User user);
 	
-	void updateUser(User user, String newPwd);
+	void updateUser(User user, String newPwd, String filename);
 	
 	void deleteUser(String uid);
 
