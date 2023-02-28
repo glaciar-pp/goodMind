@@ -14,7 +14,7 @@ import com.example.demo.service.ChatbotService;
 @RequestMapping("/goodM/chat")
 public class ChatController {
 	
-	@Autowired
+	@Autowired 
 	private ChatbotService chatbotService;
 	
 	@GetMapping("/gibuni")

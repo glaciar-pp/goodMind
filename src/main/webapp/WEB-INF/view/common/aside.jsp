@@ -44,7 +44,7 @@
 			      </li>
 			    </c:otherwise>
 			 </c:choose>
-            <br>
+<!--         <br>     -->    
             <li>
             	<a href="/goodM/user/logout"><i class="fas fa-sign-out-alt"></i> 로그아웃</a>
 			</li>
@@ -54,6 +54,6 @@
 		</div>
 	</div>
 
-	<button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#nav">
+	<button class="btn" type="button" id="ham" data-bs-toggle="offcanvas" data-bs-target="#nav">
 		<i class="fa-solid fa-bars"></i>
 	</button>

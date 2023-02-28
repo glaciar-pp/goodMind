@@ -29,13 +29,13 @@ $(function(){
                 for(var b in bubbles){
                     if(bubbles[b].type == 'text'){ // 기본 답변인 경우
                         /* chatBox에 받은 메시지 추가 */
-                        $('#chatBox').append('<div class="msgBox receive"><span id="in"><span>챗봇1, 텍스트</span><br><span>' +
+                        $('#chatBox').append('<div class="msgBox receive"><span id="in"><span>기부니</span><br><span>' +
                             bubbles[b].data.description +'</span></span></div><br><br>');
                     }    else if(bubbles[b].type == 'template'){//이미지 답변 또는 멀티링크 답변 시작
                             if(bubbles[b].data.cover.type=="text"){//멀티링크 답변이면
                                 console.log(bubbles[b].type)
                                 console.log(bubbles[b].data.cover.type)
-                            $("#chatBox").append("<div class='msgBox receive'><span id='in'><span>챗봇2, 멀티</span><br><span>" + bubbles[b].data.cover.data.description+ "</p>");
+                            $("#chatBox").append("<div class='msgBox receive'><span id='in'><span>기부니</span><br><span>" + bubbles[b].data.cover.data.description+ "</p>");
     }                       for(var ct in bubbles[b].data.contentTable){
                             console.log(bubbles[b].contentTable)
                             var ct_data = bubbles[b].data.contentTable[ct];
@@ -52,7 +52,7 @@ $(function(){
                         console.log(bubbles[b].data.cover.type)
                         if(bubbles[b].type.data =="image"){//이미지 이면
                             console.log(bubbles[b].type.data)
-                                $("#chatBox").append("<div class='msgBox receive'><span id='in'><span>챗봇2, 이미지</span><br><span><img src=" + bubbles[b].data.cover.data.imageUrl +
+                                $("#chatBox").append("<div class='msgBox receive'><span id='in'><span>기부니</span><br><span><img src=" + bubbles[b].data.cover.data.imageUrl +
                                     "' alt='이미지 없음'></p>");
                                 //$("#chatBox").append("<img src='" + bubbles[b].data.cover.data.imageUrl + "' alt='이미지 없음'></p>");
                                 if(bubbles[b].data.contentTable != null){
