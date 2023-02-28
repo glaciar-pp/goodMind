@@ -15,8 +15,7 @@
 		</header>
 		<!-- Content -->
 		<!-- 제목 -->
-		<h2>사용자 목록</h2><!-- 제목 -->
-		<a href="/goodM/admin/deletedUserList/1">탈퇴 회원 목록 바로가기</a>
+		<h2>삭제된 회원 목록</h2><!-- 제목 -->
 			<table class="table table-condensed table-hover" style="margin-bottom: 80px;">
                 <tr class="table-secondary d-flex">
                     <th class="col-1">번호</th>
@@ -27,7 +26,7 @@
                     <th class="col-1">액션</th>
                 </tr>   
                 <!-- 반복되는 부분 -->
-			<c:forEach var="user" items="${userList}" varStatus="loop">
+			<c:forEach var="user" items="${deletedUserList}" varStatus="loop">
                 <tr class="d-flex">
 					<td class="col-1">${loop.count}</td>
 					<td class="col-2">${user.uid}</td>
@@ -38,7 +37,7 @@
 							            		            
 		            <%-- 관리자(admin) 만이 삭제 권한이 있음 --%>
 		            <c:if test="${uid eq 'admin'}">
-						<a href="/goodM/user/delete/${user.uid}"><i class="fas fa-user-minus"></i></a>
+						<a href="/goodM/admin/restore/${user.uid}"><i class="fas fa-user-minus"></i></a>
 		            </c:if>
 		            <c:if test="${uid ne 'admin'}">
 		            	<a href="#" class="disabled-link"><i class="fas fa-user-minus"></i></a>

@@ -15,10 +15,23 @@
     <script>
     	let msg = '${msg}';
     	let url = '${url}';
-        alertify.alert(msg, function() {
-            alertify.message('OK');
-            location.href = url;
-        });
+    	
+    	if('${confirm}') {
+    		alertify.confirm(msg, function(e) {
+    			if(e) {
+    				alertify.success("확인")
+    				location.href = url;
+    			} else {
+    				alertify.error("취소")
+    				location.href = url;
+    			}
+    		});
+    	} else {
+    		alertify.alert(msg, function() {
+                alertify.message('OK');
+                location.href = url;
+            });	
+    	}
     </script> 
 </body>
 </html>

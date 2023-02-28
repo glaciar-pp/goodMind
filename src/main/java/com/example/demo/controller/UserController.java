@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.example.demo.entity.User;
+import com.example.demo.service.AdminService;
 import com.example.demo.service.UserService;
 
 @Controller
@@ -26,7 +28,7 @@ import com.example.demo.service.UserService;
 public class UserController {
 
 	@Autowired
-	private UserService userService;
+	private UserService userService;	
 	
 	@Value("${spring.servlet.multipart.location}") private String uploadDir;
 	
@@ -53,13 +55,16 @@ public class UserController {
 		case UserService.UID_NOT_EXIST:
 			model.addAttribute("msg", "회원 가입 페이지로 이동합니다.");
 			model.addAttribute("url", "/goodM/user/register");
+			break;
 		case UserService.IS_DELETED_1:
-			model.addAttribute("msg", "탈퇴한 회원입니다.");
+			model.addAttribute("msg", "탈퇴한 회원입니다. 복원 신청 하시겠습니까?");
 			model.addAttribute("url", "/goodM/user/login");
+			model.addAttribute("confirm", true);
+			break;
 		}
 		return "user/alertMsg";
 	}
-	
+		
 	@GetMapping("/logout")
 	public String logout(HttpServletRequest req) {
 		HttpSession session = req.getSession();

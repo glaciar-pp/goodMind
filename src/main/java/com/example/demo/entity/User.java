@@ -11,6 +11,7 @@ public class User {
 	private int isDeleted;
 	private String filename;
 	private String admin;
+	private int restoreRequest;
 	
 	public User() {}
 	public User(String uid, String uname, String email, String filename) {
@@ -47,10 +48,26 @@ public class User {
 		this.filename = filename;
 		this.admin = admin;
 	}
+	
+	public User(String uid, String pwd, String uname, String email, LocalDate regDate, int isDeleted, String filename,
+			String admin, int restoreRequest) {
+		super();
+		this.uid = uid;
+		this.pwd = pwd;
+		this.uname = uname;
+		this.email = email;
+		this.regDate = regDate;
+		this.isDeleted = isDeleted;
+		this.filename = filename;
+		this.admin = admin;
+		this.restoreRequest = restoreRequest;
+	}
+	
 	@Override
 	public String toString() {
 		return "User [uid=" + uid + ", pwd=" + pwd + ", uname=" + uname + ", email=" + email + ", regDate=" + regDate
-				+ ", isDeleted=" + isDeleted + ", filename=" + filename + ", admin=" + admin + "]";
+				+ ", isDeleted=" + isDeleted + ", filename=" + filename + ", admin=" + admin + ", restoreRequest="
+				+ restoreRequest + "]";
 	}
 	public String getUid() {
 		return uid;
@@ -100,6 +117,11 @@ public class User {
 	public void setAdmin(String admin) {
 		this.admin = admin;
 	}
-	
+	public int getRestoreRequest() {
+		return restoreRequest;
+	}
+	public void setRestoreRequest(int restoreRequest) {
+		this.restoreRequest = restoreRequest;
+	}
 	
 }
