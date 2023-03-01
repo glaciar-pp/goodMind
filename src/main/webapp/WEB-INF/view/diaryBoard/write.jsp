@@ -8,8 +8,8 @@
 </head>
 
 <body style="margin-bottom:100px">
-	<%@ include file="../common/aside.jsp" %>
-	<div class="container-fluid">
+	<div class="container-fluid" id="inFrame">
+    <%@ include file="../common/aside.jsp" %>
 		<header id="header">
 			<a href="/goodM/user/main" class="logo"><strong><img src="/img/logo.png" alt="" width="30px" height="30px"></strong> by 멀캠가네 둘째 조</a>
 		</header>
@@ -20,17 +20,17 @@
        	<input type="hidden" name="uid" value="${uid}">
        	<input type="hidden" name="date" value="${date}">
            <table class="table table-borderless">
-               <tr class="d-flex">
+               <tr class="d-flex" id="write-box">
                    <td class="col-1"><label for="title">제목</label></td>
                    <td class="col-11"><input class="form-control" type="text" name="title" id="title"></td>
                </tr>
-               <tr class="d-flex">
+               <tr class="d-flex" id="write-box">
                    <td class="col-1"><label for="content">내용</label></td>
                    <td class="col-11">
                    	<textarea class="form-control" name="content" id="content" rows="10"></textarea>
                    </td>
                </tr>
-               <tr class="d-flex">
+               <tr class="d-flex" id="write-box">
                    <td class="col-1"><label for="files">첨부파일</label></td>
                    <td class="col-11"><input class="form-control" type="file" name="files" id="files" multiple></td>
                </tr>

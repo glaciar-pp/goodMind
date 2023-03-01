@@ -21,8 +21,8 @@
 </head>
 
 <body style="margin-bottom:100px">
-	<%@ include file="../common/aside.jsp" %>
-	<div class="container-fluid">
+	<div class="container-fluid" id="inFrame">
+    <%@ include file="../common/aside.jsp" %>
 		<header id="header">
 			<a href="/goodM/user/main" class="logo"><strong><img src="/img/logo.png" alt="" width="30px" height="30px"></strong> by 멀캠가네 둘째 조</a>
 		</header>
@@ -35,15 +35,17 @@
 		</h2>
 		<table class="table table-sm table-borderless">
 		<tr class="d-flex">
+			<td class="col-6">
+			</td>
 		    <td class="col-2">
-		        <select class="form-select me-2" name="f" id="field">
+		        <select class="form-select me-2" name="f" id="search-a">
 					<option value="title" selected>제목</option>
 					<option value="content">본문</option>
 					<option value="uname">글쓴이</option>
 		        </select>
 		    </td>
 		    <td class="col-3">
-		        <input class="form-control me-2" type="search" placeholder="검색 내용" name="q" id="query">
+		        <input class="form-control me-2" type="search" placeholder="검색 내용" name="q"id="search-b">
 		    </td>
 		    <td class="col-1">
 		        <button class="btn btn-outline-primary" onclick="search()">검색</button>

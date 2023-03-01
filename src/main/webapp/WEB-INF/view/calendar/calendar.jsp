@@ -31,8 +31,8 @@
 </head>
 
 <body style="margin-bottom:100px">
-	<%@ include file="../common/aside.jsp" %>
-	<div class="container-fluid">
+	<div class="container-fluid" id="inFrame">
+    <%@ include file="../common/aside.jsp" %>
 		<header id="header">
 			<a href="/goodM/user/main" class="logo"><strong><img src="/img/logo.png" alt="" width="30px" height="30px"></strong> by 멀캠가네 둘째 조</a>
 		</header>
@@ -48,7 +48,7 @@
 				<a href="/goodM/calendar/calendar/right"><i class="fa-solid fa-angle-right me-2"></i></a>
 				<a href="/goodM/calendar/calendar/right2"><i class="fa-solid fa-angles-right"></i></a>
 			</div>
-			<div>
+			<div id="diary-icon">
 				<a href="/goodM/diaryBoard/write"><i class="fa-solid fa-pen me-3"></i></a>
 				<a href="/goodM/diaryBoard/list/"><i class="fa-solid fa-table-list"></i></a>
 			</div>
