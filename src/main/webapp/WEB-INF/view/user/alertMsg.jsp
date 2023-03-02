@@ -20,10 +20,10 @@
     		alertify.confirm(msg, function(e) {
     			if(e) {
     				alertify.success("확인")
-    				location.href = url;
+    				location.href = "/goodM/admin/restoreRequest";
     			} else {
     				alertify.error("취소")
-    				location.href = url;
+    				location.href = "/goodM/user/login";
     			}
     		});
     	} else {

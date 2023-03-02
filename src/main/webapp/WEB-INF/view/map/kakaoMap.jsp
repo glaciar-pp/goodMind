@@ -4,13 +4,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9829722c486e4c2d4f6d8477a49a1129&libraries=services,clusterer,drawing"></script>
+	<script src="/js/map.js"></script>
     <link rel="stylesheet" href="/css/map.css">
 	<%@ include file="../common/top.jsp" %>
     <%@ include file="../common/heading.jsp" %>
    	<%@ include file="../chat/gibuni.jsp" %>
 </head>
 
-<body style="margin-bottom:100px">
+<body>
 	<div class="container-fluid" id="inFrame">
     <%@ include file="../common/aside.jsp" %>
 			<header id="header">
@@ -47,26 +49,50 @@
 		        </div>
 		<!-- =================== main =================== -->
 	</div>
+	
 <script>
-// 목록 숨기기 토글
-$(document).ready(function() {
-      $("#menu_wrap").show();
-	  $("#menuToggle").on("click", function() {
-	    var menuWrap = $("#menu_wrap");
-	    menuWrap.toggle();
-	    var toggleButton = $("#menuToggle");
-	    toggleButton.text(menuWrap.is(":visible") ? "목록 숨기기" : "목록 보이기");
-	  });
-});
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(37.567411643299266, 127.00568221118185), // 지도의 중심좌표
+        level: 7 // 지도의 확대 레벨 
+    }; 
+ 
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-//myLocation 버튼 클릭 이벤트 리스너 등록
-document.getElementById('myLocation').addEventListener('click', function() {
-   myLocation();
-});
+var geocoder = new daum.maps.services.Geocoder();
+
+var ps = new kakao.maps.services.Places();  
+
+var bounds = new kakao.maps.LatLngBounds();
+
+var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+
+//마커를 담을 배열입니다
+var markers = [];
+
+// 초기 circle 표시안함
+var circle = null;
+
+var itemsPerPage = 10; 	//한 페이지에 표시할 항목 수
+
+var searchData = [];
+<c:forEach items="${searchList}" var="searchList">
+
+var searchDataObj = {
+ 	title : "${searchList.orgName}",
+	address : "${searchList.addr}",
+	type : "${searchList.orgType}",
+	homepage : "${searchList.homepage}"
+};
+
+searchData.push(searchDataObj);
+</c:forEach>
+
+searchPlaces();
 
 </script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9829722c486e4c2d4f6d8477a49a1129&libraries=services,clusterer,drawing"></script>
-<script src="/js/map.js"></script>
+
+
 </div>
 <%@ include file="../common/bottom.jsp" %>
 </body>

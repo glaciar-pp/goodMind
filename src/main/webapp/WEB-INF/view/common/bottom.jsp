@@ -11,18 +11,18 @@
             <h2>Etiam feugiat</h2>
             <dl class="alt">
                 <dt>Address</dt>
-                <dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+                <dd>30123-32, Teheran-ro, Gangnam-gu, Seoul, Republic of Korea</dd>
                 <dt>Phone</dt>
-                <dd>(000) 000-0000 x 0000</dd>
+                <dd>(+082) 010-1234-5678</dd>
                 <dt>Email</dt>
                 <dd><a href="#">admin@goodM.com</a></dd>
             </dl>
             <ul class="icons" id="bottom-icons">
-                <li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-                <li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+                <a class="me-2 black" href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                <a class="me-2 black" href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                <a class="me-2 black" href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                <a class="me-2 black" href="#"><i class="fa-brands fa-square-github"></i></a>
+                <a class="me-2 black" href="#"><i class="fa-brands fa-instagram"></i></a>
             </ul>
         </section>
         <p class="copyright">Copyright &copy; 2023 멀캠가네 둘째조 Corp. All rights reserved.</p>

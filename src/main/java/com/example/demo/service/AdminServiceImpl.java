@@ -15,14 +15,8 @@ public class AdminServiceImpl implements AdminService {
 	private AdminDao adminDao;
 
 	@Override
-	public int updateRestoreRequest(String uid) {
-		int requestSuccess = adminDao.updateRequestRequest(uid);
-		if(requestSuccess > 0) {
-			return SUCCESS;
-		} else {
-			return FAIL;
-		}
-		
+	public void updateRestoreRequest(String uid) {
+		adminDao.updateRestoreRequest(uid);		
 	}
 
 	@Override

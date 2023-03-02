@@ -4,11 +4,9 @@ import java.util.List;
 
 import com.example.demo.entity.User;
 
-public interface AdminService {
-	 public static final int SUCCESS = 1;
-	 public static final int FAIL = -1;
+public interface AdminService {	
 	
-	int updateRestoreRequest(String uid);
+	void updateRestoreRequest(String uid);
 	
 	//유저 리스트
 	List<User> getDeltedUserList(int page);

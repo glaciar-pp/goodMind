@@ -1,42 +1,4 @@
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = { 
-        center: new kakao.maps.LatLng(37.567411643299266, 127.00568221118185), // 지도의 중심좌표
-        level: 7 // 지도의 확대 레벨 
-    }; 
- 
-var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-var geocoder = new daum.maps.services.Geocoder();
-
-var ps = new kakao.maps.services.Places();  
-
-var bounds = new kakao.maps.LatLngBounds();
-
-var infowindow = new kakao.maps.InfoWindow({zIndex:1});
-
-//마커를 담을 배열입니다
-var markers = [];
-
-// 초기 circle 표시안함
-var circle = null;
-
-var itemsPerPage = 10; 	//한 페이지에 표시할 항목 수
-
-var searchData = [];
-<c:forEach items="${searchList}" var="searchList">
-
-var searchDataObj = {
- 	title : "${searchList.orgName}",
-	address : "${searchList.addr}",
-	type : "${searchList.orgType}",
-	homepage : "${searchList.homepage}"
-};
-
-searchData.push(searchDataObj);
-</c:forEach>
-
-searchPlaces();
-	
 //키워드 검색을 요청하는 함수입니다
 function searchPlaces() {	
 	searchData.forEach(function(searchList,index) {
@@ -336,3 +298,19 @@ function makeCircle(lat, lon) {
 		};	
 	
 }
+
+// 목록 숨기기 토글
+$(document).ready(function() {
+	$("#menu_wrap").show();
+	$("#menuToggle").on("click", function() {
+	  var menuWrap = $("#menu_wrap");
+	  menuWrap.toggle();
+	  var toggleButton = $("#menuToggle");
+	  toggleButton.text(menuWrap.is(":visible") ? "목록 숨기기" : "목록 보이기");
+	});
+});
+
+//myLocation 버튼 클릭 이벤트 리스너 등록
+document.getElementById('myLocation').addEventListener('click', function() {
+ myLocation();
+});
