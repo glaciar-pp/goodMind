@@ -30,7 +30,7 @@
 				</ul>
 			</div>
 			<li>
-            <a href="#">자가진단 테스트(기입 예정)</a>
+            <a href="/goodM/survey/surList">자가진단 테스트</a>
             </li>
              <c:choose>
 			    <c:when test="${uid == 'admin'}">
@@ -49,8 +49,6 @@
             	<a href="/goodM/user/logout"><i class="fas fa-sign-out-alt"></i> 로그아웃</a>
 			</li>
 		</ul>
-            <p><a href="#">admin@goodM.com</a></p>
-            <p>(000) 000-0000</p>
 		</div>
 	</div>
 

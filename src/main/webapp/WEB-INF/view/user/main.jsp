@@ -50,28 +50,50 @@
 				</div>
 			</div>
 			<hr>
-			<h2>심리건강정보 게시판</h2>
+			<h2>자가진단 테스트</h2>
 			<div class="row row-cols-1 row-cols-md-2 g-4">
-			<%-- <c:forEach var="info_board" items="${infoBoardList}"> --%>
 				<div class="col">
 					<div class="card h-100">
-						<a href="/goodM/infoBoard/detail?infoBid=${info_board.infoBid}&uid=${info_board.uid}">
-							<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
-						</a>
+						<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
 						<div class="card-body">
-							<h5 class="card-title">${info_board.title}</h5>
+							<h5 class="card-title">정신건강 자가진단</h5>
 							<hr>
-							<p class="card-text" style="color: grey">조회수: ${info_board.viewCount}</p>
-							<c:if test="${today eq fn:substring(info_board.modTime, 0, 10)}">
-								<p class="card-text">${fn:substring(info_board.modTime, 11, 19)}</p>
-							</c:if>
-							<c:if test="${not (today eq fn:substring(info_board.modTime, 0, 10))}">
-								<p class="card-text">${fn:substring(info_board.modTime, 0, 10)}</p>
-							</c:if>
+							<p class="card-text" style="color: grey">측정내용: 우울, 불안, 신경과민 등</p>
+							<a href="/goodM/survey/surK10" class="button big">테스트 하러가기</a>
 						</div>
 					</div>
 				</div>
-			<%-- </c:forEach> --%>
+				<div class="col">
+					<div class="card h-100">
+						<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
+						<div class="card-body">
+							<h5 class="card-title">우울증 건강설문(PHQ-9)</h5>
+							<hr>
+							<p class="card-text" style="color: grey">측정내용: 우울</p>
+							<a href="/goodM/survey/surPHQ9" class="button big">테스트 하러가기</a>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card h-100">
+						<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
+						<div class="card-body">
+							<h5 class="card-title">정신건강 자가진단</h5>
+							<hr>
+							<p class="card-text" style="color: grey">측정내용: 우울, 불안, 신경과민 등</p>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card h-100">
+						<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
+						<div class="card-body">
+							<h5 class="card-title">정신건강 자가진단</h5>
+							<hr>
+							<p class="card-text" style="color: grey">측정내용: 우울, 불안, 신경과민 등</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	<%@ include file="../common/bottom.jsp" %>
