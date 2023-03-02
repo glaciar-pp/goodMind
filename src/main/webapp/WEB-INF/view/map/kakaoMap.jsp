@@ -48,6 +48,7 @@
 		#myLocation {position: absolute; top: 40px; right: 2%; z-index: 1;}
 		#radiusSelect {position: absolute; top: 70px; right: 2%; z-index: 1;}
 	</style>
+	<%@ include file="../common/top.jsp" %>
     <%@ include file="../common/heading.jsp" %>
    	<%@ include file="../chat/gibuni.jsp" %>
 </head>

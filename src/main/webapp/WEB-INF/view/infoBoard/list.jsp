@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <%@ include file="../common/top.jsp" %>
     <%@ include file="../common/heading.jsp" %>
    	<%@ include file="../chat/gibuni.jsp" %>
     <script>
@@ -17,7 +18,7 @@
     </script>
 </head>
 
-<body style="margin-bottom:100px">
+<body>
 	<div class="container-fluid" id="inFrame">
     <%@ include file="../common/aside.jsp" %>
 		<header id="header">

@@ -6,7 +6,7 @@
     <%@ include file="../common/heading.jsp" %>
 </head>
 
-<body style="margin-bottom:100px">
+<body>
 	<div class="container-fluid" id="inFrame">
     <%@ include file="../common/aside.jsp" %>
 		<header id="header">
@@ -14,9 +14,9 @@
 		</header>
 		<!-- Content -->
 		<!-- 제목 -->
-		<h2>회원가입</h2>
+		<h2 id="comeIn">회원가입</h2>
 		<form action="/goodM/user/register" method="post" enctype="multipart/form-data">
-			<table class="table table-borderless">
+			<table class="table table-borderless" id="comeIn">
 				<tr>
 					<td><label for="uid">프로필 사진</label></td>
 					<td><input type="file" name="filename" value="${user.filename}"></td>

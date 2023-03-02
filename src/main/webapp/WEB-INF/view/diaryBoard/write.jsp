@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <%@ include file="../common/top.jsp" %>
     <%@ include file="../common/heading.jsp" %>
     <script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
 </head>
 
-<body style="margin-bottom:100px">
+<body>
 	<div class="container-fluid" id="inFrame">
     <%@ include file="../common/aside.jsp" %>
 		<header id="header">
@@ -22,17 +23,17 @@
            <table class="table table-borderless">
                <tr class="d-flex" id="write-box">
                    <td class="col-1"><label for="title">제목</label></td>
-                   <td class="col-11"><input class="form-control" type="text" name="title" id="title"></td>
+                   <td class="col-6"><input class="form-control" type="text" name="title" id="title"></td>
                </tr>
                <tr class="d-flex" id="write-box">
                    <td class="col-1"><label for="content">내용</label></td>
-                   <td class="col-11">
+                   <td class="col-6">
                    	<textarea class="form-control" name="content" id="content" rows="10"></textarea>
                    </td>
                </tr>
                <tr class="d-flex" id="write-box">
                    <td class="col-1"><label for="files">첨부파일</label></td>
-                   <td class="col-11"><input class="form-control" type="file" name="files" id="files" multiple></td>
+                   <td class="col-6"><input class="form-control" type="file" name="files" id="files" multiple></td>
                </tr>
                <tr>
                    <td colspan="2" style="text-align: center;">

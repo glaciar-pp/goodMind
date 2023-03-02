@@ -7,7 +7,7 @@
     <%@ include file="../common/heading.jsp" %>
 </head>
 
-<body style="margin-bottom:100px">
+<body>
 	<div class="container-fluid" id="inFrame">
     <%@ include file="../common/aside.jsp" %>
 		<header id="header">

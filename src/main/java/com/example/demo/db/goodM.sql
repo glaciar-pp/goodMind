@@ -122,6 +122,7 @@ CREATE TABLE users
 	isDeleted int DEFAULT 0 NOT NULL,
 	filename varchar(50),
 	admin varchar(20) DEFAULT 'user',
+	restoreRequest int DEFAULT 0,
 	PRIMARY KEY (uid)
 );
 

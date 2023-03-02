@@ -14,7 +14,7 @@ public interface AdminDao {
 	@Update("UPDATE users SET restoreRequest = 1 WHERE uid = #{uid}")
 	int updateRequestRequest(String uid);
 	
-	@Select("SELECT * FROM users WHERE isDeleted=1 "
+	@Select("SELECT * FROM users WHERE isDeleted=1 AND restoreRequest=1"
 			+ "	ORDER BY regDate DESC, uid"
 			+ "	LIMIT 10 OFFSET #{offset}")
 	public List<User> deletedUserList(int offset);

@@ -4,10 +4,11 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+	<%@ include file="../common/top.jsp" %>
     <%@ include file="../common/heading.jsp" %>
 </head>
 
-<body style="margin-bottom:100px">
+<body>
 	<div class="container-fluid" id="inFrame">
     <%@ include file="../common/aside.jsp" %>
 		<header id="header">
@@ -16,7 +17,7 @@
 		<!-- Content -->
 		<!-- 제목 -->
 		<h2>사용자 목록</h2><!-- 제목 -->
-		<a href="/goodM/admin/deletedUserList/1">탈퇴 회원 목록 바로가기</a>
+		<a href="/goodM/admin/deletedUserList/1">복원 요청한 탈퇴 회원 목록 바로가기</a>
 			<table class="table table-condensed table-hover" style="margin-bottom: 80px;">
                 <tr class="table-secondary d-flex">
                     <th class="col-1">번호</th>

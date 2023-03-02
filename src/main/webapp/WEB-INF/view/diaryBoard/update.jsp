@@ -4,11 +4,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <%@ include file="../common/top.jsp" %>
     <%@ include file="../common/heading.jsp" %>
     <script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
 </head>
 
-<body style="margin-bottom:100px">
+<body>
 	<div class="container-fluid" id="inFrame">
     <%@ include file="../common/aside.jsp" %>
 		<header id="header">
