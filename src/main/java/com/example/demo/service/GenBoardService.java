@@ -27,4 +27,5 @@ public interface GenBoardService {
 	
 	public void insertReply(Reply reply);
 	
+	public List<GenBoard> getGenBoardListByUid(String uid);
 }

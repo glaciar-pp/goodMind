@@ -48,4 +48,6 @@ public interface InfoBoardDao {
 	@Update("UPDATE infoBoard SET isDeleted=1 WHERE infoBid=#{infoBid}")
 	public void deleteInfoBoard(int infoBid);
 	
+	@Select("select * from infoBoard where uid=#{uid} ORDER BY infoBid DESC")
+	List<InfoBoard> getInfoBoardListByUid(String uid);
 }

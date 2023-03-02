@@ -78,4 +78,9 @@ public class GenBoardServiceImpl implements GenBoardService {
 		replyDao.insertReply(reply);
 	}
 
+	@Override
+	public List<GenBoard> getGenBoardListByUid(String uid) {
+		List<GenBoard> list = genBoardDao.getGenBoardListByUid(uid);
+		return list;
+	}
 }

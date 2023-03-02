@@ -48,4 +48,7 @@ public interface GenBoardDao {
 	@Update("UPDATE genBoard SET isDeleted=1 WHERE genBid=#{genBid}")
 	public void deleteGenBoard(int genBid);
 	
+	@Select("select * from genBoard where uid=#{uid} ORDER BY genBid DESC")
+	List<GenBoard> getGenBoardListByUid(String uid);
+	
 }

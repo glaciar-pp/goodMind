@@ -15,20 +15,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.example.demo.entity.GenBoard;
+import com.example.demo.entity.InfoBoard;
 import com.example.demo.entity.User;
-import com.example.demo.service.AdminService;
+import com.example.demo.service.GenBoardService;
+import com.example.demo.service.InfoBoardService;
 import com.example.demo.service.UserService;
 
 @Controller
 @RequestMapping("/goodM/user")
 public class UserController {
 
-	@Autowired
-	private UserService userService;	
+	@Autowired	private UserService userService; 
+	@Autowired	private GenBoardService genBoardService; 
+	@Autowired	private InfoBoardService infoBoardService; 
 	
 	@Value("${spring.servlet.multipart.location}") private String uploadDir;
 	
@@ -203,6 +206,30 @@ public class UserController {
 		userService.deleteUser(uid);
 		HttpSession session = req.getSession();
 		return "redirect:/goodM/user/logout/";
+	}
+
+	// 유저 스스로 삭제하는 경우
+	@GetMapping("/deleteUser/{uid}")
+	public String deleteUser(@PathVariable String uid, Model model) {
+		model.addAttribute("uid", uid);
+		return "user/deleteUser";
+	}
+	
+	@GetMapping("/deleteUserConfirm/{uid}")
+	public String deleteUserConfirm(@PathVariable String uid, HttpServletRequest req) {
+		userService.deleteUser(uid);
+		HttpSession session = req.getSession();
+		return "redirect:/goodM/user/logout/";
+	}
+		
+	@GetMapping("/myBoard")
+	public String myBoard(HttpSession session, Model model) {
+		String uid = (String) session.getAttribute("uid");
+		List<GenBoard> genList = genBoardService.getGenBoardListByUid(uid);
+		List<InfoBoard> infoList = infoBoardService.getInfoBoardListByUid(uid);
+		model.addAttribute("genBoardList", genList);
+		model.addAttribute("infoBoardList", infoList);
+		return "user/myBoard";
 	}
 	
 }

@@ -20,5 +20,5 @@ public interface InfoBoardService {
 	
 	public void increaseViewCount(int infoBid);
 	
-	
+	public List<InfoBoard> getInfoBoardListByUid(String uid);
 }

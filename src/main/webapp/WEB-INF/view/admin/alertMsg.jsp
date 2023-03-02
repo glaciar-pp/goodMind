@@ -14,10 +14,12 @@
 <body>
     <script>
 		var msg = '${msg}';
+		// 초기값 false로 설정
 		var noneUid = ${noneUid ? noneUid : false};
 		var wrongPwd = ${wrongPwd ? wrongPwd : false};
 		var wrongUid = ${wrongUid ? wrongUid : false};
 		var correctRequest = ${correctRequest ? correctRequest : false};
+		var requestedUid = ${requestedUid ? requestedUid : false};
 		
 		if (noneUid) {
 			alertify.alert(msg, function() {
@@ -37,6 +39,11 @@
 		} else if (correctRequest) {
 			alertify.alert(msg, function() {
 				alertify.message('복원 요청 되었습니다. 소요시간이 며칠 걸릴 수 있습니다.');
+				location.href='/goodM/user/login';
+			});
+		} else if (requestedUid) {
+			alertify.alert(msg, function() {
+				alertify.message('이미 복원 요청 된 ID입니다.');
 				location.href='/goodM/user/login';
 			});
 		}

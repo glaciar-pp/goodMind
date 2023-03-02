@@ -15,7 +15,7 @@
 		</header>
 		<!-- Content -->
 		<!-- 제목 -->
-		<h2>My page</h2><br>
+		<h2>My page</h2><a href="/goodM/user/myBoard/">내 글 목록 바로가기</a><br>
 		<!-- 프로필 이미지 -->
 		<div class="d-flex justify-content-center">
 			<c:if test="${empty user.filename}">
@@ -53,7 +53,7 @@
 			</table>
 			<br><br><br><br><br><br><br><br><br>
 			<span style="font-size: 1.0em;">
-				<a href="/goodM/user/delete/${user.uid}" class="ms-3"><i class="fas fa-trash-alt"></i>계정 탈퇴</a>
+				<a href="/goodM/user/deleteUser/${user.uid}" class="ms-3"><i class="fas fa-trash-alt"></i>계정 탈퇴</a>
 			</span>
 	</div>
 <%@ include file="../common/bottom.jsp" %>

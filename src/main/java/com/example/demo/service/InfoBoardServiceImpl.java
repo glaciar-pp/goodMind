@@ -56,4 +56,10 @@ public class InfoBoardServiceImpl implements InfoBoardService {
 		infoBoardDao.increaseCount(infoBid, field);
 	}
 
+	@Override
+	public List<InfoBoard> getInfoBoardListByUid(String uid) {
+		List<InfoBoard> list = infoBoardDao.getInfoBoardListByUid(uid);
+		return list;
+	}
+
 }

@@ -70,10 +70,13 @@ public class AdminController {
 	            if (!BCrypt.checkpw(pwd, u.getPwd())) {
 	                model.addAttribute("msg", "비밀번호가 틀렸습니다.");
 	                model.addAttribute("wrongPwd", true);
-	            } else {
+	            } else if(u.getRestoreRequest() == 0) {
 	            	adminService.updateRestoreRequest(uid);
 	                model.addAttribute("msg", "복원 요청 되었습니다. 소요시간이 며칠 걸릴 수 있습니다.");
 	                model.addAttribute("correctRequest", true);
+	            } else {
+	            	model.addAttribute("msg", "이미 복원 요청 된 ID입니다.");
+	                model.addAttribute("requestedUid", true);
 	            }
 	        } else {
 	            model.addAttribute("msg", "탈퇴한 회원이 아닙니다.");
@@ -85,6 +88,7 @@ public class AdminController {
 	        model.addAttribute("wrongPwd", false);
 	        model.addAttribute("wrongUid", false);
 	        model.addAttribute("correctRequest", false);
+	        model.addAttribute("requestedUid", false);
 	    }
 
 	    return "admin/alertMsg";
