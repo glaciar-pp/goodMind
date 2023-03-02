@@ -7,6 +7,7 @@
  <%@ include file="../common/heading.jsp" %>
   <!-- 설문 항목에 대한 값을 구한 뒤, result에 넣어준다. -->
   <script type="text/javascript">
+//다듬어진 첫번째 테스트 내용 예시  
 	function getScores() {
 		const result = {};
 		const surveys = document.querySelectorAll('.survey');
@@ -34,16 +35,10 @@
 		}
 		//결과
 		let message = "";
-		if (totalScore >= 0 && totalScore <= 4) {
-			message = "당신의 점수는 " + totalScore + "점으로, '우울 아님'으로 분류되었습니다. 유의미한 우울감이 시사되지 않습니다.";
-		} else if (totalScore >= 5 && totalScore <= 9) {
-			message = "당신의 점수는 " + totalScore + "점으로, '가벼운 우울'으로 분류되었습니다."
-			+ "다소 경미한 수준의 우울감이 있으나 일상생활에 지장을 줄 정도는 아닙니다. 다만, 이러한 기분상태가 지속될 경우 개인의 신체적, 심리적 대처자원을 저하시킬 수 있습니다. 그러한 경우, 가까운 지역센터나 전문기관을 방문하시기 바랍니다.";
-		} else if (totalScore >= 10 && totalScore <= 19) {
-			message = "당신의 점수는 " + totalScore + "점으로, '중간 정도의 우울'으로 분류되었습니다."
-			+ "이러한 수준의 우울감은 흔히 신체적, 심리적 대처자원을 저하시키며 개인의 일상생활을 어렵게 만들기도 합니다. 가까운 지역센터나 전문기관을 방문하여 보다 상세한 평가와 도움을 받아보시기 바랍니다.";
+		if (totalScore >= 0 && totalScore <= 9) {
+			message = "당신의 점수는 " + totalScore + "점으로, 인터넷게임 사용 관련 장애가 있을 가능성이 낮습니다. 계속해서 건강한 습관을 영위해보세요!";
 		} else {
-			message = "당신의 점수는 " + totalScore + "점으로, '심한 우울'으로 분류되었습니다. 전문기관의 치료적 개입과 평가가 요구됩니다.";
+			message = "당신의 점수는 " + totalScore + "점으로, 인터넷게임 사용 관련 장애가 있을 가능성이 있습니다. 추가적인 검사를 통해 인터넷게임 사용관련 장애가 있는지 확인해보시는 것을 추천합니다.";
 		}
 		document.getElementById('result').innerText = message;
 	}
@@ -60,82 +55,78 @@
 		<!-- 제목 -->
 		<h2>자가진단 테스트</h2><a href="/goodM/survey/surList" class="button big">목록으로 돌아가기</a>
 		<!-- 테스트 제목 -->
-		<h3>-우울증 건강설문(PHQ-9)-</h3>	
+		<h3>-정신건강 자가진단-</h3>	
 		<!-- 테스트 내용 -->
-		<p>지난 2주간, 얼마나 자주 다음과 같은 문제들로 곤란을 겪으셨습니까?<br>
-	   		지난 2주 동안 아래와 같은 생각을 한 날을 헤아려서 해당하는 숫자에 표시하세요.    
+		<p>지난 12개월 동안, 인터넷게임과 관련하여 아래의 증상을 얼마나 경험하였습니까?    
 		</p>
-		<p id="source">
-			※ 1번과 2번 질문에서 2점이나 3점을 받은 경우, 우울증에 부합되므로 설문을 진행해주세요.<br>
-			 그렇지 않다면 유의한 수준의 우울감으로 시사되지 않는 점 참고 부탁 드립니다.
-		</p>
-		<!-- 항목 시작 -->
+
+    <!-- 항목 시작(value 숫자 순서대로) -->
 	    <table class="table">
 		<tr>
 			<th>항목</th>
-			<th>없음</th>
-			<th>2-6일</th>
-			<th>7-12일</th>
-			<th>거의 매일</th>
+			<th>전혀 아님</th>
+			<th>가끔</th>
+			<th>자주</th>
+			<th>항상</th>
 		</tr>
 		 <tr class="survey">
-		    <td >1. 기분이 가라앉거나, 우울하거나, 희망이 없다고 느꼈다.</td>
+		 	<td>1. 이전에 했던 인터넷게임에 대해 계속 생각하거나, 인터넷 게임을 할 생각에 몰두했다.</td>
 		    <td><input type="radio" name="s1" value="0"></td>
 		    <td><input type="radio" name="s1" value="1"></td>
 		    <td><input type="radio" name="s1" value="2"></td>
 		    <td><input type="radio" name="s1" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>2. 평소 하던 일에 대한 흥미가 없어지거나 즐거움을 느끼지 못했다.</td>
+		    <td>2. 인터넷게임을 하지 않을때에는 초조하거나 불안하거나 슬프다.</td>
 		    <td><input type="radio" name="s2" value="0"></td>
 		    <td><input type="radio" name="s2" value="1"></td>
 		    <td><input type="radio" name="s2" value="2"></td>
 		    <td><input type="radio" name="s2" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>3. 잠들기가 어렵거나 자주 깼다 / 혹은 너무 많이 잤다.</td>
+		    <td>3. 인터넷에 쓰는 시간이 점점 길어진다.</td>
 		    <td><input type="radio" name="s3" value="0"></td>
 		    <td><input type="radio" name="s3" value="1"></td>
 		    <td><input type="radio" name="s3" value="2"></td>
 		    <td><input type="radio" name="s3" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>4. 평소보다 식욕이 줄었다 / 혹은 평소보다 많이 먹었다.</td>
+		    <td>4. 인터넷게임을 하는 것을 조절하려고 해보았지만 성공하지 못했다.</td>
 		    <td><input type="radio" name="s4" value="0"></td>
 		    <td><input type="radio" name="s4" value="1"></td>
 		    <td><input type="radio" name="s4" value="2"></td>
 		    <td><input type="radio" name="s4" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>5. 다른 사람들이 눈치 챌 정도로 평소보다 말과 행동이 느려졌다 / 혹은 너무 안절부절 못해서 가만히 앉아있을 수 없었다.</td>
+		    <td>5. 인터넷게임으로 인해 예전의 다른 취미 생활이나 오락 활동에 대한 흥미가 줄어들었다.</td>
 		    <td><input type="radio" name="s5" value="0"></td>
 		    <td><input type="radio" name="s5" value="1"></td>
 		    <td><input type="radio" name="s5" value="2"></td>
 		    <td><input type="radio" name="s5" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>6. 피곤하고 기운이 없었다.</td>
+		    <td>6. 사회적, 심리적 문제에도 불구하고 계속해서 인터넷게임을 과하게 한다.</td>
 		    <td><input type="radio" name="s6" value="0"></td>
 		    <td><input type="radio" name="s6" value="1"></td>
 		    <td><input type="radio" name="s6" value="2"></td>
 		    <td><input type="radio" name="s6" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>7. 내가 잘못 했거나, 실패했다는 생각이 들었다 / 혹은 자신과 가족을 실망시켰다고 생각했다.</td>
+		    <td>7. 가족이나 치료자, 또는 그 외의 사람에게 인터넷게임을 하는 데 사용한 시간을 속인 적이 있다.</td>
 		    <td><input type="radio" name="s7" value="0"></td>
 		    <td><input type="radio" name="s7" value="1"></td>
 		    <td><input type="radio" name="s7" value="2"></td>
 		    <td><input type="radio" name="s7" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>8. 신문을 읽거나 TV를 보는 것과 같은 일상적인 일에도 집중할 수가 없었다.</td>
+		    <td>8. 부정적인 감정을 해소하거나 회피하기 위해 인터넷게임을 한다.</td>
 		    <td><input type="radio" name="s8" value="0"></td>
 		    <td><input type="radio" name="s8" value="1"></td>
 		    <td><input type="radio" name="s8" value="2"></td>
 		    <td><input type="radio" name="s8" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>9. 차라리 죽는 것이 더 낫겠다고 생각했다 / 혹은 자해할 생각을 했다.</td>
+		    <td>9. 과도한 인터넷게임으로 인해 중요한 인간관계, 일, 교육이나 경력상의 기회를 위태롭게 하거나 잃은 적이 있다.</td>
 		    <td><input type="radio" name="s9" value="0"></td>
 		    <td><input type="radio" name="s9" value="1"></td>
 		    <td><input type="radio" name="s9" value="2"></td>
@@ -153,7 +144,7 @@
 		<div id="source">
 			<ol>
 				<li>
-					박승진·최혜라·최지혜·김건우·홍진표(2010). 한글판 우울증 선별도구(Patient Health Questionnaire-9, PHQ-9)의 신뢰도와 타당도. 대한불안의학회지 6, 119-24.
+					조선진, 이해국, 임현우, 조근호, 최삼욱, 오홍석. 중독 선별검사 도구 및 사용지침 개발. 2013, 가톨릭대학교, 한국건강증진재단.
 				</li>
 			</ol>
 		</div>

@@ -35,15 +35,9 @@
 		//결과
 		let message = "";
 		if (totalScore >= 0 && totalScore <= 4) {
-			message = "당신의 점수는 " + totalScore + "점으로, '우울 아님'으로 분류되었습니다. 유의미한 우울감이 시사되지 않습니다.";
-		} else if (totalScore >= 5 && totalScore <= 9) {
-			message = "당신의 점수는 " + totalScore + "점으로, '가벼운 우울'으로 분류되었습니다."
-			+ "다소 경미한 수준의 우울감이 있으나 일상생활에 지장을 줄 정도는 아닙니다. 다만, 이러한 기분상태가 지속될 경우 개인의 신체적, 심리적 대처자원을 저하시킬 수 있습니다. 그러한 경우, 가까운 지역센터나 전문기관을 방문하시기 바랍니다.";
-		} else if (totalScore >= 10 && totalScore <= 19) {
-			message = "당신의 점수는 " + totalScore + "점으로, '중간 정도의 우울'으로 분류되었습니다."
-			+ "이러한 수준의 우울감은 흔히 신체적, 심리적 대처자원을 저하시키며 개인의 일상생활을 어렵게 만들기도 합니다. 가까운 지역센터나 전문기관을 방문하여 보다 상세한 평가와 도움을 받아보시기 바랍니다.";
+			message = "당신의 점수는 " + totalScore + "점으로, 불안이 시사되지 않습니다.";
 		} else {
-			message = "당신의 점수는 " + totalScore + "점으로, '심한 우울'으로 분류되었습니다. 전문기관의 치료적 개입과 평가가 요구됩니다.";
+			message = "당신의 점수는 " + totalScore + "점으로, 불안이 시사됩니다. 주의가 필요합니다.";
 		}
 		document.getElementById('result').innerText = message;
 	}
@@ -60,86 +54,67 @@
 		<!-- 제목 -->
 		<h2>자가진단 테스트</h2><a href="/goodM/survey/surList" class="button big">목록으로 돌아가기</a>
 		<!-- 테스트 제목 -->
-		<h3>-우울증 건강설문(PHQ-9)-</h3>	
+		<h3>-불안장애 척도(GAD-7)-</h3>	
 		<!-- 테스트 내용 -->
-		<p>지난 2주간, 얼마나 자주 다음과 같은 문제들로 곤란을 겪으셨습니까?<br>
-	   		지난 2주 동안 아래와 같은 생각을 한 날을 헤아려서 해당하는 숫자에 표시하세요.    
+		<p>지난 2주 동안 당신은 다음의 문제들로 인해서 얼마나 자주 방해를 받았습니까?
 		</p>
-		<p id="source">
-			※ 1번과 2번 질문에서 2점이나 3점을 받은 경우, 우울증에 부합되므로 설문을 진행해주세요.<br>
-			 그렇지 않다면 유의한 수준의 우울감으로 시사되지 않는 점 참고 부탁 드립니다.
-		</p>
-		<!-- 항목 시작 -->
+    	<!-- 항목 시작(value 숫자 순서대로) -->
 	    <table class="table">
 		<tr>
 			<th>항목</th>
-			<th>없음</th>
-			<th>2-6일</th>
-			<th>7-12일</th>
-			<th>거의 매일</th>
+			<th>전혀 방해받지 않음</th>
+			<th>며칠 동안 방해 받음</th>
+			<th>2주 중 절반 이상 방해 받음</th>
+			<th>거의 매일 방해 받음</th>
 		</tr>
 		 <tr class="survey">
-		    <td >1. 기분이 가라앉거나, 우울하거나, 희망이 없다고 느꼈다.</td>
+		    <td >1. 초조하거나 불안하거나 조마조마하게 느낀다.</td>
 		    <td><input type="radio" name="s1" value="0"></td>
 		    <td><input type="radio" name="s1" value="1"></td>
 		    <td><input type="radio" name="s1" value="2"></td>
 		    <td><input type="radio" name="s1" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>2. 평소 하던 일에 대한 흥미가 없어지거나 즐거움을 느끼지 못했다.</td>
+		    <td>2. 걱정하는 것을 멈추거나 조절할 수가 없다.</td>
 		    <td><input type="radio" name="s2" value="0"></td>
 		    <td><input type="radio" name="s2" value="1"></td>
 		    <td><input type="radio" name="s2" value="2"></td>
 		    <td><input type="radio" name="s2" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>3. 잠들기가 어렵거나 자주 깼다 / 혹은 너무 많이 잤다.</td>
+		    <td>3. 여러 가지 것들에 대해 걱정을 너무 많이 한다.</td>
 		    <td><input type="radio" name="s3" value="0"></td>
 		    <td><input type="radio" name="s3" value="1"></td>
 		    <td><input type="radio" name="s3" value="2"></td>
 		    <td><input type="radio" name="s3" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>4. 평소보다 식욕이 줄었다 / 혹은 평소보다 많이 먹었다.</td>
+		    <td>4. 편하게 있기가 어렵다.</td>
 		    <td><input type="radio" name="s4" value="0"></td>
 		    <td><input type="radio" name="s4" value="1"></td>
 		    <td><input type="radio" name="s4" value="2"></td>
 		    <td><input type="radio" name="s4" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>5. 다른 사람들이 눈치 챌 정도로 평소보다 말과 행동이 느려졌다 / 혹은 너무 안절부절 못해서 가만히 앉아있을 수 없었다.</td>
+		    <td>5. 너무 안절부절 못해서 가만히 있기가 힘들다.</td>
 		    <td><input type="radio" name="s5" value="0"></td>
 		    <td><input type="radio" name="s5" value="1"></td>
 		    <td><input type="radio" name="s5" value="2"></td>
 		    <td><input type="radio" name="s5" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>6. 피곤하고 기운이 없었다.</td>
+		    <td>6. 쉽게 짜증이 나거나 쉽게 성을 내게 된다.</td>
 		    <td><input type="radio" name="s6" value="0"></td>
 		    <td><input type="radio" name="s6" value="1"></td>
 		    <td><input type="radio" name="s6" value="2"></td>
 		    <td><input type="radio" name="s6" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>7. 내가 잘못 했거나, 실패했다는 생각이 들었다 / 혹은 자신과 가족을 실망시켰다고 생각했다.</td>
+		    <td>7. 마치 끔찍한 일이 생길 것처럼 두렵게 느껴진다.</td>
 		    <td><input type="radio" name="s7" value="0"></td>
 		    <td><input type="radio" name="s7" value="1"></td>
 		    <td><input type="radio" name="s7" value="2"></td>
 		    <td><input type="radio" name="s7" value="3"></td>
-		</tr>
-		<tr class="survey">
-		    <td>8. 신문을 읽거나 TV를 보는 것과 같은 일상적인 일에도 집중할 수가 없었다.</td>
-		    <td><input type="radio" name="s8" value="0"></td>
-		    <td><input type="radio" name="s8" value="1"></td>
-		    <td><input type="radio" name="s8" value="2"></td>
-		    <td><input type="radio" name="s8" value="3"></td>
-		</tr>
-		<tr class="survey">
-		    <td>9. 차라리 죽는 것이 더 낫겠다고 생각했다 / 혹은 자해할 생각을 했다.</td>
-		    <td><input type="radio" name="s9" value="0"></td>
-		    <td><input type="radio" name="s9" value="1"></td>
-		    <td><input type="radio" name="s9" value="2"></td>
-		    <td><input type="radio" name="s9" value="3"></td>
 		</tr>
     </table>
 	<br>
@@ -153,7 +128,10 @@
 		<div id="source">
 			<ol>
 				<li>
-					박승진·최혜라·최지혜·김건우·홍진표(2010). 한글판 우울증 선별도구(Patient Health Questionnaire-9, PHQ-9)의 신뢰도와 타당도. 대한불안의학회지 6, 119-24.
+					 Spitzer RL, Kroenke K, Williams JB, et al.(2006). A brief measure for assessing generalized anxiety disorder: the GAD-7, Arch Intern Med 166, 1092–7
+				</li>
+				<li>
+					www.phqscreeners.com
 				</li>
 			</ol>
 		</div>
