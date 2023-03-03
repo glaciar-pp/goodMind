@@ -67,6 +67,7 @@ var bounds = new kakao.maps.LatLngBounds();
 
 var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
+
 //마커를 담을 배열입니다
 var markers = [];
 
@@ -90,6 +91,21 @@ searchData.push(searchDataObj);
 
 searchPlaces();
 
+//목록 숨기기 토글
+$(document).ready(function() {
+	$("#menu_wrap").show();
+	$("#menuToggle").on("click", function() {
+	  var menuWrap = $("#menu_wrap");
+	  menuWrap.toggle();
+	  var toggleButton = $("#menuToggle");
+	  toggleButton.text(menuWrap.is(":visible") ? "목록 숨기기" : "목록 보이기");
+	});
+});
+
+//myLocation 버튼 클릭 이벤트 리스너 등록
+document.getElementById('myLocation').addEventListener('click', function() {
+ myLocation();
+});
 </script>
 
 

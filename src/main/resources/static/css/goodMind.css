@@ -131,29 +131,6 @@ header {
   text-align: center;
 }
 
-/* 
-#airLogo {
-  display: block;
-  margin: 0 auto;
-  max-width: 75%;
-}
-#airLogo{
-  display: block;
-  margin: 0 auto;
-  margin-top: 0px;
-  margin-right: auto;
-  margin-bottom: 0px;
-  margin-left: auto;
-  max-width: 75%;
-}
-
-#airLogo{
--moz-transform: none;
--webkit-transform: none;
--ms-transform: none;
-transform: none;
-} */
-
 /* projectName = 기분어때 */
 #projectName {
   color: var(--white-color);
@@ -168,7 +145,7 @@ transform: none;
 /* 전체 테이블 대상 글자 왼쪽 정렬 */
 th,
 td {
-  text-align: left;
+  text-align: center;
 }
 
 /* 1-2 링크 이벤트 처리 */
@@ -218,20 +195,21 @@ hr {
   padding: var(--padding);
   text-decoration: none;
 }
+
+/* 2-7 sidenav */
 /* Style the side navigation */
 .sidenav {
 	border-radius: 20px;
 	height: 80%;
 	width: 80px;
 	position: fixed;
-		z-index: 1;
-		top: 0;
-		left: 0;
+  z-index: 1;
+	top: 0;
+  left: 0;
 	background-color: var(--white-color);
 	overflow-x: hidden;
-	 margin: 0 auto;
+	margin: 0 auto;
 }
-
 
 /* Side navigation links */
 .sidenav a {
@@ -286,8 +264,8 @@ li {
 }
 
 /* 3-2 카드형태 */
-.card h-100 {
-   width: 90%;
+.card.h-100 {
+  width: 90%;
   height: 90%;
   padding: 2px;
   margin-bottom: 10px;
@@ -348,7 +326,7 @@ min-height: 70px;
 }
 
 /* 4.공통사항*/
-/* 4-1 input type title, content width 변경 -> 화면크기에 따라 달라지는데 이쁘지 않음ㅜㅜ 작업필요!!!*/
+/* 4-1 input type title, content width*/
 /* #write-box {
   position: relative;
   width: 100%;
@@ -378,11 +356,26 @@ min-height: 70px;
   float: right;
   margin-right: 50px;
 }
+/* 4-3 Board/list 제목 왼쪽정렬 */
+.listTitle{
+  color: black;
+  font-family: 'IBMPlexSansKR-Regular';
+  font-size: 18px;
+  text-align: left !important;
+  text-decoration: none;
+}
+.listTitle:hover {
+  color: rgba(0, 0, 0, 0.443);
+  font-family: 'IBMPlexSansKR-Regular';
+  font-size: 18px;
+  text-align: left !important;
+  text-decoration: none;
+}
 
 /* 4-3 전체 jsp */
 #inFrame {
   /* max-height: max-content !important; */
-  min-height: 1000px;
+  min-height: 1100px;
   background-color: var(--white-color) !important;
   border-radius: 18px;
   margin-bottom: 100px;
@@ -475,12 +468,6 @@ min-height: 70px;
   text-decoration: none;
 }
 
-/* 5-6 캘린더 현재 년/월표시 네모박스: 바꾸고 싶은데 안바뀜ㅜ.ㅜ 작업필요!!! 
-.badge bg-primary mx-2 {
-  color: var(--white-color);
-  background: var(--lavender-dark-color);
-} */
-
 /* 6. 챗봇 */
 /* 6-1 기부니 챗봇 버튼 */
 #btnImage {
@@ -560,20 +547,5 @@ min-height: 70px;
   color: rgba(0, 0, 0, 0.443);
   font-family: 'IBMPlexSansKR-Regular';
   font-size: 24px;
-  text-decoration: none;
-}
-
-.listTitle{
-  color: black;
-  font-family: 'IBMPlexSansKR-Regular';
-  font-size: 18px;
-  text-align: left !important;
-  text-decoration: none;
-}
-.listTitle:hover {
-  color: rgba(0, 0, 0, 0.443);
-  font-family: 'IBMPlexSansKR-Regular';
-  font-size: 18px;
-  text-align: left !important;
   text-decoration: none;
 }

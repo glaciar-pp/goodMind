@@ -228,8 +228,6 @@ function addMarker(coords, searchList) {
         image: markerImage        
     });	
     
- 	// 'searchData' 속성에 검색 결과 객체 저장
-    marker.searchList = searchList;
  	
     marker.setMap(map);
     markers.push(marker);
@@ -259,6 +257,10 @@ function myLocation() {
             
             makeCircle(lat, lon);
            
+            var marker = new kakao.maps.Marker({
+				map: map,
+				position: locPosition
+			});
         });
     } else {
         alert("현재 위치를 찾을 수 없습니다.");
@@ -266,8 +268,6 @@ function myLocation() {
 }
 
 function makeCircle(lat, lon) {
-	
-	
 	 
 	//select 태그에서 선택된 반경값
 	var radiusSelect = document.getElementById('radiusSelect');
@@ -298,19 +298,3 @@ function makeCircle(lat, lon) {
 		};	
 	
 }
-
-// 목록 숨기기 토글
-$(document).ready(function() {
-	$("#menu_wrap").show();
-	$("#menuToggle").on("click", function() {
-	  var menuWrap = $("#menu_wrap");
-	  menuWrap.toggle();
-	  var toggleButton = $("#menuToggle");
-	  toggleButton.text(menuWrap.is(":visible") ? "목록 숨기기" : "목록 보이기");
-	});
-});
-
-//myLocation 버튼 클릭 이벤트 리스너 등록
-document.getElementById('myLocation').addEventListener('click', function() {
- myLocation();
-});

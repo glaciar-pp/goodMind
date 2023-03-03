@@ -56,7 +56,7 @@
 			</div>
 			<hr>
 			<h2>자가진단 테스트</h2>
-			<div class="row row-col-1 row-col-md-3 g-4">
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 ms-5 me-5">
 				<div class="col">
 					<div class="card h-100">
 						<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
@@ -90,7 +90,19 @@
 						</div>
 					</div>
 				</div>
+				<div class="col">
+				<div class="card h-100">
+					<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
+					<div class="card-body">
+						<h5 class="card-title">인터넷 게임중독(IGUESS)</h5>
+						<hr>
+						<p class="card-text" style="color: grey">측정내용: 인터넷게임 중독 증상 선별</p>
+						<a href="/goodM/survey/surIGUESS class="button big">테스트 하러가기</a>
+					</div>
+				</div>
 			</div>
+			</div>
+			<br>
 		</div>
 	<%@ include file="../common/bottom.jsp" %>
 </body>
