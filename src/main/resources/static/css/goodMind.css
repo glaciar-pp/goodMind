@@ -310,11 +310,22 @@ li {
 
 /* 4.공통사항*/
 /* 4-1 input type title, content width 변경 -> 화면크기에 따라 달라지는데 이쁘지 않음ㅜㅜ 작업필요!!!*/
-#write-box {
+/* #write-box {
   position: relative;
-  width: 70%;
+  width: 100%;
   float: center;
   text-align: center;
+}
+#content {
+  position: relative;
+  width: 100%; 
+  float: center;
+  text-align: center;
+} */
+
+.d-flex, .form-control {
+  position: relative;
+  width: 100%; 
 }
 
 /* 4-2 search & 검색 오른쪽정렬*/
@@ -336,7 +347,7 @@ li {
   background-color: var(--white-color) !important;
   border-radius: 18px;
   padding-bottom: auto !important;
-  margin-bottom: auto !important;
+  margin-bottom: 100px !important;
 }
 
 /* 5. 버튼 */

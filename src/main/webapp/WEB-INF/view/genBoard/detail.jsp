@@ -42,7 +42,7 @@
 		<!-- 내용 -->
 		<div class="row">
 		<div class="col-12">
-			<h5>${genBoard.title}</h5>
+			<h6>제목: ${genBoard.title}</h6>
 			<h6>글 번호: ${genBoard.genBid} | ${fn:replace(genBoard.modTime, 'T', ' ')}</h6>
 			<h6>첨부 파일: 
 			<c:forEach var="file" items="${fileList}">

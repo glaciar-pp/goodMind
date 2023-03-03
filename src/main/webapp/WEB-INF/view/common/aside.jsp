@@ -9,15 +9,15 @@
 		<hr>
 		<ul>
 			<li><a href="/goodM/user/main"><i class="fa-sharp fa-solid fa-house"></i>  메인</a></li>
-			<li><a href="/goodM/user/about"><i class="fa-regular fa-block-question"></i>  소개</a></li>
+			<li><a href="/goodM/user/about"><i class="fa-solid fa-question"></i>  소개</a></li>
 			<li><a href="/goodM/calendar/calendar"><i class="fa-solid fa-calendar-days"></i>  기분일기</a></li>	
 			<li><a href="/goodM/map/kakaoMap"><i class="fa-solid fa-map-location-dot"></i>  병원/기관 찾기</a></li>
 			<li><a href="/goodM/infoBoard/list?p=1&f=&q="><i class="fa-regular fa-rectangle-list"></i>  심리건강정보 게시판</a></li>
-			<li><a href="/goodM/genBoard/list?p=1&f=&q="><i class="fa-solid fa-rectangle-list"></i>  자유게시판</a></li>
-			<li><a href="/goodM/survey/surList"><i class="fa-sharp fa-regular fa-clipboard-list-check"></i>  자가진단 테스트</a></li>
+			<li><a href="/goodM/genBoard/list?p=1&f=&q="><i class="fa-regular fa-rectangle-list"></i>  자유게시판</a></li>
+			<li><a href="/goodM/survey/surList"><i class="fa-solid fa-rectangle-list"></i>  자가진단 테스트</a></li>
         <c:choose>
 			  <c:when test="${uid == 'admin'}">
-			    <li><a href="/goodM/user/list/1">관리자페이지</a></li>
+			    <li><a href="/goodM/user/list/1"><i class="fa-solid fa-address-card"></i>  관리자페이지</a></li>
 			    </c:when>
 			    <c:otherwise>
 			     <li><a href="/goodM/user/myPage"><i class="fa-solid fa-address-card"></i>  마이페이지</a></li>

@@ -41,7 +41,7 @@
 		</h2>
 		<div class="row">
 			<div class="col-8">
-				<h5>${infoBoard.title}</h5>
+				<h6>제목: ${infoBoard.title}</h6>
 				<h6>글 번호: ${infoBoard.infoBid} | ${fn:replace(infoBoard.modTime, 'T', ' ')}</h6>
 				<h6>첨부 파일: 
 				<c:forEach var="file" items="${fileList}">
@@ -56,7 +56,7 @@
 			
 			<div class="col-12"><hr></div>
 			<div class="col-12">
-			    ${fn:replace(infoBoard.content, newline, '<br>')}
+			${fn:replace(infoBoard.content, newline, '<br>')}
 			</div>
 			<hr style="margin-bottom:300px">
 		</div>

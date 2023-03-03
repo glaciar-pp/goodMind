@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <%@ include file="../common/heading.jsp" %>
+	<%@ include file="../common/top.jsp" %>
+  <%@ include file="../common/heading.jsp" %>
 </head>
 
 <body>

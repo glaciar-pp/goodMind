@@ -4,7 +4,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <%@ include file="../common/heading.jsp" %>
+	<%@ include file="../common/top.jsp" %>
+	<%@ include file="../common/heading.jsp" %>
   <!-- 설문 항목에 대한 값을 구한 뒤, result에 넣어준다. -->
   <script type="text/javascript">
 //다듬어진 첫번째 테스트 내용 예시  
@@ -45,7 +46,7 @@
 </script>
 </head>
 
-<body style="margin-bottom:100px">
+<body>
 	<div class="container-fluid" id="inFrame">
 	<%@ include file="../common/aside.jsp" %>
 		<header id="header">

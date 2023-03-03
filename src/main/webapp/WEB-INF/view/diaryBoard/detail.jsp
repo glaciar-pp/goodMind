@@ -11,7 +11,7 @@
 </head>
 
 <body>
-	<div class="container-fluid" id="inFrame">
+	<div class="container-fluid" id="inFrame" style="margin-bottom: 100px;">
     <%@ include file="../common/aside.jsp" %>
 		<header id="header">
 			<a href="/goodM/user/main" class="logo"><strong><img src="/img/logo.png" alt="" width="30px" height="30px"></strong> by 멀캠가네 둘째 조</a>
@@ -40,7 +40,7 @@
 		</h2>
         <div class="row">
             <div class="col-12">
-                <h5>${diaryBoard.title}</h5>
+                <h6>제목: ${diaryBoard.title}</h6>
                 <h6>글 번호: ${diaryBoard.did} | ${fn:replace(diaryBoard.modTime, 'T', ' ')}</h6> 
                 <h6>기분: <img src="/img/sentiImage${diaryBoard.score}.png" height="30px"></h6>
                 <h6>첨부 파일: 
@@ -51,7 +51,7 @@
             </div>
             <div class="col-12"><hr></div>
             <div class="col-12">
-                ${fn:replace(diaryBoard.content, newline, '<br>')}
+							${fn:replace(diaryBoard.content, newline, '<br>')}
             </div>
         </div>
 	</div>
