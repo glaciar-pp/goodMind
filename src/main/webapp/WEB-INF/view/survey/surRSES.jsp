@@ -63,15 +63,18 @@
 		</header>
 		<!-- Content -->
 		<!-- 제목 -->
-		<h2>자가진단 테스트</h2><a href="/goodM/survey/surList" class="button big">목록으로 돌아가기</a>
+		<h2>자가진단 테스트<a href="/goodM/survey/surList" class="button big">목록으로 돌아가기</a></h2>
 		<!-- 테스트 제목 -->
-		<h3>-자아존중감척도(RSES)-</h3>	
+		<br>
+		
+		<h5>-자아존중감 척도(RSES)-</h5>	
 		<!-- 테스트 내용 -->
 		<p>다음의 각 문항들을 읽고 최근 일주일 동안 자신에게 가장 적합하다고 생각되는 곳에 표기해 주십시오.  
 		</p>
+		<hr>
 		<!-- 항목 시작(value 숫자 역순) -->
 	    <table class="table">
-		<tr>
+		<tr style="background-color: #ccccff">
 			<th>항목</th>
 			<th>매우 그렇지 않다</th>
 			<th>대체로 그렇지 않다</th>
@@ -160,8 +163,11 @@
 			    <td><input type="radio" name="s10" value="0"></td>
 			</tr>
     </table>
+	<p id="source">
+		※ 모든 척도는 증상의 정도, 성향을 파악하는 도구일 뿐입니다.
+	</p>
 	<br>
-		<button onclick="getScores()" class="btn btn-primary">결과 확인하기</button>
+		<button onclick="getScores()" class="btn">결과 확인하기</button>
 		<br>
 		<br>
 		<div id="surRes">

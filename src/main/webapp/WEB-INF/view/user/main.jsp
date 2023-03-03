@@ -45,18 +45,23 @@
 				</div>
 				<div class="col">
 				<i class="fa-solid fa-heart" id="mainIcon"></i>
-					<h3>게시판을 통한 정보 공유</h3>
+					<h3>정보 공유</h3>
 					<p>심리건강정보 공유 게시판에 올라오는 정보를 통해 심리건강 지식을 얻고, 본인의 좋은 노하우가 있다면 자유게시판을 통해 공유해보세요.</p>
+				</div>
+				<div class="col">
+				<i class="fa-solid fa-list-check" id="mainIcon"></i>
+					<h3>자가진단</h3>
+					<p>병원에 가기 망설여진다면, 자가진단을 통해 내 마음의 상태를 알아보아요.<br>※ 모든 척도는 증상의 정도, 성향을 파악하는 도구일 뿐입니다.</p>
 				</div>
 			</div>
 			<hr>
 			<h2>자가진단 테스트</h2>
-			<div class="row row-cols-1 row-cols-md-2 g-4">
+			<div class="row row-col-1 row-col-md-3 g-4">
 				<div class="col">
 					<div class="card h-100">
 						<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
 						<div class="card-body">
-							<h5 class="card-title">정신건강 자가진단</h5>
+							<h5 class="card-title">정신건강 자가진단(K10)</h5>
 							<hr>
 							<p class="card-text" style="color: grey">측정내용: 우울, 불안, 신경과민 등</p>
 							<a href="/goodM/survey/surK10" class="button big">테스트 하러가기</a>
@@ -78,19 +83,10 @@
 					<div class="card h-100">
 						<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
 						<div class="card-body">
-							<h5 class="card-title">정신건강 자가진단</h5>
+							<h5 class="card-title">스트레스 척도(PSS)</h5>
 							<hr>
-							<p class="card-text" style="color: grey">측정내용: 우울, 불안, 신경과민 등</p>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="card h-100">
-						<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
-						<div class="card-body">
-							<h5 class="card-title">정신건강 자가진단</h5>
-							<hr>
-							<p class="card-text" style="color: grey">측정내용: 우울, 불안, 신경과민 등</p>
+							<p class="card-text" style="color: grey; margin-bottom:15px">측정내용: 스트레스</p>
+							<a href="/goodM/survey/surPSS" class="button big">테스트 하러가기</a>
 						</div>
 					</div>
 				</div>

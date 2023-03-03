@@ -218,6 +218,33 @@ hr {
   padding: var(--padding);
   text-decoration: none;
 }
+/* Style the side navigation */
+.sidenav {
+	border-radius: 20px;
+	height: 80%;
+	width: 80px;
+	position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+	background-color: var(--white-color);
+	overflow-x: hidden;
+	 margin: 0 auto;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+  color: var(--lavender-color);
+  padding: 5px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: #ccccff;
+  color: black;
+}
 
 /* 2-7 마우스 오버: sideBar,  boardTitle */
 a {
@@ -246,8 +273,8 @@ li {
 /* 2-8 출처 표시 등 회색 & 작은 글씨 표시용 */
 #source {
 	font-family: 'IBMPlexSansKR-Regular';
-  font-size: 10px;
-  color: var(--grey-dark-color);
+	font-size: 12px;
+	color: #808080;
 }
 
 /* 3. 아이콘, 박스, 카드 등 도형형태 서식 */
@@ -255,12 +282,24 @@ li {
 #mainIcon {
   color: #a0a0ff;
   font-size: 100px;
-  margin: 10px 0 10px 100px;
+/*   margin: 10px 0 10px 100px; */
 }
 
-/* 3-2 카드형태 이미지 사이즈 작게 설정하기: 작업필요!!! */
+/* 3-2 카드형태 */
 .card h-100 {
-  image-rendering: 50px;
+   width: 90%;
+  height: 90%;
+  padding: 2px;
+  margin-bottom: 10px;
+}
+
+.card-title {
+min-height: 70px;
+font-weight: bold;
+}
+
+.card-text {
+min-height: 70px;
 }
 
 /* 3-3  박스 양식 */
@@ -294,8 +333,8 @@ li {
 
 /* 3-5 자가진단 테스트 결과창 */
 #surRes {
-	max-width: 80%;
-	min-height: 100px;
+	width: 80%;
+	min-height: 200px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 20px;
@@ -343,11 +382,10 @@ li {
 /* 4-3 전체 jsp */
 #inFrame {
   /* max-height: max-content !important; */
-  min-height: min-content;
+  min-height: 1000px;
   background-color: var(--white-color) !important;
   border-radius: 18px;
-  padding-bottom: auto !important;
-  margin-bottom: 100px !important;
+  margin-bottom: 100px;
 }
 
 /* 5. 버튼 */
@@ -522,5 +560,20 @@ li {
   color: rgba(0, 0, 0, 0.443);
   font-family: 'IBMPlexSansKR-Regular';
   font-size: 24px;
+  text-decoration: none;
+}
+
+.listTitle{
+  color: black;
+  font-family: 'IBMPlexSansKR-Regular';
+  font-size: 18px;
+  text-align: left !important;
+  text-decoration: none;
+}
+.listTitle:hover {
+  color: rgba(0, 0, 0, 0.443);
+  font-family: 'IBMPlexSansKR-Regular';
+  font-size: 18px;
+  text-align: left !important;
   text-decoration: none;
 }

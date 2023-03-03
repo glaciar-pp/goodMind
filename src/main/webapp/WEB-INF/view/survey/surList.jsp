@@ -106,6 +106,7 @@
 				</div>
 			</div>
 		</div>
+		<br>
 	</div>
 <%@ include file="../common/bottom.jsp" %>
 </body>
