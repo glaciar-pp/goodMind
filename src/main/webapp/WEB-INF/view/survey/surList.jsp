@@ -16,12 +16,12 @@
 		<!-- Content -->
 		<!-- 제목 -->
 		<h2>자가진단 테스트</h2>
-		<div class="row row-cols-1 row-cols-md-2 g-4">
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 ms-5 me-3">
 			<div class="col">
 				<div class="card h-100">
-					<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
+					<img src="/img/survey/K10.jpg" class="card-img-top" alt="thumbnail image">
 					<div class="card-body">
-						<h5 class="card-title">정신건강 자가진단</h5>
+						<h5 class="card-title">정신건강 자가진단(K10)</h5>
 						<hr>
 						<p class="card-text" style="color: grey">측정내용: 우울, 불안, 신경과민 등</p>
 						<a href="/goodM/survey/surK10" class="button big">테스트 하러가기</a>
@@ -30,7 +30,7 @@
 			</div>
 			<div class="col">
 				<div class="card h-100">
-					<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
+					<img src="/img/survey/PHQ-9.jpg" class="card-img-top" alt="thumbnail image">
 					<div class="card-body">
 						<h5 class="card-title">우울증 건강설문(PHQ-9)</h5>
 						<hr>
@@ -41,7 +41,7 @@
 			</div>
 			<div class="col">
 				<div class="card h-100">
-					<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
+					<img src="/img/survey/GAD-7.jpg" class="card-img-top" alt="thumbnail image">
 					<div class="card-body">
 						<h5 class="card-title">불안장애 척도(GAD-7)</h5>
 						<hr>
@@ -52,7 +52,7 @@
 			</div>
 			<div class="col">
 				<div class="card h-100">
-					<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
+					<img src="/img/survey/RSES.jpg" class="card-img-top" alt="thumbnail image">
 					<div class="card-body">
 						<h5 class="card-title">자아존중감척도(RSES)</h5>
 						<hr>
@@ -63,7 +63,7 @@
 			</div>
 			<div class="col">
 				<div class="card h-100">
-					<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
+					<img src="/img/survey/PSS.jpg" class="card-img-top" alt="thumbnail image">
 					<div class="card-body">
 						<h5 class="card-title">스트레스 척도(PSS)</h5>
 						<hr>
@@ -74,7 +74,7 @@
 			</div>
 			<div class="col">
 				<div class="card h-100">
-					<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
+					<img src="/img/survey/AUDIT_K.jpg" class="card-img-top" alt="thumbnail image">
 					<div class="card-body">
 						<h5 class="card-title">위험음주자 선별도구(AUDIT_K)</h5>
 						<hr>
@@ -85,7 +85,7 @@
 			</div>
 			<div class="col">
 				<div class="card h-100">
-					<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
+					<img src="/img/survey/IGUESS.jpg" class="card-img-top" alt="thumbnail image">
 					<div class="card-body">
 						<h5 class="card-title">인터넷 게임중독(IGUESS)</h5>
 						<hr>
@@ -96,7 +96,7 @@
 			</div>
 			<div class="col">
 				<div class="card h-100">
-					<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
+					<img src="/img/survey/mKPQ-16.jpg" class="card-img-top" alt="thumbnail image">
 					<div class="card-body">
 						<h5 class="card-title">조기 정신증 선별도구(mKPQ-16)</h5>
 						<hr>
@@ -105,6 +105,10 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<br>
+		<div id="source">
+			<p>※ 이미지 작가: storyset / 출처: Freepik</p>
 		</div>
 		<br>
 	</div>

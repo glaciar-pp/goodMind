@@ -8,9 +8,18 @@
             <div class="navbar-text me-3" id="projectName" >기분어때?
             </div>
             <div class="navbar-text me-3" id="welcome"> 
-  			<c:if test="${not empty uname}">
-                ${uname}님 환영합니다. 
-			</c:if>   
+	  			<c:if test="${not empty uname}">
+	                ${uname}님 환영합니다. 
+				</c:if>
+				<c:if test="${empty uname}">
+	                비회원 상태입니다. 
+				</c:if>
+				<c:if test="${not empty uid}">
+				<a class="float-end" href="/goodM/user/logout"><i class="fas fa-sign-out-alt"></i>  로그아웃</a>
+				</c:if>
+				<c:if test="${empty uid}">
+				<a class="float-end" href="/goodM/user/login"><i class="fas fa-sign-out-alt"></i> 로그인</a>
+				</c:if>
             </div>
         </nav>
     </div>    

@@ -4,9 +4,10 @@ SET SESSION FOREIGN_KEY_CHECKS=0;
 
 DROP TABLE IF EXISTS diary;
 DROP TABLE IF EXISTS diaryBoard;
-DROP TABLE IF EXISTS likeList;
+DROP TABLE IF EXISTS genLikeTable;
 DROP TABLE IF EXISTS reply;
 DROP TABLE IF EXISTS genBoard;
+DROP TABLE IF EXISTS infoLikeTable;
 DROP TABLE IF EXISTS infoBoard;
 DROP TABLE IF EXISTS map;
 DROP TABLE IF EXISTS testResult;
@@ -56,7 +57,18 @@ CREATE TABLE genBoard
 	replyCount int DEFAULT 0 NOT NULL,
 	isDeleted int DEFAULT 0 NOT NULL,
 	files varchar(100),
+	likeCount int DEFAULT 0 NOT NULL,
 	PRIMARY KEY (genBid)
+);
+
+
+CREATE TABLE genLikeTable
+(
+	lid int NOT NULL AUTO_INCREMENT,
+	genBid int NOT NULL,
+	uid varchar(20) NOT NULL,
+	likeTime datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	PRIMARY KEY (lid)
 );
 
 
@@ -70,17 +82,18 @@ CREATE TABLE infoBoard
 	viewCount int DEFAULT 0 NOT NULL,
 	isDeleted int DEFAULT 0 NOT NULL,
 	files varchar(100),
+	likeCount int DEFAULT 0 NOT NULL,
 	PRIMARY KEY (infoBid)
 );
 
 
-CREATE TABLE likeList
+CREATE TABLE infoLikeTable
 (
-	likeCount int DEFAULT 0 NOT NULL,
-	uid varchar(20) NOT NULL,
-	genBid int NOT NULL,
+	lid int NOT NULL AUTO_INCREMENT,
 	infoBid int NOT NULL,
-	PRIMARY KEY (likeCount)
+	uid varchar(20) NOT NULL,
+	likeTime datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	PRIMARY KEY (lid)
 );
 
 
@@ -130,7 +143,7 @@ CREATE TABLE users
 
 /* Create Foreign Keys */
 
-ALTER TABLE likeList
+ALTER TABLE genLikeTable
 	ADD FOREIGN KEY (genBid)
 	REFERENCES genBoard (genBid)
 	ON UPDATE RESTRICT
@@ -146,7 +159,7 @@ ALTER TABLE reply
 ;
 
 
-ALTER TABLE likeList
+ALTER TABLE infoLikeTable
 	ADD FOREIGN KEY (infoBid)
 	REFERENCES infoBoard (infoBid)
 	ON UPDATE RESTRICT
@@ -178,6 +191,14 @@ ALTER TABLE genBoard
 ;
 
 
+ALTER TABLE genLikeTable
+	ADD FOREIGN KEY (uid)
+	REFERENCES users (uid)
+	ON UPDATE RESTRICT
+	ON DELETE RESTRICT
+;
+
+
 ALTER TABLE infoBoard
 	ADD FOREIGN KEY (uid)
 	REFERENCES users (uid)
@@ -186,7 +207,7 @@ ALTER TABLE infoBoard
 ;
 
 
-ALTER TABLE likeList
+ALTER TABLE infoLikeTable
 	ADD FOREIGN KEY (uid)
 	REFERENCES users (uid)
 	ON UPDATE RESTRICT

@@ -174,7 +174,7 @@ h2 {
 /* 2-3 main.jsp 소제목: 각 메뉴의이름*/
 h3 {
   font-family: 'ONE-Mobile-POP';
-  margin: 10px 0 10px 100px;
+ /*  margin: 10px 0 10px 100px; */
 }
 
 /* 2-4 main.jsp 소제목의 설명글: 가독성있게 스타일 정해야함!!!!! 작업필요!!! */
@@ -200,15 +200,17 @@ hr {
 /* Style the side navigation */
 .sidenav {
 	border-radius: 20px;
-	height: 80%;
+	height: 50%;
 	width: 80px;
 	position: fixed;
   z-index: 1;
-	top: 0;
-  left: 0;
+	top: 25%;
+  	left: 0;
 	background-color: var(--white-color);
 	overflow-x: hidden;
 	margin: 0 auto;
+	font-family: 'ONE-Mobile-POP';
+	color: var(--lavender-color);
 }
 
 /* Side navigation links */
@@ -258,9 +260,10 @@ li {
 /* 3. 아이콘, 박스, 카드 등 도형형태 서식 */
 /* 3-1 아이콘 색 */
 #mainIcon {
-  color: #a0a0ff;
-  font-size: 100px;
-/*   margin: 10px 0 10px 100px; */
+	color: #a0a0ff;
+	font-size: 100px;
+	text-align: center;
+	margin: 10px;
 }
 
 /* 3-2 카드형태 */
@@ -269,6 +272,12 @@ li {
   height: 90%;
   padding: 2px;
   margin-bottom: 10px;
+}
+.card-img-top{
+	width: 100%;
+	float: none; margin: 0 auto;
+	height: 30vw;
+	object-fit: fill;
 }
 
 .card-title {
@@ -477,8 +486,8 @@ min-height: 70px;
   height: 80px;
   margin: 6px;
   position: fixed;
-  bottom: 70px;
-  right: 10px;
+  bottom: 60px;
+  right: 20px;
   background-color: #a0a0ff;
   border-radius: 50%;
   box-shadow: 20px 20px 20px -20px #a0a0ff;
