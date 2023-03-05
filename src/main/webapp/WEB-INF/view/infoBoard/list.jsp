@@ -61,7 +61,7 @@
 						<div class="card-body">
 							<h5 class="card-title">${info_board.title}</h5>
 							<hr>
-							<p class="card-text" style="color: grey">조회수: ${info_board.viewCount}</p>
+							<p class="card-text" style="color: grey">조회수: ${info_board.viewCount} &nbsp;&nbsp; 좋아요: ${info_board.likeCount}</p>
 							<c:if test="${today eq fn:substring(info_board.modTime, 0, 10)}">
 								<p class="card-text">${fn:substring(info_board.modTime, 11, 19)}</p>
 							</c:if>

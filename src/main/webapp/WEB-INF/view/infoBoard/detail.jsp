@@ -8,6 +8,18 @@
 <head>
     <%@ include file="../common/top.jsp" %>
     <%@ include file="../common/heading.jsp" %>
+     <script>
+    	function likeClick(mid, uid) {
+    		console.log("==============", mid, uid);
+    		$.ajax({
+    			type: 'GET',
+    			url: '/goodM/infoBoard/like/' + mid + '/' + uid,
+    			success: function(count) {
+    				$('#likeCount').html(count);
+    			}
+    		});
+    	}
+    </script>
 </head>
 
 <body>
@@ -51,7 +63,16 @@
 			</div>
 			<div class="col-4 text-end">
 				<h5>${infoBoard.uname}</h5>
-				<h6>조회 ${infoBoard.viewCount}</h6>
+				<h6>조회 ${infoBoard.viewCount} &nbsp;&nbsp;
+				<c:if test="${infoBoard.uid eq uid}">
+				 <a href="#"><i class="fa-solid fa-heart"></i></a> ${infoBoard.likeCount}
+				 </c:if>
+				<c:if test="${infoBoard.uid ne uid}">
+				 <a href="#" onclick="likeClick(${infoBoard.infoBid}, '${uid}')">
+					 <i class="fa-solid fa-heart"></i> 
+				 </a>
+				 <span id="likeCount">${infoBoard.likeCount}</span>
+				 </c:if> </h6>
 			</div>
 			
 			<div class="col-12"><hr></div>

@@ -8,6 +8,18 @@
 <head>
 	<%@ include file="../common/top.jsp" %>
     <%@ include file="../common/heading.jsp" %>
+        <script>
+    	function likeClick(mid, uid) {
+    		console.log("==============", mid, uid);
+    		$.ajax({
+    			type: 'GET',
+    			url: '/goodM/genBoard/like/' + mid + '/' + uid,
+    			success: function(count) {
+    				$('#likeCount').html(count);
+    			}
+    		});
+    	}
+    </script>
 </head>
 
 <body>
@@ -21,7 +33,7 @@
 		<h2>게시글 상세 조회
 		<span style="font-size: 0.6em;">
 			<a href="/goodM/genBoard/list?p=${currentGenBoardPage}&f=&q=" class="ms-5"><i class="fas fa-list-ul"></i> 목록</a>
-         
+          
          <!-- 본인만 수정 가능 -->
 		<c:if test="${genBoard.uid eq uid}">
 			<a href="/goodM/genBoard/update?genBid=${genBoard.genBid}" class="ms-3"><i class="far fa-edit"></i> 수정</a>  <!-- bid -->
@@ -42,7 +54,7 @@
 		<!-- 내용 -->
 		<div class="row">
 		<div class="col-12">
-			<h6>제목: ${genBoard.title}</h6>
+			<h5>${genBoard.title}</h5>
 			<h6>글 번호: ${genBoard.genBid} | ${fn:replace(genBoard.modTime, 'T', ' ')}</h6>
 			<h6>첨부 파일: 
 			<c:forEach var="file" items="${fileList}">
@@ -52,7 +64,16 @@
 		</div>
 		<div class="col-4 text-end">
 			<h5>${genBoard.uname}</h5>
-			<h6>조회 ${genBoard.viewCount}&nbsp;&nbsp;댓글 ${genBoard.replyCount}</h6>
+			<h6>조회 ${genBoard.viewCount}&nbsp;&nbsp;댓글 ${genBoard.replyCount} &nbsp;&nbsp;
+              <c:if test="${genBoard.uid eq uid}">
+               <a href="#"><i class="fa-solid fa-heart"></i></a> ${genBoard.likeCount}
+          	 </c:if>
+              <c:if test="${genBoard.uid ne uid}">
+               <a href="#" onclick="likeClick(${genBoard.genBid}, '${uid}')">
+               	<i class="fa-solid fa-heart"></i> 
+               </a>
+               <span id="likeCount">${genBoard.likeCount}</span>
+           	</c:if> </h6>
 		</div>
 
 		<div class="col-12"><hr></div>

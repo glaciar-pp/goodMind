@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.InfoBoardDao;
 import com.example.demo.entity.InfoBoard;
+import com.example.demo.entity.InfoLikeList;
 
 @Service
 public class InfoBoardServiceImpl implements InfoBoardService {
@@ -60,6 +61,18 @@ public class InfoBoardServiceImpl implements InfoBoardService {
 	public List<InfoBoard> getInfoBoardListByUid(String uid) {
 		List<InfoBoard> list = infoBoardDao.getInfoBoardListByUid(uid);
 		return list;
+	}
+	
+	@Override
+	public int updateLikeCount(int infoBid, String uid) {
+		InfoLikeList infoLikeList = infoBoardDao.getLikeEntry(infoBid, uid);
+		if (infoLikeList == null) {
+			infoLikeList = new InfoLikeList(infoBid, uid);
+			infoBoardDao.insertLike(infoLikeList);
+			infoBoardDao.increaseCount(infoBid, "likeCount");
+		}
+		int count = infoBoardDao.getLikeCount(infoBid);
+		return count;
 	}
 
 }

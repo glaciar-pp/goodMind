@@ -39,7 +39,7 @@
 		                    <form action="/goodM/map/kakaoMap" method="post">
 		                        주소(동) : <input type="text" id="keyword" name="searchWord" size="15"
 		                         				  placeholder="근처 동을 입력하세요!"> 
-		                        <button type="submit">검색하기</button> 
+		                        <button id="submit" type="submit">검색하기</button> 
 		                    </form>
 		                </div>
 		            </div>

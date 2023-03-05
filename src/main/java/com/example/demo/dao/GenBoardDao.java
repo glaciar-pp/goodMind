@@ -8,12 +8,13 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.example.demo.entity.GenBoard;
+import com.example.demo.entity.GenLikeList;
 
 @Mapper
 public interface GenBoardDao {
 
 	@Select("SELECT b.genBid, b.uid, b.title, b.modTime, "
-			+ "	b.viewCount, b.replyCount, u.uname FROM genBoard AS b"
+			+ "	b.viewCount, b.replyCount, b.likeCount, u.uname FROM genBoard AS b"
 			+ "	JOIN users AS u"
 			+ "	ON b.uid=u.uid"
 			+ "	WHERE b.isDeleted=0 AND ${field} LIKE #{query}"
@@ -28,7 +29,7 @@ public interface GenBoardDao {
 	public int getGenBoardCount(String field, String query);
 	
 	@Select("SELECT b.genBid, b.uid, b.title, b.content, b.modTime, b.viewCount,"
-			+ "	b.replyCount, b.files, u.uname FROM genBoard AS b"
+			+ "	b.replyCount, b.files, b.likeCount, u.uname FROM genBoard AS b"
 			+ "	JOIN users AS u"
 			+ "	ON b.uid=u.uid"
 			+ "	WHERE b.genBid=#{genBid}")
@@ -38,7 +39,7 @@ public interface GenBoardDao {
 	public void increaseCount(int genBid, String field);
 
 	@Insert("INSERT INTO genBoard VALUES(DEFAULT, #{uid}, #{title}, #{content},"
-			+ " DEFAULT, DEFAULT, DEFAULT, DEFAULT, #{files})")
+			+ " DEFAULT, DEFAULT, DEFAULT, DEFAULT, #{files}, default)")
 	public void insertGenBoard(GenBoard genBoard);
 
 	@Update("UPDATE genBoard SET title=#{title}, content=#{content}, "
@@ -51,4 +52,13 @@ public interface GenBoardDao {
 	@Select("select * from genBoard where uid=#{uid} ORDER BY genBid DESC")
 	List<GenBoard> getGenBoardListByUid(String uid);
 	
+	@Select("select likeCount from genBoard where genBid=#{genBid}")
+	public int getLikeCount(int genBid);
+
+	@Insert("insert into genLikeTable values(default, #{genBid}, #{uid}, default)")
+	public void insertLike(GenLikeList genLike);
+
+	@Select("select * from genLikeTable where genBid=#{genBid} and uid=#{uid}")
+	public GenLikeList getLikeEntry(int genBid, String uid);
+
 }

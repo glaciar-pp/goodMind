@@ -73,7 +73,7 @@
                         </c:if>
                         </td>
                         <td>${info_board.viewCount}</td>
-                        <%-- <td>${info_board.likeCount}</td> --%>
+                        <td>${info_board.likeCount}</td> 
                     </tr>
                 </c:forEach>    
 			</table>
@@ -102,9 +102,10 @@
 			<table class="table mt-2">
 			    <tr class="table-secondary ">
 					<!-- <th class="col-1">번호</th> -->
-					<th class="col-6">제목</th>
-					<th class="col-2">날짜/시간</th>
+					<th class="col-5">제목</th>
+					<th class="col-3">날짜/시간</th>
 					<th class="col-1">조회수</th>
+					<th class="col-1">좋아요</th>
 			    </tr>
 				<c:forEach var="genBoard" items="${genBoardList}">
 				<tr>
@@ -125,6 +126,7 @@
 					</c:if>
 					</td>
 					<td>${genBoard.viewCount}</td>
+                    <td>${genBoard.likeCount}</td>
 				</tr>
 				</c:forEach> 
 			</table>

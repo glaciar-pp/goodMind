@@ -8,12 +8,13 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.example.demo.entity.InfoBoard;
+import com.example.demo.entity.InfoLikeList;
 
 @Mapper
 public interface InfoBoardDao {
 
 	@Select("SELECT b.infoBid, b.uid, b.title, b.modTime, "
-			+ "	b.viewCount, u.uname FROM infoBoard AS b"
+			+ "	b.viewCount, b.likeCount, u.uname FROM infoBoard AS b"
 			+ "	JOIN users AS u"
 			+ "	ON b.uid=u.uid"
 			+ "	WHERE b.isDeleted=0 AND ${field} LIKE #{query}"
@@ -38,7 +39,7 @@ public interface InfoBoardDao {
 	public void increaseCount(int infoBid, String field);
 
 	@Insert("INSERT INTO infoBoard VALUES(DEFAULT, #{uid}, #{title}, #{content},"
-			+ " DEFAULT, DEFAULT, DEFAULT, #{files})")
+			+ " DEFAULT, DEFAULT, DEFAULT, #{files}, default)")
 	public void insertInfoBoard(InfoBoard infoBoard);
 
 	@Update("UPDATE infoBoard SET title=#{title}, content=#{content}, "
@@ -50,4 +51,14 @@ public interface InfoBoardDao {
 	
 	@Select("select * from infoBoard where uid=#{uid} ORDER BY infoBid DESC")
 	List<InfoBoard> getInfoBoardListByUid(String uid);
+
+	@Select("select likeCount from infoBoard where infoBid=#{infoBid}")
+	public int getLikeCount(int infoBid);
+
+	@Insert("insert into infoLikeTable values(default, #{infoBid}, #{uid}, default)")
+	public void insertLike(InfoLikeList infoLike);
+
+	@Select("select * from infoLikeTable where infoBid=#{infoBid} and uid=#{uid}")
+	public InfoLikeList getLikeEntry(int infoBid, String uid);
+
 }
