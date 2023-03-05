@@ -2,13 +2,14 @@
 
     <footer id="footer">
         <section>
-            <h2>Aliquam sed mauris</h2>
-            <p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore
-                veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit,
-                vitae tincidunt odio.</p>
+            <h2>Healing Quotes</h2>
+            <p>I believe that everything happens for a reason. People change so that you can learn to let go, 
+                things go wrong so that you appreciate them when they're right, 
+                you believe lies so you eventually learn to trust no one but yourself, 
+                and sometimes good things fall apart so better things can fall together.</p>
         </section>
         <section>
-            <h2>Etiam feugiat</h2>
+            <h2>Contect Us</h2>
             <dl class="alt">
                 <dt>Address</dt>
                 <dd>30123-32, Teheran-ro, Gangnam-gu, Seoul, Republic of Korea</dd>
@@ -25,6 +26,6 @@
                 <a class="me-2 black" href="#"><i class="fa-brands fa-instagram"></i></a>
             </ul>
         </section>
-        <p class="copyright">Copyright &copy; 2023 멀캠가네 둘째조 Corp. All rights reserved.</p>
+        <p class="copyright" style="color:rgba(15, 1, 1, 0.484)">Copyright &copy; 2023 멀캠가네 둘째조 Corp. All rights reserved.</p>
     </footer> 
     
