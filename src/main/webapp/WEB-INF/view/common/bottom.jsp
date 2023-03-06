@@ -9,10 +9,10 @@
                 and sometimes good things fall apart so better things can fall together.</p>
         </section>
         <section>
-            <h2>Contect Us</h2>
+            <h2>Contact Us</h2>
             <dl class="alt">
                 <dt>Address</dt>
-                <dd>30123-32, Teheran-ro, Gangnam-gu, Seoul, Republic of Korea</dd>
+                <dd>서울시 강남구 테헤란로 30123-32, 9층</dd>
                 <dt>Phone</dt>
                 <dd>(+082) 010-1234-5678</dd>
                 <dt>Email</dt>

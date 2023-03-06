@@ -6,6 +6,7 @@ public class InfoBoard {
 	private int infoBid;
 	private String uid;
 	private String title;
+	private String filename;
 	private String content;
 	private LocalDateTime modTime;
 	private int viewCount;
@@ -16,28 +17,33 @@ public class InfoBoard {
 
 	public InfoBoard() {}
 	// 게시글 생성시 필요한 생성자
-	public InfoBoard(String uid, String title, String content, String files) {
+	public InfoBoard(String uid, String title, String filename, String content, String files) {
 		super();
 		this.uid = uid;
 		this.title = title;
+		this.filename = filename;
+		this.content = content;
+		this.files = files;
+	}
+
+	
+	// 게시글 수정시 필요한 생성자	
+	public InfoBoard(int infoBid, String title, String filename, String content, String files) {
+		super();
+		this.infoBid = infoBid;
+		this.title = title;
+		this.filename = filename;
 		this.content = content;
 		this.files = files;
 	}
 	
-	// 게시글 수정시 필요한 생성자	
-	public InfoBoard(int infoBid, String title, String content, String files) {
-		super();
-		this.infoBid = infoBid;
-		this.title = title;
-		this.content = content;
-		this.files = files;
-	}
-	public InfoBoard(int infoBid, String uid, String title, String content, LocalDateTime modTime, int viewCount,
-			int isDeleted, String files, String uname, int likeCount) {
+	public InfoBoard(int infoBid, String uid, String title, String filename, String content, LocalDateTime modTime,
+			int viewCount, int isDeleted, String files, String uname, int likeCount) {
 		super();
 		this.infoBid = infoBid;
 		this.uid = uid;
 		this.title = title;
+		this.filename = filename;
 		this.content = content;
 		this.modTime = modTime;
 		this.viewCount = viewCount;
@@ -46,6 +52,7 @@ public class InfoBoard {
 		this.uname = uname;
 		this.likeCount = likeCount;
 	}
+	
 	public int getInfoBid() {
 		return infoBid;
 	}
@@ -63,6 +70,12 @@ public class InfoBoard {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 	public String getContent() {
 		return content;
@@ -106,4 +119,5 @@ public class InfoBoard {
 	public void setLikeCount(int likeCount) {
 		this.likeCount = likeCount;
 	}
+
 }

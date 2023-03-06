@@ -13,7 +13,7 @@ import com.example.demo.entity.InfoLikeList;
 @Mapper
 public interface InfoBoardDao {
 
-	@Select("SELECT b.infoBid, b.uid, b.title, b.modTime, "
+	@Select("SELECT b.infoBid, b.uid, b.title, b.filename, b.modTime, "
 			+ "	b.viewCount, b.likeCount, u.uname FROM infoBoard AS b"
 			+ "	JOIN users AS u"
 			+ "	ON b.uid=u.uid"
@@ -28,7 +28,7 @@ public interface InfoBoardDao {
 			+ "	WHERE b.isDeleted=0 AND ${field} LIKE #{query}")
 	public int getInfoBoardCount(String field, String query);
 	
-	@Select("SELECT b.infoBid, b.uid, b.title, b.content, b.modTime, b.viewCount,"
+	@Select("SELECT b.infoBid, b.uid, b.title, b.filename, b.content, b.modTime, b.viewCount,"
 			+ "	b.files, u.uname FROM infoBoard AS b"
 			+ "	JOIN users AS u"
 			+ "	ON b.uid=u.uid"
@@ -38,13 +38,17 @@ public interface InfoBoardDao {
 	@Update("UPDATE infoBoard SET ${field}=${field}+1 WHERE infoBid=#{infoBid}")
 	public void increaseCount(int infoBid, String field);
 
-	@Insert("INSERT INTO infoBoard VALUES(DEFAULT, #{uid}, #{title}, #{content},"
+	@Insert("INSERT INTO infoBoard VALUES(DEFAULT, #{uid}, #{title},  #{filename}, #{content},"
 			+ " DEFAULT, DEFAULT, DEFAULT, #{files}, default)")
 	public void insertInfoBoard(InfoBoard infoBoard);
 
 	@Update("UPDATE infoBoard SET title=#{title}, content=#{content}, "
 			+ " modTime=NOW(), files=#{files} WHERE infoBid=#{infoBid}")
 	public void updateInfoBoard(InfoBoard infoBoard);
+	
+	@Update("UPDATE infoBoard SET title=#{title}, #{filename}, content=#{content}, "
+			+ " modTime=NOW(), files=#{files} WHERE infoBid=#{infoBid}")
+	public void updateWithImageInfoBoard(InfoBoard infoBoard);
 
 	@Update("UPDATE infoBoard SET isDeleted=1 WHERE infoBid=#{infoBid}")
 	public void deleteInfoBoard(int infoBid);

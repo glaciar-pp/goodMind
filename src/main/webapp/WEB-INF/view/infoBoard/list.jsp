@@ -58,12 +58,17 @@
 				<div class="col">
 					<div class="card h-100">
 						<a href="/goodM/infoBoard/detail?infoBid=${info_board.infoBid}&uid=${info_board.uid}">
-							<img src="/img/기본 썸네일.png" class="card-img-top" alt="thumbnail image">
+							<c:if test="${empty info_board.filename}">
+								<img src="/img/기본 썸네일.png" class="card-img-top">
+							</c:if>
+							<c:if test="${not empty info_board.filename}">
+								<img src="/goodM/file/download?file=${info_board.filename}" class="card-img-top">
+							</c:if>
 						</a>
 						<div class="card-body">
 							<h5 class="card-title">${info_board.title}</h5>
 							<hr>
-							<p class="card-text" style="color: grey">조회수: ${info_board.viewCount} &nbsp;&nbsp; 좋아요: ${info_board.likeCount}</p>
+							<p class="card-text" style="color: grey">조회수: ${info_board.viewCount} <br> 좋아요: ${info_board.likeCount}</p>
 							<c:if test="${today eq fn:substring(info_board.modTime, 0, 10)}">
 								<p class="card-text">${fn:substring(info_board.modTime, 11, 19)}</p>
 							</c:if>

@@ -96,9 +96,18 @@ public class InfoBoardController {
 	}
 	
 	@PostMapping("/write")
-	public String write(MultipartHttpServletRequest req) {
+	public String write(MultipartHttpServletRequest req) throws Exception {
 		String uid = (String) req.getParameter("uid");
 		String title = (String) req.getParameter("title");
+		MultipartFile profile = req.getFile("filename");
+		String filename = profile.getOriginalFilename();
+		System.out.println(profile + "===" + filename);
+		if (filename != null && !filename.equals("")) {
+		    String imageFile_ = uploadDir + "/" + filename;
+		    File uploadFile = new File(imageFile_);
+		    profile.transferTo(uploadFile);
+		} else
+			filename = null;
 		String content = (String) req.getParameter("content");
 		List<MultipartFile> fileList = req.getFiles("files");
 		List<String> list = new ArrayList<>();
@@ -115,7 +124,7 @@ public class InfoBoardController {
 		}
 		JSONUtil json = new JSONUtil();
 		String files = json.stringify(list);
-		InfoBoard infoBoard = new InfoBoard(uid, title, content, files); 
+		InfoBoard infoBoard = new InfoBoard(uid, title, filename, content, files); 
 		infoBoardService.insertInfoBoard(infoBoard);
 		return "redirect:/goodM/infoBoard/list?p=1&f=&q=";
 	}
@@ -137,10 +146,19 @@ public class InfoBoardController {
 	}
 	
 	@PostMapping("/update")
-	public String update(MultipartHttpServletRequest req) {
+	public String update(MultipartHttpServletRequest req) throws Exception {
 		int infoBid = Integer.parseInt(req.getParameter("infoBid"));
 		String uid = req.getParameter("uid");
 		String title = (String) req.getParameter("title");
+		MultipartFile profile = req.getFile("filename");
+		String filename = profile.getOriginalFilename();
+		System.out.println(profile + "===" + filename);
+		if (filename != null && !filename.equals("")) {
+		    String imageFile_ = uploadDir + "/" + filename;
+		    File uploadFile = new File(imageFile_);
+		    profile.transferTo(uploadFile);
+		} else
+			filename = null;
 		String content = (String) req.getParameter("content");
 		
 		HttpSession session = req.getSession();
@@ -179,7 +197,7 @@ public class InfoBoardController {
 		}
 		JSONUtil json = new JSONUtil();
 		String files = json.stringify(newAdditionalFileList);
-		InfoBoard infoBoard = new InfoBoard(infoBid, title, content, files);
+		InfoBoard infoBoard = new InfoBoard(infoBid, filename, title, content, files);
 		infoBoardService.updateInfoBoard(infoBoard);
 		
 		return "redirect:/goodM/infoBoard/detail?infoBid=" + infoBid + "&uid=" + uid + "&option=DNI";
