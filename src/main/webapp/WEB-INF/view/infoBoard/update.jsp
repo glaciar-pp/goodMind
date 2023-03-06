@@ -50,8 +50,8 @@
 			                   <td class="col-10"><input class="form-control" type="file" name="files" id="files" multiple></td>
 			               </tr>
 							<tr class="d-flex">
-								<td class="col-2"><label for="uid">커버 사진</label></td>
-								<td class="col-10"><input class="btn btn-lavender" type="file" name="filename" value="${infoBoard.filename}"></td>
+								<td class="col-2"><label for="filename">커버 사진</label></td>
+								<td class="col-10"><input class="btn btn-lavender" type="file" name="filename" id="filename"></td>
 							</tr>
 			               <tr>
 			                   <td colspan="2" style="text-align: center;">

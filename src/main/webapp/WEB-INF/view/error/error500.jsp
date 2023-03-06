@@ -18,7 +18,7 @@
 		</header>
 		<!-- Content -->
 		<!-- 제목 -->
-		<img src="/img/error500.svg" alt="error500">
+		<img src="/img/error500.svg" alt="error500" id="mainImg">
 		<br>
 		<br>
 		<p style="text-align: center;"><strong>Internal server error</strong><br>

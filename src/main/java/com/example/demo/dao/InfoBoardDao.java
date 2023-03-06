@@ -42,7 +42,7 @@ public interface InfoBoardDao {
 			+ " DEFAULT, DEFAULT, DEFAULT, #{files}, default)")
 	public void insertInfoBoard(InfoBoard infoBoard);
 
-	@Update("UPDATE infoBoard SET title=#{title}, content=#{content}, "
+	@Update("UPDATE infoBoard SET title=#{title}, filename=#{filename}, content=#{content}, "
 			+ " modTime=NOW(), files=#{files} WHERE infoBid=#{infoBid}")
 	public void updateInfoBoard(InfoBoard infoBoard);
 	

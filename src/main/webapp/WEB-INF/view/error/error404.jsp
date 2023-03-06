@@ -18,7 +18,7 @@
 		</header>
 		<!-- Content -->
 		<!-- 제목 -->
-		<img src="/img/error404.svg" alt="error404">
+		<img src="/img/error404.svg" alt="error404" id="mainImg">
 		<br>
 		<br>
 		<p style="text-align: center;"><strong>something 's missing</strong><br>
