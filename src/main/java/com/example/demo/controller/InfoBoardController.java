@@ -48,7 +48,7 @@ public class InfoBoardController {
 		model.addAttribute("query", query);
 		
 		int totalInfoBoardNo = infoBoardService.getInfoBoardCount(field, query);
-		int totalPages = (int) Math.ceil(totalInfoBoardNo / 10.);
+		int totalPages = (int) Math.ceil(totalInfoBoardNo / 12.);
 		
 		int startPage = (int)(Math.ceil((page-0.5)/10) - 1) * 10 + 1;
 		int endPage = Math.min(totalPages, startPage + 9);

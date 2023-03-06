@@ -85,7 +85,7 @@
 				</c:if>
 				</div>
 			<c:forEach var="diaryBoard" items="${day.diaryBoardList}" varStatus="loop">
-				<div class="${loop.first ? 'mt-1' : ''}" style="font-size: 12px; text-align: left;" onclick="mindClick(${diaryBoard.did}, '${uid}')">
+				<div class="${loop.first ? 'mt-1' : ''}" style="font-size: 16px; text-align: left;" onclick="mindClick(${diaryBoard.did}, '${uid}')">
 					${diaryBoard.title}
 					<img src="/img/sentiImage${diaryBoard.score}.png" height="30px">                        	
 				</div>
