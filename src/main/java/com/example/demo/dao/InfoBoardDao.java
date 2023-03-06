@@ -38,7 +38,7 @@ public interface InfoBoardDao {
 	@Update("UPDATE infoBoard SET ${field}=${field}+1 WHERE infoBid=#{infoBid}")
 	public void increaseCount(int infoBid, String field);
 
-	@Insert("INSERT INTO infoBoard VALUES(DEFAULT, #{uid}, #{title},  #{filename}, #{content},"
+	@Insert("INSERT INTO infoBoard VALUES(DEFAULT, #{uid}, #{title}, #{filename}, #{content},"
 			+ " DEFAULT, DEFAULT, DEFAULT, #{files}, default)")
 	public void insertInfoBoard(InfoBoard infoBoard);
 
@@ -46,7 +46,7 @@ public interface InfoBoardDao {
 			+ " modTime=NOW(), files=#{files} WHERE infoBid=#{infoBid}")
 	public void updateInfoBoard(InfoBoard infoBoard);
 	
-	@Update("UPDATE infoBoard SET title=#{title}, #{filename}, content=#{content}, "
+	@Update("UPDATE infoBoard SET title=#{title}, filename=#{filename}, content=#{content}, "
 			+ " modTime=NOW(), files=#{files} WHERE infoBid=#{infoBid}")
 	public void updateWithImageInfoBoard(InfoBoard infoBoard);
 

@@ -197,7 +197,7 @@ public class InfoBoardController {
 		}
 		JSONUtil json = new JSONUtil();
 		String files = json.stringify(newAdditionalFileList);
-		InfoBoard infoBoard = new InfoBoard(infoBid, filename, title, content, files);
+		InfoBoard infoBoard = new InfoBoard(infoBid, title, filename, content, files);
 		infoBoardService.updateInfoBoard(infoBoard);
 		
 		return "redirect:/goodM/infoBoard/detail?infoBid=" + infoBid + "&uid=" + uid + "&option=DNI";
