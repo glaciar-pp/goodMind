@@ -16,12 +16,12 @@
 		<!-- Content -->
 		<!-- 제목 -->
 		<h2>게시글 삭제</h2>
-		<div class="card border-warning mt-3">
+		<div class="card border-danger mt-3">
 			<div class="card-body">
 			    <strong class="card-title">정말로 삭제하시겠습니까?</strong>
 			    <p class="card-text text-center">
 			        <br>
-			        <button class="btn btn-primary" onclick="location.href='/goodM/genBoard/deleteConfirm?genBid=${genBid}'">삭제</button>
+			        <button class="btn btn-lavender" onclick="location.href='/goodM/genBoard/deleteConfirm?genBid=${genBid}'">삭제</button>
 					<button class="btn btn-secondary" onclick="location.href='/goodM/genBoard/list?p=${currentGenBoardPage}&f=&q='">취소</button>
 		        </p>
 		    </div>

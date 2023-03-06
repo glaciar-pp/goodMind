@@ -16,9 +16,6 @@
 			location.href = "/goodM/genBoard/list?p=${currentGenBoardPage}&f=" + field + "&q=" + query;
 		}
 	</script>
-		<style>
-			th, td {text-align: center;}
-		</style>
 </head>
 
 <body>
@@ -48,17 +45,24 @@
 					<input class="form-control me-2" type="search" placeholder="검색 내용" name="q"id="search-b">
 				</td>
 				<td class="col-1">
-					<button class="btn btn-outline-primary" onclick="search()">검색</button>
+					<button class="btn btn-lavender" onclick="search()">검색</button>
 				</td>
 			</tr>
 		</table>
 		<hr>
-			
+		<p id="source" style="text-align: center;">
+			😊의견을 나눌 수 있는 자유게시판 입니다😊<br>
+			서로의 일상이나 심리건강에 좋은 정보를 공유해보세요.<br>
+			-----------------------------------------<br>
+			개인정보 유·노출, 상업성 광고, 저속한 표현, 특정인에 대한 명예훼손 및 비방, 정치적 목적이나 성향, 반복적 게시물, 게시판의 성격에 맞지 않은 글 등은 관리자에 의해 통보 없이 삭제됩니다.<br>
+			또한, 홈페이지를 통하여 불법유해 정보를 게시하거나 배포하면 「정보통신망 이용촉진 및 정보보호 등에 관한 법률 제74조」에 의거 1년 이하의 징역 또는 1천만원 이하의 벌금에 처해질 수 있습니다.<br>
+			※ 관련법령 : 개인정보보호법, 정보통신망 이용촉진 및 정보보호 등에 관한 법률 등<br>
+		</p>	
 		<div class="row">
-			<div class="col-2"></div>
-			<div class="col-8">
+			<div class="col-1"></div>
+			<div class="col-10">
 				<table class="table mt-2">
-					<tr class="table-secondary ">
+					<tr class="table" style="background-color: #ccccff; vertical-align: middle;">
 					<th class="col-1">번호</th>
 					<th class="col-5">제목</th>
 					<th class="col-2">글쓴이</th>
@@ -110,7 +114,7 @@
 					</c:if>
 				</ul>
 			</div>	
-		<div class="col-2"></div>
+		<div class="col-1"></div>
 	</div>
 </div>	
 <%@ include file="../common/bottom.jsp" %>

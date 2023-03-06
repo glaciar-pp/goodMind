@@ -7,7 +7,7 @@
             </div>
             <div class="navbar-text me-3" id="projectName" >기분어때?
             </div>
-            <div class="navbar-text me-3" id="welcome"> 
+            <div class="navbar-text" id="welcome"> 
 	  			<c:if test="${not empty uname}">
 	                ${uname}님 환영합니다. 
 				</c:if>

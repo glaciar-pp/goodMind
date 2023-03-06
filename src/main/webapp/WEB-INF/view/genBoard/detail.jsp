@@ -53,7 +53,9 @@
 		</h2>
 		<!-- 내용 -->
 		<div class="row">
-		<div class="col-12">
+		<div class="col-1"></div>
+		<div class="col-10">
+		<br>
 			<h5>${genBoard.title}</h5>
 			<h6>글 번호: ${genBoard.genBid} | ${fn:replace(genBoard.modTime, 'T', ' ')}</h6>
 			<h6>첨부 파일: 
@@ -61,8 +63,8 @@
 				<a href="/goodM/file/download?file=${file}" class="me-2" download>${file}</a>
 			</c:forEach>
 			</h6>
-		</div>
-		<div class="col-4 text-end">
+		
+		<div class="text-end">
 			<h5>${genBoard.uname}</h5>
 			<h6>조회 ${genBoard.viewCount}&nbsp;&nbsp;댓글 ${genBoard.replyCount} &nbsp;&nbsp;
               <c:if test="${genBoard.uid eq uid}">
@@ -75,14 +77,13 @@
                <span id="likeCount">${genBoard.likeCount}</span>
            	</c:if> </h6>
 		</div>
-
-		<div class="col-12"><hr></div>
-		<div class="col-12">
+		<hr>
+		<!-- 댓글 구간 -->
+		<div>
 			${fn:replace(genBoard.content, newline, '<br>')}
 		</div>
-
-        <div class="col-12"><hr></div>
-	        <div class="col-12">
+		<hr>
+	        <div>
 	        <c:forEach var="reply" items="${replyList}">
 	        <c:if test="${reply.isMine eq 0}">
 	            <div class="d-flex flex-row mt-1">
@@ -111,14 +112,14 @@
 	            <input type="hidden" name="uid" value="${genBoard.uid}">     <!-- uid -->
 	            <table class="table table-borderless mt-2">
 	                <tr class="d-flex">
-	                    <td class="col-1 text-end">
+	                    <td class="col-2 text-end">
 	                        <label for="content">댓글</label>
 	                    </td>
-	                    <td class="col-9">
+	                    <td class="col-8">
 	                        <textarea class="form-control" id="content" name="content" rows="3"></textarea>
 	                    </td>
 	                    <td class="col-2">
-	                        <button type="submit" class="btn btn-primary">제출</button>
+	                        <button type="submit" class="btn btn-lavender">제출</button>
 	                    </td>
 	                </tr>
 	            </table>
@@ -126,6 +127,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 <%@ include file="../common/bottom.jsp" %>
 </body>
 </html>

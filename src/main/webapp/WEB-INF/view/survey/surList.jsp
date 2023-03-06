@@ -90,7 +90,7 @@
 						<h5 class="card-title">인터넷 게임중독(IGUESS)</h5>
 						<hr>
 						<p class="card-text" style="color: grey">측정내용: 인터넷게임 중독 증상 선별</p>
-						<a href="/goodM/survey/surIGUESS class="button big">테스트 하러가기</a>
+						<a href="/goodM/survey/surIGUESS" class="button big">테스트 하러가기</a>
 					</div>
 				</div>
 			</div>

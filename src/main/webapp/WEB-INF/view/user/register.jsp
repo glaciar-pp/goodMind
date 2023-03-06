@@ -44,7 +44,7 @@
 			    </tr>
 			    <tr>
 			        <td colspan="2" style="text-align: center;">
-			            <input class="btn btn-primary" type="submit" value="제출">
+			            <input class="btn btn-lavender" type="submit" value="제출">
 			            <input class="btn btn-secondary" type="reset" value="취소">
 			        </td>
 			    </tr>

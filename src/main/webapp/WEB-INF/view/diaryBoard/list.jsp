@@ -43,29 +43,27 @@
 					<input class="form-control me-2" type="search" placeholder="검색 내용" name="q" id="search-b">
 				</td>
 				<td class="col-1">
-					<button class="btn btn-outline-primary" onclick="search()">검색</button>
+					<button class="btn btn-lavender" onclick="search()">검색</button>
 				</td>
 			</tr>
 		</table>
 		<hr>
 		
 		<div class="row">
-			<div class="col-2"></div>
-			<div class="col-8">
-				<table class="table mt-2">
+			<div class="col-1"></div>
+			<div class="col-10">
 					<div id="diary-icon">
 						<a href="/goodM/diaryBoard/write"><i class="fa-solid fa-pen me-3"></i></a>
 						<a href="/goodM/calendar/calendar"><i class="fa-solid fa-calendar-days"></i></a>
 					</div>
-					<div>
-					<tr class="table-secondary" text="justify-content-center">
+				<table class="table mt-2">
+					<tr class="table" style="background-color: #ccccff; vertical-align: middle;">
 						<th class="col-1">번호</th>
 						<th class="col-6">제목</th>
 						<th class="col-2">글쓴이</th>
 						<th class="col-2">날짜</th>
 						<th class="col-1">기분</th>
 					</tr>
-					</div>
 					<c:forEach var="db" items="${diaryBoardList}">
 						<tr>
 							<td>${db.did}</td>
@@ -99,9 +97,9 @@
 					</c:if>
 				</ul>	
 			</div>
-		</div>	
-    <div class="col-2"></div>
-	</div>
+	    <div class="col-1"></div>
+	</div>	
+</div>
 <%@ include file="../common/bottom.jsp" %>
 </body>
 </html>

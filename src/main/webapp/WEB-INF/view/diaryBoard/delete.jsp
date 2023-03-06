@@ -16,12 +16,12 @@
 		<!-- Content -->
 		<!-- 제목 -->
 		<h2>기분일기 삭제</h2>
-		<div class="card border-warning mt-3">
+		<div class="card border-danger mt-3">
 			<div class="card-body">
 				<strong class="card-title">일기를 삭제하시겠습니까?</strong>
 				<p class="card-text text-center">
 					<br>
-					<button class="btn btn-primary" onclick="location.href='/goodM/diaryBoard/deleteConfirm?did=${did}'">삭제</button>
+					<button class="btn btn-lavender" onclick="location.href='/goodM/diaryBoard/deleteConfirm?did=${did}'">삭제</button>
 					<button class="btn btn-secondary" onclick="location.href='/goodM/diaryBoard/list?p=${currentDiaryBoardPage}&f=&q='">취소</button>
 				</p>
 		    </div>

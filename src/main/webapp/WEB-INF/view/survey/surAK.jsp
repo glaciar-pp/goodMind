@@ -82,26 +82,27 @@
 		</header>
 		<!-- Content -->
 		<!-- 제목 -->
-		<h2>자가진단 테스트</h2><a href="/goodM/survey/surList" class="button big">목록으로 돌아가기</a>
+		<h2>자가진단 테스트&ensp;<a href="/goodM/survey/surList" class="button big">목록으로 돌아가기</a></h2>
 		<!-- 테스트 제목 -->
-		<h3>-위험음주자 선별도구(AUDIT_K)-</h3>	
+		<br>
+		<h3 style="text-align: center; margin: 40px">-위험음주자 선별도구(AUDIT_K)-</h3>	
 		<!-- 테스트 내용 -->
-		<p>다음의 각 문장을 읽고, 자신에게 알맞은 답변에 ○로 표시해주시기 바랍니다.</p>
-		<h5>성별 선택(필수)</h5>
+		<p>: 다음의 각 문장을 읽고, 자신에게 알맞은 답변에 표시해주시기 바랍니다.</p>
+		<h6><strong>성별 선택(필수)</strong></h6>
 	    <input type="radio" name="gender" value="남">남성
 	    <input type="radio" name="gender" value="여">여성
 	    <!-- 항목 시작(value 숫자 순서대로) -->
 	    <table class="table">
-		<tr>
-			<th>항목</th>
-			<th>0점</th>
-			<th>1점</th>
-			<th>2점</th>
-			<th>3점</th>
-			<th>4점</th>
+		<tr style="background-color: #ccccff; vertical-align: middle;">
+			<th class="col-5">항목</th>
+			<th class="col-2">0점</th>
+			<th class="col-1">1점</th>
+			<th class="col-1">2점</th>
+			<th class="col-1">3점</th>
+			<th class="col-2">4점</th>
 		</tr>
 		 <tr class="survey">
-		    <td >1. 술을 얼마나 자주 마십니까?</td>
+		    <td style="text-align: left;">1. 술을 얼마나 자주 마십니까?</td>
 		    <td><input type="radio" name="s1" value="0">전혀 마시지 않는다</td>
 		    <td><input type="radio" name="s1" value="1">한달에 한번 미만</td>
 		    <td><input type="radio" name="s1" value="2">한달에 2~4회</td>
@@ -109,7 +110,7 @@
 		    <td><input type="radio" name="s1" value="4">1주일에 4회 이상</td>
 		</tr>
 		<tr class="survey">
-		    <td>2. 평소 술을 마시는 날 몇잔 정도나 마십니까.</td>
+		    <td style="text-align: left;">2. 평소 술을 마시는 날 몇잔 정도나 마십니까.</td>
 		    <td><input type="radio" name="s2" value="0">1~2잔</td>
 		    <td><input type="radio" name="s2" value="1">3~4잔</td>
 		    <td><input type="radio" name="s2" value="2">5~6잔</td>
@@ -117,7 +118,7 @@
 		    <td><input type="radio" name="s2" value="4">10잔 이상</td>
 		</tr>
 		<tr class="survey">
-		    <td>3. 한번 술을 마실 때 소주 1병 또는 맥주 4병 이상의 음주는 얼마나 자주 하십니까?</td>
+		    <td style="text-align: left;">3. 한번 술을 마실 때 소주 1병 또는 맥주 4병 이상의 음주는 얼마나 자주 하십니까?</td>
 		    <td><input type="radio" name="s3" value="0">전혀 없다</td>
 		    <td><input type="radio" name="s3" value="1">한달에 1번 미만</td>
 		    <td><input type="radio" name="s3" value="2">한달에 한번</td>
@@ -125,7 +126,7 @@
 		    <td><input type="radio" name="s3" value="4">매일같이</td>
 		</tr>
 		<tr class="survey">
-		    <td>4. 지난 1년간 술을 한번 마시기 시작하면 멈출 수 없다는 것을 안 때가 얼마나 자주 있었습니까?</td>
+		    <td style="text-align: left;">4. 지난 1년간 술을 한번 마시기 시작하면 멈출 수 없다는 것을 안 때가 얼마나 자주 있었습니까?</td>
 		    <td><input type="radio" name="s4" value="0">전혀 없다</td>
 		    <td><input type="radio" name="s4" value="1">한달에 1번 미만</td>
 		    <td><input type="radio" name="s4" value="2">한달에 한번</td>
@@ -133,7 +134,7 @@
 		    <td><input type="radio" name="s4" value="4">매일같이</td>
 		</tr>
 		<tr class="survey">
-		    <td>5. 지난 1년간 당신은 평소 같으면 할 수 있었던 일을 음주 때문에 실패한 적이 얼마나 자주 있었습니까?</td>
+		    <td style="text-align: left;">5. 지난 1년간 당신은 평소 같으면 할 수 있었던 일을 음주 때문에 실패한 적이 얼마나 자주 있었습니까?</td>
 		    <td><input type="radio" name="s5" value="0">전혀 없다</td>
 		    <td><input type="radio" name="s5" value="1">한달에 1번 미만</td>
 		    <td><input type="radio" name="s5" value="2">한달에 한번</td>
@@ -141,7 +142,7 @@
 		    <td><input type="radio" name="s5" value="4">매일같이</td>
 		</tr>
 		<tr class="survey">
-		    <td>6. 지난 1년간 술을 마신 다음날 아침에 일을 나가기 위해 다시 해장술을 필요로 했던 적이 얼마나 자주 있었습니까?</td>
+		    <td style="text-align: left;">6. 지난 1년간 술을 마신 다음날 아침에 일을 나가기 위해 다시 해장술을 필요로 했던 적이 얼마나 자주 있었습니까?</td>
 		    <td><input type="radio" name="s6" value="0">전혀 없다</td>
 		    <td><input type="radio" name="s6" value="1">한달에 1번 미만</td>
 		    <td><input type="radio" name="s6" value="2">한달에 한번</td>
@@ -149,7 +150,7 @@
 		    <td><input type="radio" name="s6" value="4">매일같이</td>
 		</tr>
 		<tr class="survey">
-		    <td>7. 지난 1년간 음주 후에 죄책감이 들거나 후회를 한 적이 얼마나 자주 있었습니까?</td>
+		    <td style="text-align: left;">7. 지난 1년간 음주 후에 죄책감이 들거나 후회를 한 적이 얼마나 자주 있었습니까?</td>
 		    <td><input type="radio" name="s7" value="0">전혀 없다</td>
 		    <td><input type="radio" name="s7" value="1">한달에 1번 미만</td>
 		    <td><input type="radio" name="s7" value="2">한달에 한번</td>
@@ -157,7 +158,7 @@
 		    <td><input type="radio" name="s7" value="4">매일같이</td>
 		</tr>
 		<tr class="survey">
-		    <td>8. 지난 1년간 음주 때문에 전날 밤에 있었던 일이 기억나지 않았던 적이 얼마나 자주 있었습니까? </td>
+		    <td style="text-align: left;">8. 지난 1년간 음주 때문에 전날 밤에 있었던 일이 기억나지 않았던 적이 얼마나 자주 있었습니까? </td>
 		    <td><input type="radio" name="s8" value="0">전혀 없다.</td>
 		    <td><input type="radio" name="s8" value="1">한달에 1번 미만</td>
 		    <td><input type="radio" name="s8" value="2">한달에 한번</td>
@@ -165,20 +166,23 @@
 		    <td><input type="radio" name="s8" value="4">매일같이</td>
 		</tr>
 		<tr class="survey">
-		    <td>9. 음주로 인해 자신이나 다른 사람이 다친 적이 있었습니까?</td>
+		    <td style="text-align: left;">9. 음주로 인해 자신이나 다른 사람이 다친 적이 있었습니까?</td>
 		    <td><input type="radio" name="s9" value="0">없었다</td>
 		    <td colspan="2"><input type="radio" name="s9" value="2">있지만, 지난 1년간에는 없었다</td>
 		    <td colspan="2"><input type="radio" name="s9" value="4">지난 1년간 있었다</td>
 		</tr>
 		<tr class="survey">
-		    <td>10. 친척이나 친구, 또는 의사가 당신이 술 마시는 것을 걱정하거나 술 끊기를 권유한 적이 있습니까?</td>
+		    <td style="text-align: left;">10. 친척이나 친구, 또는 의사가 당신이 술 마시는 것을 걱정하거나 술 끊기를 권유한 적이 있습니까?</td>
 		    <td><input type="radio" name="s10" value="0">전혀 없다</td>
 		    <td colspan="2"><input type="radio" name="s10" value="2">있지만, 지난 1년간에는 없었다</td>
 		    <td colspan="2"><input type="radio" name="s10" value="4">지난 1년간 있었다</td>
 		</tr>
     </table>
+	<p id="source">
+		※ 모든 척도는 증상의 정도, 성향을 파악하는 도구일 뿐입니다.
+	</p>
 	<br>
-		<button onclick="getScores()" class="btn btn-primary">결과 확인하기</button>
+		<button onclick="getScores()" class="btn btn-lavender" style="display: block; margin: auto;">결과 확인하기</button>
 		<br>
 		<br>
 		<div id="surRes">

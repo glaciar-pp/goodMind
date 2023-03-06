@@ -29,6 +29,7 @@
 		        <button id="menuToggle">목록 숨기기</button>
 		        <button id="myLocation">내 위치</button>
 		        <select id="radiusSelect">
+		        	<option value="0">반경삭제</option>
 		        	<option value="1">1km</option>
 		        	<option value="3">3km</option>
 		        	<option value="5">5km</option>
@@ -107,8 +108,25 @@ document.getElementById('myLocation').addEventListener('click', function() {
  myLocation();
 });
 </script>
-
-
+<br>
+<br>
+	<h3 style="text-align: center;">-주변 병원/기관 찾기 사용방법-</h3>
+	<div id="surRes">
+		<p>
+			1. 지도와 검색 및 목록창을 통해 원하시는 병원 또는 기관을 찾으실 수 있습니다.<br>
+			깔끔하게 지도만 보고싶을땐 목록 숨기기 버튼을 눌러주세요.<br>
+			2. "내 위치"를 사용하시고자 할때 사용자 위치 엑세스 권한이 필요합니다.<br>
+			서비스 이용을 위함이니 허용해주세요.<br>
+			3. 내 위치 하단에 있는 1km / 3km / 5km 반경 보기 도구도 활용해보세요.<br>
+			<br>
+			※마커 분류<br>
+			<img src="/img/marker1.png" >= 중독관리통합지원센터, 기초정신건강복지센터, 자살예방센터, 광역정신건강복지센터, 이외 기본값<br>
+		    <img src="/img/marker2.png" >= 보건소<br>
+		    <img src="/img/marker3.png" >= 정신재활시설, 정신요양시설<br>
+		    <img src="/img/marker4.png" >= 의원<br>
+		    <img src="/img/marker5.png" >= 공립, 국립, 병원, 종합병원, 상급종합병원<br>
+		</p>
+	</div>
 </div>
 <%@ include file="../common/bottom.jsp" %>
 </body>

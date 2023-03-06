@@ -70,13 +70,13 @@ body {
 
 /* header & logo */
 header {
-  display: flex;
-  padding: 20px;
-  justify-content: space-between;
-  background-color: var(--white-color);
-  color: var(--lavender-color);
-  border-bottom: solid 3px #a0a0ff;
-  margin-bottom: 50px;
+	display:block;
+	padding: 5px;
+	justify-content: space-between;
+	background-color: var(--white-color);
+	color: var(--lavender-color);
+	border-bottom: solid 3px #a0a0ff;
+	margin-bottom: 50px;
 }
 
 #header a {
@@ -111,7 +111,6 @@ header {
   font-size: var(--font-mediun);
   top: 0px;
   display: flexbox;
-  justify-content: flex-end;
   position: relative;
 }
 
@@ -302,7 +301,7 @@ min-height: 70px;
   padding-right: 10px;
   border-radius: 20px;
   background-color: #FFFFFF;
-  box-shadow: 20px 20px 20px -20px #94f6ff44;
+/*   box-shadow: 20px 20px 20px -20px #94f6ff44; */  
   justify-content: center;
   align-items: center;
   font-size: 20px;
@@ -314,13 +313,13 @@ min-height: 70px;
 #mainImg {
   border-radius: 20px;
   margin: auto;
-  width: 90%;
+  width: 100%;
   height: 400px;
 }
 
 /* 3-5 자가진단 테스트 결과창 */
 #surRes {
-	width: 80%;
+	width: 70%;
 	min-height: 200px;
 	margin-left: auto;
 	margin-right: auto;
@@ -330,25 +329,19 @@ min-height: 70px;
 	display : flex;
 	align-items: center;
 	text-align: left;
-	font-style: bold;
+	font-weight: bold;
 	font-size: 20px;
 }
 
-/* 4.공통사항*/
-/* 4-1 input type title, content width*/
-/* #write-box {
-  position: relative;
-  width: 100%;
-  float: center;
-  text-align: center;
+/* 3-6. 마이페이지 메뉴 */
+#myPageNav{
+	border: 2px dashed var(--lavender-color);
+	border-radius: 20px;
+	padding: 10px;
 }
-#content {
-  position: relative;
-  width: 100%; 
-  float: center;
-  text-align: center;
-} */
 
+/* 4.공통사항*/
+/* 4-1 input */
 .d-flex, .form-control {
   position: relative;
   width: 100%; 
@@ -387,14 +380,22 @@ min-height: 70px;
   min-height: 1100px;
   background-color: var(--white-color) !important;
   border-radius: 18px;
+  padding: 50px;
   margin-bottom: 100px;
 }
 
 /* 5. 버튼 */
-/* 5-1 제출, 저장 버튼 */
-.btn-primary {
-  --bs-btn-bg: var(--lavender-light-color);
-  --bs-btn-border-color: var(--lavender-light-color);
+/* 5-1 버튼 글자색 */
+.btn {
+  color: var(--white-color);
+  font-family: 'IBMPlexSansKR-Regular';
+  font-size: 1rem;
+  text-decoration: none;
+}
+/* 5-2 라벤더 색 버튼 */
+.btn-lavender {
+  --bs-btn-bg: var(--lavender-color);
+  --bs-btn-border-color: var(--lavender-color);
   --bs-btn-hover-color: var(--white-color);
   --bs-btn-hover-bg: var(--lavender-dark-color);
   --bs-btn-hover-border-color: var(--lavender-dark-color);
@@ -404,45 +405,11 @@ min-height: 70px;
   --bs-btn-active-border-color: var(--lavender-dark-color);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(111, 71, 205, 0.4);
   --bs-btn-disabled-color: var(--white-color);
-  --bs-btn-disabled-bg: var(--lavender-light-color);
-  --bs-btn-disabled-border-color: var(--lavender-light-color);
+  --bs-btn-disabled-bg: var(--lavender-color);
+  --bs-btn-disabled-border-color: var(--lavender-color);
 }
 
-/* 5-2 취소 버튼 */
-.btn-secondary {
-  --bs-btn-bg: var(--lavender-light-color);
-  --bs-btn-border-color: var(--lavender-light-color);
-  --bs-btn-hover-color: var(--white-color);
-  --bs-btn-hover-bg: var(--lavender-dark-color);
-  --bs-btn-hover-border-color: var(--lavender-dark-color);
-  --bs-btn-focus-shadow-rgb: inset 0 3px 5px rgba(111, 71, 205, 0.4);
-  --bs-btn-active-color: var(--white-color);
-  --bs-btn-active-bg: var(--lavender-dark-color);
-  --bs-btn-active-border-color: var(--lavender-dark-color);
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(111, 71, 205, 0.4);
-  --bs-btn-disabled-color: var(--white-color);
-  --bs-btn-disabled-bg: var(--lavender-light-color);
-  --bs-btn-disabled-border-color: var(--lavender-light-color);
-}
-
-/* 5-3 search 검색 버튼 */
-.btn-outline-primary {
-  --bs-btn-bg: var(--lavender-light-color);
-  --bs-btn-border-color: var(--lavender-light-color);
-  --bs-btn-hover-color: var(--white-color);
-  --bs-btn-hover-bg: var(--lavender-dark-color);
-  --bs-btn-hover-border-color: var(--lavender-dark-color);
-  --bs-btn-focus-shadow-rgb: inset 0 3px 5px rgba(111, 71, 205, 0.4);
-  --bs-btn-active-color: var(--white-color);
-  --bs-btn-active-bg: var(--lavender-dark-color);
-  --bs-btn-active-border-color: var(--lavender-dark-color);
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(111, 71, 205, 0.4);
-  --bs-btn-disabled-color: var(--white-color);
-  --bs-btn-disabled-bg: var(--lavender-light-color);
-  --bs-btn-disabled-border-color: var(--lavender-light-color);
-}
-
-/* 5-4 페이지 버튼 */
+/* 5-3 페이지 버튼 */
 .pagination {
   --bs-pagination-padding-x: 0.75rem;
   --bs-pagination-padding-y: 0.375rem;
@@ -467,14 +434,6 @@ min-height: 70px;
   display: flex;
   padding-left: 0;
   list-style: none;
-}
-
-/* 5-5 버튼 속 글자색 */
-.btn {
-  color: var(--white-color);
-  font-family: 'IBMPlexSansKR-Regular';
-  font-size: 1rem;
-  text-decoration: none;
 }
 
 /* 6. 챗봇 */

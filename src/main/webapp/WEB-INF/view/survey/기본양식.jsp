@@ -315,7 +315,7 @@
 		</tr>
     </table>
 	<br>
-		<button onclick="getScores()" class="btn btn-primary">결과 확인하기</button>
+		<button onclick="getScores()" class="btn btn-lavender">결과 확인하기</button>
 		<br>
 		<br>
 		<div id="surRes">

@@ -109,7 +109,7 @@ public class DiaryBoardController {
 		case "positive":
 			Double val = Double.parseDouble(tmp[1].replaceAll("[()%]", "")); //괄호와%를 없애는
 			System.out.println(val); 
-			if (val > 90.) 
+			if (val > 70.) 
 				score = 4;
 			else
 				score = 3;
@@ -118,7 +118,7 @@ public class DiaryBoardController {
 		case "negative":
 			val = Double.parseDouble(tmp[1].replaceAll("[()%]", ""));
 			System.out.println(val);
-			if (val > 90.) 
+			if (val > 70.) 
 				score = 1;
 			else
 				score = 0;
@@ -199,7 +199,7 @@ public class DiaryBoardController {
 		case "positive":
 			Double val = Double.parseDouble(tmp[1].replaceAll("[()%]", "")); //괄호와%를 없애는
 			System.out.println(val); 
-			if (val > 90.) 
+			if (val > 70.) 
 				score = 4;
 			else
 				score = 3;
@@ -208,7 +208,7 @@ public class DiaryBoardController {
 		case "negative":
 			val = Double.parseDouble(tmp[1].replaceAll("[()%]", ""));
 			System.out.println(val);
-			if (val > 90.) 
+			if (val > 70.) 
 				score = 1;
 			else
 				score = 0;

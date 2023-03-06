@@ -44,7 +44,7 @@
                             <input class="form-control me-2" type="search" placeholder="검색 내용" name="q" id="query">
                         </td>
                         <td class="col-1">
-                            <button class="btn btn-outline-primary" onclick="search()">검색</button>
+                            <button class="btn btn-lavender" onclick="search()">검색</button>
                         </td>
                     </tr>
                 </table>
@@ -94,7 +94,7 @@
 			        <input class="form-control me-2" type="search" placeholder="검색 내용" name="q" id="query">
 			    </td>
 			    <td class="col-1">
-			        <button class="btn btn-outline-primary" onclick="search()">검색</button>
+			        <button class="btn btn-lavender" onclick="search()">검색</button>
 		        </td>
 		    </tr>
 			</table>

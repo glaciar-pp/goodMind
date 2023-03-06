@@ -36,12 +36,12 @@
 		//결과
 		let message = "";
 		if (totalScore >= 0 && totalScore <= 4) {
-			message = "당신의 점수는 " + totalScore + "점으로, '우울 아님'으로 분류되었습니다. 유의미한 우울감이 시사되지 않습니다.";
+			message = "당신의 점수는 " + totalScore + "점으로, '우울 아님'으로 분류되었습니다. 유의미한 우울감이 시사되지 않습니다.\n";
 		} else if (totalScore >= 5 && totalScore <= 9) {
-			message = "당신의 점수는 " + totalScore + "점으로, '가벼운 우울'으로 분류되었습니다."
+			message = "당신의 점수는 " + totalScore + "점으로, '가벼운 우울'으로 분류되었습니다.\n"
 			+ "다소 경미한 수준의 우울감이 있으나 일상생활에 지장을 줄 정도는 아닙니다. 다만, 이러한 기분상태가 지속될 경우 개인의 신체적, 심리적 대처자원을 저하시킬 수 있습니다. 그러한 경우, 가까운 지역센터나 전문기관을 방문하시기 바랍니다.";
 		} else if (totalScore >= 10 && totalScore <= 19) {
-			message = "당신의 점수는 " + totalScore + "점으로, '중간 정도의 우울'으로 분류되었습니다."
+			message = "당신의 점수는 " + totalScore + "점으로, '중간 정도의 우울'으로 분류되었습니다.\n"
 			+ "이러한 수준의 우울감은 흔히 신체적, 심리적 대처자원을 저하시키며 개인의 일상생활을 어렵게 만들기도 합니다. 가까운 지역센터나 전문기관을 방문하여 보다 상세한 평가와 도움을 받아보시기 바랍니다.";
 		} else {
 			message = "당신의 점수는 " + totalScore + "점으로, '심한 우울'으로 분류되었습니다. 전문기관의 치료적 개입과 평가가 요구됩니다.";
@@ -59,92 +59,96 @@
 		</header>
 		<!-- Content -->
 		<!-- 제목 -->
-		<h2>자가진단 테스트</h2><a href="/goodM/survey/surList" class="button big">목록으로 돌아가기</a>
+		<h2>자가진단 테스트&ensp;<a href="/goodM/survey/surList" class="button big">목록으로 돌아가기</a></h2>
 		<!-- 테스트 제목 -->
-		<h3>-우울증 건강설문(PHQ-9)-</h3>	
+		<br>
+		<h3 style="text-align: center; margin: 40px">-우울증 건강설문(PHQ-9)-</h3>	
 		<!-- 테스트 내용 -->
-		<p>지난 2주간, 얼마나 자주 다음과 같은 문제들로 곤란을 겪으셨습니까?<br>
+		<p>: 지난 2주간, 얼마나 자주 다음과 같은 문제들로 곤란을 겪으셨습니까?<br>
 	   		지난 2주 동안 아래와 같은 생각을 한 날을 헤아려서 해당하는 숫자에 표시하세요.    
 		</p>
 		<p id="source">
-			※ 1번과 2번 질문에서 2점이나 3점을 받은 경우, 우울증에 부합되므로 설문을 진행해주세요.<br>
+			※ 1번과 2번 질문에서 2점이나 3점을 받은 경우(1,2번 질문 항목 최소 선택지 '2-6일' 이상), 우울증에 부합되므로 설문을 진행해주세요.<br>
 			 그렇지 않다면 유의한 수준의 우울감으로 시사되지 않는 점 참고 부탁 드립니다.
 		</p>
 		<!-- 항목 시작 -->
 	    <table class="table">
-		<tr>
-			<th>항목</th>
-			<th>없음</th>
-			<th>2-6일</th>
-			<th>7-12일</th>
-			<th>거의 매일</th>
+		<tr style="background-color: #ccccff; vertical-align: middle;">
+			<th class="col-5">항목</th>
+			<th class="col-1">없음</th>
+			<th class="col-2">2-6일</th>
+			<th class="col-2">7-12일</th>
+			<th class="col-2">거의 매일</th>
 		</tr>
 		 <tr class="survey">
-		    <td >1. 기분이 가라앉거나, 우울하거나, 희망이 없다고 느꼈다.</td>
+		    <td style="text-align: left;">1. 기분이 가라앉거나, 우울하거나, 희망이 없다고 느꼈다.</td>
 		    <td><input type="radio" name="s1" value="0"></td>
 		    <td><input type="radio" name="s1" value="1"></td>
 		    <td><input type="radio" name="s1" value="2"></td>
 		    <td><input type="radio" name="s1" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>2. 평소 하던 일에 대한 흥미가 없어지거나 즐거움을 느끼지 못했다.</td>
+		    <td style="text-align: left;">2. 평소 하던 일에 대한 흥미가 없어지거나 즐거움을 느끼지 못했다.</td>
 		    <td><input type="radio" name="s2" value="0"></td>
 		    <td><input type="radio" name="s2" value="1"></td>
 		    <td><input type="radio" name="s2" value="2"></td>
 		    <td><input type="radio" name="s2" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>3. 잠들기가 어렵거나 자주 깼다 / 혹은 너무 많이 잤다.</td>
+		    <td style="text-align: left;">3. 잠들기가 어렵거나 자주 깼다 / 혹은 너무 많이 잤다.</td>
 		    <td><input type="radio" name="s3" value="0"></td>
 		    <td><input type="radio" name="s3" value="1"></td>
 		    <td><input type="radio" name="s3" value="2"></td>
 		    <td><input type="radio" name="s3" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>4. 평소보다 식욕이 줄었다 / 혹은 평소보다 많이 먹었다.</td>
+		    <td style="text-align: left;">4. 평소보다 식욕이 줄었다 / 혹은 평소보다 많이 먹었다.</td>
 		    <td><input type="radio" name="s4" value="0"></td>
 		    <td><input type="radio" name="s4" value="1"></td>
 		    <td><input type="radio" name="s4" value="2"></td>
 		    <td><input type="radio" name="s4" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>5. 다른 사람들이 눈치 챌 정도로 평소보다 말과 행동이 느려졌다 / 혹은 너무 안절부절 못해서 가만히 앉아있을 수 없었다.</td>
+		    <td style="text-align: left;">5. 다른 사람들이 눈치 챌 정도로 평소보다 말과 행동이 느려졌다 / 혹은 너무 안절부절 못해서 가만히 앉아있을 수 없었다.</td>
 		    <td><input type="radio" name="s5" value="0"></td>
 		    <td><input type="radio" name="s5" value="1"></td>
 		    <td><input type="radio" name="s5" value="2"></td>
 		    <td><input type="radio" name="s5" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>6. 피곤하고 기운이 없었다.</td>
+		    <td style="text-align: left;">6. 피곤하고 기운이 없었다.</td>
 		    <td><input type="radio" name="s6" value="0"></td>
 		    <td><input type="radio" name="s6" value="1"></td>
 		    <td><input type="radio" name="s6" value="2"></td>
 		    <td><input type="radio" name="s6" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>7. 내가 잘못 했거나, 실패했다는 생각이 들었다 / 혹은 자신과 가족을 실망시켰다고 생각했다.</td>
+		    <td style="text-align: left;">7. 내가 잘못 했거나, 실패했다는 생각이 들었다 / 혹은 자신과 가족을 실망시켰다고 생각했다.</td>
 		    <td><input type="radio" name="s7" value="0"></td>
 		    <td><input type="radio" name="s7" value="1"></td>
 		    <td><input type="radio" name="s7" value="2"></td>
 		    <td><input type="radio" name="s7" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>8. 신문을 읽거나 TV를 보는 것과 같은 일상적인 일에도 집중할 수가 없었다.</td>
+		    <td style="text-align: left;">8. 신문을 읽거나 TV를 보는 것과 같은 일상적인 일에도 집중할 수가 없었다.</td>
 		    <td><input type="radio" name="s8" value="0"></td>
 		    <td><input type="radio" name="s8" value="1"></td>
 		    <td><input type="radio" name="s8" value="2"></td>
 		    <td><input type="radio" name="s8" value="3"></td>
 		</tr>
 		<tr class="survey">
-		    <td>9. 차라리 죽는 것이 더 낫겠다고 생각했다 / 혹은 자해할 생각을 했다.</td>
+		    <td style="text-align: left;">9. 차라리 죽는 것이 더 낫겠다고 생각했다 / 혹은 자해할 생각을 했다.</td>
 		    <td><input type="radio" name="s9" value="0"></td>
 		    <td><input type="radio" name="s9" value="1"></td>
 		    <td><input type="radio" name="s9" value="2"></td>
 		    <td><input type="radio" name="s9" value="3"></td>
 		</tr>
     </table>
+		<p id="source">
+		※ 모든 척도는 증상의 정도, 성향을 파악하는 도구일 뿐입니다.
+	</p>
 	<br>
-		<button onclick="getScores()" class="btn btn-primary">결과 확인하기</button>
+		<button onclick="getScores()" class="btn btn-lavender" style="display: block; margin: auto;">결과 확인하기</button>
 		<br>
 		<br>
 		<div id="surRes">

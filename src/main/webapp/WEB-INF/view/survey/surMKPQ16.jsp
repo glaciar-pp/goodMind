@@ -38,7 +38,7 @@
 		if (totalScore >= 1 && totalScore <= 6) {
 			message = "당신의 점수는 " + totalScore + "점으로, 문제 가능성이 적은 것으로 시사됩니다.";
 		} else {
-			message = "당신의 점수는 " + totalScore + "점으로, 문제 가능성이 있는 것으로 시사됩니다. 7점 이상은 정신증 고위험군 선별을 위한 심층면담 대상자로 선정됩니다.";
+			message = "당신의 점수는 " + totalScore + "점으로, 문제 가능성이 있는 것으로 시사됩니다.\n 7점 이상은 정신증 고위험군 선별을 위한 심층면담 대상자로 선정됩니다.";
 		}
 		document.getElementById('result').innerText = message;
 	}
@@ -53,117 +53,121 @@
 		</header>
 		<!-- Content -->
 		<!-- 제목 -->
-		<h2>자가진단 테스트</h2><a href="/goodM/survey/surList" class="button big">목록으로 돌아가기</a>
+		<h2>자가진단 테스트&ensp;<a href="/goodM/survey/surList" class="button big">목록으로 돌아가기</a></h2>
 		<!-- 테스트 제목 -->
-		<h3>-정신건강 자가진단-</h3>	
+		<br>
+		<h3 style="text-align: center; margin: 40px">-정신건강 자가진단-</h3>	
 		<!-- 테스트 내용 -->
-		<p>지난 한 달 동안 다음의 생각, 느낌, 경험이 있었는지에 대해 '예' 또는 '아니오'에 체크해주십시오. 술이나 약을 복용하는 동안에만 경험하는 것은 포함하지 않습니다.   
+		<p>: 지난 한 달 동안 다음의 생각, 느낌, 경험이 있었는지에 대해 '예' 또는 '아니오'에 체크해주십시오. <br>술이나 약을 복용하는 동안에만 경험하는 것은 포함하지 않습니다.   
 		</p>
 		<!-- 항목 시작(value 숫자 역순) -->
 	    <table class="table">
-			<tr>
-				<th>항목</th>
-				<th>예</th>
-				<th>아니오</th>
+			<tr style="background-color: #ccccff; vertical-align: middle;">
+				<th class="col-8">항목</th>
+				<th class="col-2">예</th>
+				<th class="col-2">아니오</th>
 			</tr>
 			 <tr class="survey">
-			    <td >1. 내가 이전에 즐겨했던 일에 흥미가 없어진다.</td>
+			    <td style="text-align: left;">1. 내가 이전에 즐겨했던 일에 흥미가 없어진다.</td>
 			    <td><input type="radio" name="s1" value="1"></td>
 			    <td><input type="radio" name="s1" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>2. 지금 경험하는 일이 마치 전에도 똑같이 일어났던 것처럼 느껴질 때가 종종 있다(데자뷰).</td>
+			    <td style="text-align: left;">2. 지금 경험하는 일이 마치 전에도 똑같이 일어났던 것처럼 느껴질 때가 종종 있다(데자뷰).</td>
 			    <td><input type="radio" name="s2" value="1"></td>
 			    <td><input type="radio" name="s2" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>3. 나는 때때로 다른 사람들이 느끼지 못하는 냄새나 맛을 느낀다.</td>
+			    <td style="text-align: left;">3. 나는 때때로 다른 사람들이 느끼지 못하는 냄새나 맛을 느낀다.</td>
 			    <td><input type="radio" name="s3" value="1"></td>
 			    <td><input type="radio" name="s3" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>4. 나는 쿵, 찰칵, 쉿, 짝짝, 딸랑딸랑 거리는 등의 특이한 소리를 종종 듣는다.</td>
+			    <td style="text-align: left;">4. 나는 쿵, 찰칵, 쉿, 짝짝, 딸랑딸랑 거리는 등의 특이한 소리를 종종 듣는다.</td>
 			    <td><input type="radio" name="s4" value="1"></td>
 			    <td><input type="radio" name="s4" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>5. 때로는 내가 경험한 상황이 실제인지 상상인지 헷갈릴 때가 있다.</td>
+			    <td style="text-align: left;">5. 때로는 내가 경험한 상황이 실제인지 상상인지 헷갈릴 때가 있다.</td>
 			    <td><input type="radio" name="s5" value="1"></td>
 			    <td><input type="radio" name="s5" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>6. 내가 다른 사람을 쳐다보거나 거울 속의 내 자신을 볼 때, 내 눈 바로 앞에서 얼굴이 바뀌는 것을 본 적이 있다.</td>
+			    <td style="text-align: left;">6. 내가 다른 사람을 쳐다보거나 거울 속의 내 자신을 볼 때, 내 눈 바로 앞에서 얼굴이 바뀌는 것을 본 적이 있다.</td>
 			    <td><input type="radio" name="s6" value="1"></td>
 			    <td><input type="radio" name="s6" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>7. 나는 사람을 처음 만날 때 극도로 불안해진다.</td>
+			    <td style="text-align: left;">7. 나는 사람을 처음 만날 때 극도로 불안해진다.</td>
 			    <td><input type="radio" name="s7" value="1"></td>
 			    <td><input type="radio" name="s7" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>8. 다른 사람들이 확실히 볼 수 없는 것들을 본 적이 있다.</td>
+			    <td style="text-align: left;">8. 다른 사람들이 확실히 볼 수 없는 것들을 본 적이 있다.</td>
 			    <td><input type="radio" name="s8" value="1"></td>
 			    <td><input type="radio" name="s8" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>9. 내 생각들은 가끔 너무 강렬해져서 마치 실제로 내게 말하는 것처럼 느낄 때가 있다.</td>
+			    <td style="text-align: left;">9. 내 생각들은 가끔 너무 강렬해져서 마치 실제로 내게 말하는 것처럼 느낄 때가 있다.</td>
 			    <td><input type="radio" name="s9" value="1"></td>
 			    <td><input type="radio" name="s9" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>10. 나는 때때로 광고나 상품 진열대 또는 내 주변에 배치된 것들에서 특별한 의미를 발견한다.</td>
+			    <td style="text-align: left;">10. 나는 때때로 광고나 상품 진열대 또는 내 주변에 배치된 것들에서 특별한 의미를 발견한다.</td>
 			    <td><input type="radio" name="s10" value="1"></td>
 			    <td><input type="radio" name="s10" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td >11. 때때로 나는 내 아이디어나 생각을 통제하지 못한다고 느낄 때가 있다.</td>
-			    <td><input type="radio" name="s1" value="1"></td>
-			    <td><input type="radio" name="s1" value="0"></td>
+			    <td style="text-align: left;">11. 때때로 나는 내 아이디어나 생각을 통제하지 못한다고 느낄 때가 있다.</td>
+			    <td><input type="radio" name="s11" value="1"></td>
+			    <td><input type="radio" name="s11" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>12. 때때로 나는 평소에는 알아채지 못했을 희미한 소리에 갑자기 정신이 산만해진다.</td>
-			    <td><input type="radio" name="s2" value="1"></td>
-			    <td><input type="radio" name="s2" value="0"></td>
+			    <td style="text-align: left;">12. 때때로 나는 평소에는 알아채지 못했을 희미한 소리에 갑자기 정신이 산만해진다.</td>
+			    <td><input type="radio" name="s12" value="1"></td>
+			    <td><input type="radio" name="s12" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>13. 다른 사람들이 듣지 못하는 속삭임이나 말소리를 들은 적이 있다.</td>
-			    <td><input type="radio" name="s3" value="1"></td>
-			    <td><input type="radio" name="s3" value="0"></td>
+			    <td style="text-align: left;">13. 다른 사람들이 듣지 못하는 속삭임이나 말소리를 들은 적이 있다.</td>
+			    <td><input type="radio" name="s13" value="1"></td>
+			    <td><input type="radio" name="s13" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>14. 나는 다른 사람들이 내게 앙심을 품고 있다고 느낀 적이 종종 있다.</td>
-			    <td><input type="radio" name="s4" value="1"></td>
-			    <td><input type="radio" name="s4" value="0"></td>
+			    <td style="text-align: left;">14. 나는 다른 사람들이 내게 앙심을 품고 있다고 느낀 적이 종종 있다.</td>
+			    <td><input type="radio" name="s14" value="1"></td>
+			    <td><input type="radio" name="s14" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>15. 보이진 않지만, 어떤 사람이나 힘이 내 주위에 존재하는 느낌을 받은 적이 있다.</td>
-			    <td><input type="radio" name="s5" value="1"></td>
-			    <td><input type="radio" name="s5" value="0"></td>
+			    <td style="text-align: left;">15. 보이진 않지만, 어떤 사람이나 힘이 내 주위에 존재하는 느낌을 받은 적이 있다.</td>
+			    <td><input type="radio" name="s15" value="1"></td>
+			    <td><input type="radio" name="s15" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>16. 나는 내 몸의 일부가 어떤 면에서 달라졌거나, 이전과 다르게 움직이고 있다고 느낀다.</td>
-			    <td><input type="radio" name="s6" value="1"></td>
-			    <td><input type="radio" name="s6" value="0"></td>
+			    <td style="text-align: left;">16. 나는 내 몸의 일부가 어떤 면에서 달라졌거나, 이전과 다르게 움직이고 있다고 느낀다.</td>
+			    <td><input type="radio" name="s16" value="1"></td>
+			    <td><input type="radio" name="s16" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>a. 가끔 나에 대한 음모(모함)가 있다는 느낌이 든다.</td>
-			    <td><input type="radio" name="s7" value="1"></td>
-			    <td><input type="radio" name="s7" value="0"></td>
+			    <td style="text-align: left;">a. 가끔 나에 대한 음모(모함)가 있다는 느낌이 든다.</td>
+			    <td><input type="radio" name="s17" value="1"></td>
+			    <td><input type="radio" name="s17" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>b. 사람들이 말을 길게 하면 말뜻을 정확히 이해하기 어렵다.</td>
-			    <td><input type="radio" name="s8" value="1"></td>
-			    <td><input type="radio" name="s8" value="0"></td>
+			    <td style="text-align: left;">b. 사람들이 말을 길게 하면 말뜻을 정확히 이해하기 어렵다.</td>
+			    <td><input type="radio" name="s18" value="1"></td>
+			    <td><input type="radio" name="s18" value="0"></td>
 			</tr>
 			<tr class="survey">
-			    <td>c. 그럴리가 없는데 가끔 어떤 사건이나 방송들이 나와 관련이 있는 것 같다.</td>
-			    <td><input type="radio" name="s9" value="1"></td>
-			    <td><input type="radio" name="s9" value="0"></td>
+			    <td style="text-align: left;">c. 그럴리가 없는데 가끔 어떤 사건이나 방송들이 나와 관련이 있는 것 같다.</td>
+			    <td><input type="radio" name="s19" value="1"></td>
+			    <td><input type="radio" name="s19" value="0"></td>
 			</tr>
     </table>
+	<p id="source">
+		※ 모든 척도는 증상의 정도, 성향을 파악하는 도구일 뿐입니다.
+	</p>
 	<br>
-		<button onclick="getScores()" class="btn btn-primary">결과 확인하기</button>
+		<button onclick="getScores()" class="btn btn-lavender" style="display: block; margin: auto;">결과 확인하기</button>
 		<br>
 		<br>
 		<div id="surRes">

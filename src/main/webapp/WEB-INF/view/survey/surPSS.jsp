@@ -52,25 +52,25 @@
 		</header>
 		<!-- Content -->
 		<!-- 제목 -->
-		<h2>자가진단 테스트</h2><a href="/goodM/survey/surList" class="button big">목록으로 돌아가기</a>
-		<!-- 테스트 제목 -->
-		<h3>-스트레스 척도(PSS)-</h3>	
+		<h2>자가진단 테스트&ensp;<a href="/goodM/survey/surList" class="button big">목록으로 돌아가기</a></h2>
+		<!-- 테스트 제목 --><br>
+		<h3 style="text-align: center; margin: 40px">-스트레스 척도(PSS)-</h3>	
 		<!-- 테스트 내용 -->
-		<p>다음 문항들은 최근 1개월 동안 당신이 느끼고 생각한 것에 대한 것입니다.<br> 
-		각 문항의 내용을 얼마나 자주 느꼈는지 ○로 표시해주시기 바랍니다.    
+		<p>: 다음 문항들은 최근 1개월 동안 당신이 느끼고 생각한 것에 대한 것입니다.<br> 
+		각 문항의 내용을 얼마나 자주 느꼈는지 표시해주시기 바랍니다.    
 		</p>
 		<!-- 항목 시작(value 숫자 역순) -->
 	    <table class="table">
-		<tr>
-			<th>항목</th>
-			<th>전혀 없음</th>
-			<th>거의 없음</th>
-			<th>때때로 있음</th>
-			<th>자주 있음</th>
-			<th>매우 자주</th>
+		<tr style="background-color: #ccccff; vertical-align: middle;">
+			<th class="col-7">항목</th>
+			<th class="col-1">전혀 없음</th>
+			<th class="col-1">거의 없음</th>
+			<th class="col-1">때때로 있음</th>
+			<th class="col-1">자주 있음</th>
+			<th class="col-1">매우 자주</th>
 		</tr>
 		 <tr class="survey">
-		    <td >1. 최근 1개월 동안, 예상치 못했던 일 때문에 당황했던 적이 얼마나 있었습니까?</td>
+		    <td style="text-align: left;">1. 최근 1개월 동안, 예상치 못했던 일 때문에 당황했던 적이 얼마나 있었습니까?</td>
 		    <td><input type="radio" name="s1" value="0"></td>
 		    <td><input type="radio" name="s1" value="1"></td>
 		    <td><input type="radio" name="s1" value="2"></td>
@@ -78,7 +78,7 @@
 		    <td><input type="radio" name="s1" value="4"></td>
 		</tr>
 		<tr class="survey">
-		    <td>2. 최근 1개월 동안, 인생에서 중요한 일들을 조절할 수 없다는 느낌을 얼마나 경험하였습니까?</td>
+		    <td style="text-align: left;">2. 최근 1개월 동안, 인생에서 중요한 일들을 조절할 수 없다는 느낌을 얼마나 경험하였습니까?</td>
 		    <td><input type="radio" name="s2" value="0"></td>
 		    <td><input type="radio" name="s2" value="1"></td>
 		    <td><input type="radio" name="s2" value="2"></td>
@@ -86,7 +86,7 @@
 		    <td><input type="radio" name="s2" value="4"></td>
 		</tr>
 		<tr class="survey">
-		    <td>3. 최근 1개월 동안, 신경이 예민해지고 스트레스를 받고 있다는 느낌을 얼마나 경험하였습니까?</td>
+		    <td style="text-align: left;">3. 최근 1개월 동안, 신경이 예민해지고 스트레스를 받고 있다는 느낌을 얼마나 경험하였습니까?</td>
 		    <td><input type="radio" name="s3" value="0"></td>
 		    <td><input type="radio" name="s3" value="1"></td>
 		    <td><input type="radio" name="s3" value="2"></td>
@@ -94,7 +94,7 @@
 		    <td><input type="radio" name="s3" value="4"></td>
 		</tr>
 		<tr class="survey">
-		    <td>4. 최근 1개월 동안, 당신의 개인적 문제들을 다루는데 있어서 얼마나 자주 자신감을 느끼셨습니까?</td>
+		    <td style="text-align: left;">4. 최근 1개월 동안, 당신의 개인적 문제들을 다루는데 있어서 얼마나 자주 자신감을 느끼셨습니까?</td>
 		    <td><input type="radio" name="s4" value="4"></td>
 		    <td><input type="radio" name="s4" value="3"></td>
 		    <td><input type="radio" name="s4" value="2"></td>
@@ -102,7 +102,7 @@
 		    <td><input type="radio" name="s4" value="0"></td>
 		</tr>
 		<tr class="survey">
-		    <td>5. 최근 1개월 동안, 일상의 일들이 당신의 생각대로 진행되고 있다는 느낌을 얼마나 경험하였습니까?</td>
+		    <td style="text-align: left;">5. 최근 1개월 동안, 일상의 일들이 당신의 생각대로 진행되고 있다는 느낌을 얼마나 경험하였습니까?</td>
 		    <td><input type="radio" name="s5" value="4"></td>
 		    <td><input type="radio" name="s5" value="3"></td>
 		    <td><input type="radio" name="s5" value="2"></td>
@@ -110,7 +110,7 @@
 		    <td><input type="radio" name="s5" value="0"></td>
 		</tr>
 		<tr class="survey">
-		    <td>6. 최근 1개월 동안, 당신이 꼭 해야하는 일을 처리할 수 없다고 생각한 적이 얼마나 있었습니까?</td>
+		    <td style="text-align: left;">6. 최근 1개월 동안, 당신이 꼭 해야하는 일을 처리할 수 없다고 생각한 적이 얼마나 있었습니까?</td>
 		    <td><input type="radio" name="s6" value="0"></td>
 		    <td><input type="radio" name="s6" value="1"></td>
 		    <td><input type="radio" name="s6" value="2"></td>
@@ -118,7 +118,7 @@
 		    <td><input type="radio" name="s6" value="4"></td>
 		</tr>
 		<tr class="survey">
-		    <td>7. 최근 1개월 동안, 일상생활의 짜증을 얼마나 자주 잘 다스릴 수 있었습니까?</td>
+		    <td style="text-align: left;">7. 최근 1개월 동안, 일상생활의 짜증을 얼마나 자주 잘 다스릴 수 있었습니까?</td>
 		    <td><input type="radio" name="s7" value="4"></td>
 		    <td><input type="radio" name="s7" value="3"></td>
 		    <td><input type="radio" name="s7" value="2"></td>
@@ -126,7 +126,7 @@
 		    <td><input type="radio" name="s7" value="0"></td>
 		</tr>
 		<tr class="survey">
-		    <td>8. 최근 1개월 동안, 최상의 컨디션이라고 얼마나 자주 느끼셨습니까?</td>
+		    <td style="text-align: left;">8. 최근 1개월 동안, 최상의 컨디션이라고 얼마나 자주 느끼셨습니까?</td>
 		    <td><input type="radio" name="s8" value="4"></td>
 		    <td><input type="radio" name="s8" value="3"></td>
 		    <td><input type="radio" name="s8" value="2"></td>
@@ -134,7 +134,7 @@
 		    <td><input type="radio" name="s8" value="0"></td>
 		</tr>
 		<tr class="survey">
-		    <td>9. 최근 1개월 동안, 당신이 통제할 수 없는 일 때문에 화가 난 경험이 얼마나 있었습니까?</td>
+		    <td style="text-align: left;">9. 최근 1개월 동안, 당신이 통제할 수 없는 일 때문에 화가 난 경험이 얼마나 있었습니까?</td>
 		    <td><input type="radio" name="s9" value="0"></td>
 		    <td><input type="radio" name="s9" value="1"></td>
 		    <td><input type="radio" name="s9" value="2"></td>
@@ -142,7 +142,7 @@
 		    <td><input type="radio" name="s9" value="4"></td>
 		</tr>
 		<tr class="survey">
-		    <td>10. 최근 1개월 동안, 어려운 일들이 너무 많이 쌓여서 극복하지 못할 것 같은 느낌을 얼마나 자주 경험하셨습니까?</td>
+		    <td style="text-align: left;">10. 최근 1개월 동안, 어려운 일들이 너무 많이 쌓여서 극복하지 못할 것 같은 느낌을 얼마나 자주 경험하셨습니까?</td>
 		    <td><input type="radio" name="s10" value="0"></td>
 		    <td><input type="radio" name="s10" value="1"></td>
 		    <td><input type="radio" name="s10" value="2"></td>
@@ -150,8 +150,11 @@
 		    <td><input type="radio" name="s10" value="3"></td>
 		</tr>
     </table>
+	<p id="source">
+		※ 모든 척도는 증상의 정도, 성향을 파악하는 도구일 뿐입니다.
+	</p>
 	<br>
-		<button onclick="getScores()" class="btn btn-primary">결과 확인하기</button>
+		<button onclick="getScores()" class="btn btn-lavender" style="display: block; margin: auto;">결과 확인하기</button>
 		<br>
 		<br>
 		<div id="surRes">

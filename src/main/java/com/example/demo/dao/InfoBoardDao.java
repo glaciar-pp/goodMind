@@ -19,7 +19,7 @@ public interface InfoBoardDao {
 			+ "	ON b.uid=u.uid"
 			+ "	WHERE b.isDeleted=0 AND ${field} LIKE #{query}"
 			+ "	ORDER BY infoBid DESC"
-			+ "	LIMIT 10 OFFSET #{offset}")
+			+ "	LIMIT 12 OFFSET #{offset}")
 	public List<InfoBoard> getInfoBoardList(int offset, String field, String query);
 
 	@Select("SELECT COUNT(infoBid) FROM infoBoard AS b"

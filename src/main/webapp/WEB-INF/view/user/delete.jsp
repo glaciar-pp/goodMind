@@ -16,13 +16,13 @@
 		<!-- Content -->
 		<!-- 제목 -->
 		<h2>회원 탈퇴</h2><!-- 제목 -->
-		<div class="card border-warning mt-3">
+		<div class="card border-danger mt-3">
                <div class="card-body">
                    <strong class="card-title">삭제하시겠습니까?</strong>
                    <p class="card-text text-center">
                        <br>
                        <!-- 유저 탈퇴 방식 결정에 따라 주소 변경 필요 -->
-                       <button class="btn btn-primary" onclick="location.href='/goodM/user/deleteConfirm/${uid}'">삭제</button>
+                       <button class="btn btn-lavender" onclick="location.href='/goodM/user/deleteConfirm/${uid}'">삭제</button>
                        <button class="btn btn-secondary" onclick="location.href='/goodM/user/list/${currentUserPage}'">취소</button>
                    </p>
 			</div>

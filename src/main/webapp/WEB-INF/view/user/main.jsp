@@ -14,25 +14,28 @@
 	<div class="container-fluid" id="inFrame">
 	<%@ include file="../common/aside.jsp" %>
 		<header id="header">
-			<a href="/goodM/user/main" class="logo"><strong><img src="/img/logo.png" alt="" width="40px" height="40px"></strong>   by 멀캠가네 둘째 조</a>
+			<a href="/goodM/user/main" class="logo"><img src="/img/logo.png" alt="" width="100px" height="100px"></a>
 			<div class="float-end">
-			<a href="#" id="addrChange"><img src="/img/addr.png" height="16" class="me-1"></a>
+				<a href="#" id="addrChange"><img src="/img/addr.png" height="16" class="me-1"></a>
                    	<span id="addr">
-                   		${empty sessionAddress ? '서울시 광진구' : sessionAddress}
+                   		${empty sessionAddress ? '서울시 강남구' : sessionAddress}
                    	</span>
-                   	<div id="addrInputDisp" class="mt-2 d-none">
-	                	<input class="form-control form-control-sm" type="text" id="addrInput">
-	                	<a href="#" id="addrSubmit"><span class="badge bg-primary">확인</span></a>
-	                </div>
-                   	<a href="#" id="weather"><span class="badge bg-secondary">날씨</span></a><br>
-                    <div id="weatherInfo"></div>
+               	<div id="addrInputDisp" class="mt-2 d-none">
+               	<input class="form-control form-control-sm" type="text" id="addrInput">
+               	<a href="#" id="addrSubmit"><span class="badge bg-primary">확인</span></a>
+               	</div>
+				<a href="#" id="weather"><span class="badge bg-secondary">오늘의 날씨</span></a><br>
+				<div id="weatherInfo"></div>
 			</div>
 		</header>
 		<!-- 메인 배너 -->
 		<div class="row row-cols-1 row-cols-sm-2 ms-5 me-5">
 			<div class="col">
-				<h1>오늘, 기분 어때?</h1>
-				<p>당신을 위한 심리건강 서비스</p>
+				<h1>오늘,<br> 기분 어때?</h1>
+				<p>
+					오늘 하루는 어떠셨나요?<br>
+					기분이 좋아서, 기분이 좋지 않아서 오시는 여러분의 모든 기분을 담을 수 있는 이 곳<br>
+				</p>
 				<p>[여러분의 기분을 기록하고 기억하고 관리해 드립니다.]</p>
 				<a href="/goodM/user/about" class="button big">Learn More</a>
 			</div>
@@ -40,16 +43,6 @@
 				<img src="/img/mainImg.jpg" id="mainImg"/>
 			</div>
 		</div>
-		<hr>
-		<c:set var = "total" value = "0" />
-		<c:forEach var="diaryBoard" items="${day.diaryBoardList}" varStatus="status">
-				<div class="${loop.first ? 'mt-1' : ''}" style="font-size: 12px;" onclick="mindClick(${diaryBoard.did}, '${uid}')">
-					${diaryBoard.title}
-					<img src="/img/sentiImage${diaryBoard.score}.png" height="30px">                        	
-				</div>
-				<c:set var= "total" value="${total + diaryBoard.score}"/>
-			</c:forEach>
-			<c:out value="${total}"/>
 		<hr>
 		<!-- 서비스 목표 -->
 		<h2>서비스 목표</h2>
